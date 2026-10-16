@@ -22,7 +22,7 @@ with st.sidebar:
 search_tab, coverage_tab, about_tab = st.tabs(['Find a hydrant', '159-county coverage', 'Sources & method'])
 with search_tab:
     with st.form('address_form'):
-        address = st.text_input('Georgia street address', value='558 McCarty Rd, Statham, GA 30666')
+        address = st.text_input('Georgia street address', value='')
         submitted = st.form_submit_button('Locate address', type='primary')
     if submitted:
         for key in ('matches', 'result'):
