@@ -6,19 +6,20 @@
     "county_fips": [
       "13013"
     ],
-    "scope": "Barrow County utility mapping; completeness not certified",
+    "scope": "Primarily Barrow County-owned utility hydrants; municipal systems are not comprehensively represented.",
     "evidence_url": "https://www.barrowga.org/526/GIS",
     "date_field": "last_edited_date",
-    "verified_at": "2026-10-15T18:37:07.113350+00:00",
+    "verified_at": "2026-10-16T17:47:15.921968+00:00",
     "verified_record_count": 1639,
-    "notes": "Anonymous metadata, full ID list and WGS84 feature query verified. Map presence does not establish operation or public access.",
+    "notes": "Full audit: 1,639 records, 1,637 marked BARROW ownership and 2 null ownership; all Active. No missing geometry. Two coincident coordinate pairs retained because separate records are not proof of duplicate assets.",
     "ownership_chain": [
       "https://www.barrowga.org/526/GIS",
       "https://experience.arcgis.com/experience/cbd734c0037e41e38fc08b186e1ee896/",
       "https://www.arcgis.com/sharing/rest/content/items/cbd734c0037e41e38fc08b186e1ee896/data?f=json",
       "https://www.arcgis.com/sharing/rest/content/items/7ab7f87122234b5ea04a56b0aafc6934/data?f=json",
       "https://services5.arcgis.com/OVFGXfRTCVcPwl55/ArcGIS/rest/services/BCGIS_Utility_Layers/FeatureServer/17"
-    ]
+    ],
+    "result_caution": "Barrow county-owned utility mapping omits portions of municipal water systems. The nearest actual hydrant may be closer than this mapped result."
   },
   {
     "id": "cherokee",
