@@ -62,19 +62,6 @@ Athens–Clarke uses the working `enigma.accgov.com` Public Utilities service, r
 
 Monroe uses a [public hosted layer](https://www.arcgis.com/home/item.html?id=9a13c7491b124c988573206dc61af984) published in October 2025 by `nwilliams_MGRC` (Nicole Williams), a GIS analyst listed on the [official MGRC staff page](https://www.middlegeorgiarc.org/about-us/staff/). Publisher evidence is in `data/monroe_publisher_evidence.json`. The older EMS map references an unresponsive `mgrcmaps.org` service and is not used. Publication/edit dates do not establish field-survey currency. Sample geometry corresponds to coordinates rounded to 0.001 degrees, so distances may have substantial position uncertainty; a Monroe result displays an additional accuracy caution. The dataset extent includes points outside Monroe County, which are not silently clipped or represented as necessarily within the county.
 
-## McCarty Road validation
-
-The live check on 2026-10-16, across all ten sources, returned:
-
-- Matched address: **558 MCCARTY RD, STATHAM, GA, 30666**, Barrow County.
-- Census origin: latitude **33.956920962905**, longitude **-83.617097912197**.
-- Closest mapped point among the configured sources within 5 miles: Barrow record **628**, FacilityID **wh00628**.
-- Hydrant geometry: latitude **33.95123601732712**, longitude **-83.62331950596656**.
-- Calculated distance: **2,800.006 feet**, displayed as **2,800 ft**.
-- Barrow layer's publisher data edit timestamp: **2026-09-30 13:46:22.811 UTC**. This is a GIS edit timestamp, not a field inspection date.
-
-`data/example_result.json` preserves the live result and source responses' provenance. It is a dated example, never a fallback for new searches. Some providers do not expose a layer-wide data edit date through their metadata responses; the UI explicitly identifies missing dates. Record-level update timestamps are included where available.
-
 ## Calculation and completeness
 
 - Census `geographies/onelineaddress` uses `Public_AR_Current` and `Current_Current`. Both the matched state and county FIPS must identify Georgia. No city/ZIP centroid fallback is used. Returned benchmark/vintage and retrieval time are recorded.
