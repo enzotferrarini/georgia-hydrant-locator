@@ -1,0 +1,1152 @@
+{
+  "currentVersion": 12,
+  "id": 1,
+  "name": "Hydrants",
+  "type": "Feature Layer",
+  "serviceItemId": "24e566526efd4b28b0c7a0a67f4f155b",
+  "cacheMaxAge": 30,
+  "isView": true,
+  "isUpdatableView": true,
+  "sourceSchemaChangesAllowed": true,
+  "displayField": "Name",
+  "description": "",
+  "copyrightText": "",
+  "defaultVisibility": false,
+  "editingInfo": {
+    "lastEditDate": 1792079544932,
+    "schemaLastEditDate": 1792079544932,
+    "dataLastEditDate": 1792079544932
+  },
+  "relationships": [],
+  "isDataVersioned": false,
+  "hasContingentValuesDefinition": false,
+  "supportsAppend": true,
+  "supportsCalculate": true,
+  "supportsASyncCalculate": true,
+  "supportsTruncate": false,
+  "supportsAttachmentsByUploadId": true,
+  "supportsAttachmentsResizing": true,
+  "supportsRollbackOnFailureParameter": true,
+  "supportsStatistics": true,
+  "supportsExceedsLimitStatistics": true,
+  "supportsAdvancedQueries": true,
+  "supportsValidateSql": true,
+  "supportsCoordinatesQuantization": true,
+  "supportsLayerOverrides": true,
+  "supportsTilesAndBasicQueriesMode": true,
+  "supportsFieldDescriptionProperty": true,
+  "supportsQuantizationEditMode": true,
+  "supportsColumnStoreIndex": true,
+  "supportsApplyEditsWithGlobalIds": true,
+  "supportsReturningQueryGeometry": true,
+  "enableNullGeometry": false,
+  "advancedQueryCapabilities": {
+    "supportsPagination": true,
+    "supportsPaginationOnAggregatedQueries": true,
+    "supportsQueryRelatedPagination": true,
+    "supportsQueryWithDistance": true,
+    "supportsOutDistance": true,
+    "supportsReturningQueryExtent": true,
+    "supportsStatistics": true,
+    "supportsOrderBy": true,
+    "supportsDistinct": true,
+    "supportsQueryWithResultType": true,
+    "supportsSqlExpression": true,
+    "supportsTimeRelation": true,
+    "supportsAdvancedQueryRelated": true,
+    "supportsCountDistinct": true,
+    "supportsPercentileStatistics": true,
+    "supportsApproxPercentileStatistics": true,
+    "supportsSpatialAggregationStatistics": true,
+    "supportedSpatialAggregationStatistics": [
+      "EnvelopeAggregate",
+      "CentroidAggregate",
+      "ConvexHullAggregate"
+    ],
+    "supportsLod": true,
+    "supportsQueryWithLodSR": false,
+    "supportedLodTypes": [
+      "geohash"
+    ],
+    "supportsReturningGeometryCentroid": false,
+    "supportsReturningGeometryEnvelope": false,
+    "supportsQueryWithDatumTransformation": true,
+    "supportsCurrentUserQueries": true,
+    "supportsHavingClause": true,
+    "supportsOutFieldSQLExpression": true,
+    "supportsMaxRecordCountFactor": true,
+    "supportsTopFeaturesQuery": true,
+    "supportsDisjointSpatialRel": true,
+    "supportsQueryWithCacheHint": true,
+    "supportedOperationsWithCacheHint": [
+      "query",
+      "queryTopFilter",
+      "queryAnalytics",
+      "queryAttachments",
+      "queryRelated",
+      "queryBins",
+      "queryPivot"
+    ],
+    "supportsQueryAnalytic": true,
+    "supportsQueryPivot": true,
+    "supportsQueryBins": true,
+    "supportsDefaultSR": true,
+    "supportsTranslations": false,
+    "supportsAggIds": true,
+    "supportsQueryWithCollation": true,
+    "supportsISODOW": true,
+    "supportsISOWeek": true,
+    "supportsFullTextSearch": true,
+    "fullTextSearchCapabilities": {
+      "supportsAccentSensitivity": true,
+      "supportsStopWords": true,
+      "supportsSearchOperator": true,
+      "supportsOperator": true
+    }
+  },
+  "advancedQueryAnalyticCapabilities": {
+    "supportsLinearRegression": true,
+    "supportsTrendlineRegression": true,
+    "supportsAsync": true,
+    "supportsPercentileAnalytic": true
+  },
+  "queryBinsCapabilities": {
+    "supportsAsync": true,
+    "supportsAutoIntervalBin": true,
+    "supportsFixedIntervalBin": true,
+    "supportsFixedBoundariesBin": true,
+    "supportsDateBin": true,
+    "supportsClassificationBin": true,
+    "supportsStackBy": true,
+    "supportsSplitBy": true,
+    "supportsFirstDayOfWeek": true,
+    "supportsSnapToData": true,
+    "supportsReturnFullIntervalBin": true,
+    "supportsReturnStackValueRange": true,
+    "supportsNormalization": true,
+    "supportedStatisticTypes": [
+      "COUNT",
+      "SUM",
+      "AVG",
+      "VAR",
+      "STDDEV",
+      "MIN",
+      "MAX",
+      "PERCENTILE_CONT",
+      "PERCENTILE_DISC",
+      "APPROX_PERCENTILE_CONT",
+      "APPROX_PERCENTILE_DISC",
+      "CentroidAggregate",
+      "EnvelopeAggregate",
+      "ConvexHullAggregate"
+    ],
+    "supportedNormalizationTypes": [
+      "boxCox",
+      "field",
+      "inverse",
+      "log",
+      "naturalLog",
+      "percentOfTotal",
+      "squareRoot"
+    ]
+  },
+  "supportedOperationsWithCollation": "query,addField,updateField",
+  "advancedEditingCapabilities": {
+    "supportedSqlFormatsInCalculate": [
+      "standard"
+    ],
+    "supportsAsyncApplyEdits": true,
+    "supportsReturnEditResults": true,
+    "supportsApplyEditsbyUploadID": true,
+    "supportedApplyEditsUploadIDFormats": "JSON,PBF",
+    "supportsTranslation": false,
+    "supportsMaxTranslations": 10
+  },
+  "infoInEstimates": [
+    "extent",
+    "count"
+  ],
+  "useStandardizedQueries": true,
+  "geometryType": "esriGeometryPoint",
+  "minScale": 60000,
+  "maxScale": 0,
+  "extent": {
+    "xmin": -9330346.840837568,
+    "ymin": 4024774.4317029165,
+    "xmax": -9281772.188793702,
+    "ymax": 4066590.9208382564,
+    "spatialReference": {
+      "wkid": 102100,
+      "latestWkid": 3857
+    }
+  },
+  "spatialReference": {
+    "wkid": 102100,
+    "latestWkid": 3857
+  },
+  "drawingInfo": {
+    "renderer": {
+      "type": "uniqueValue",
+      "field1": "AGENCY",
+      "uniqueValueInfos": [
+        {
+          "symbol": {
+            "type": "esriPMS",
+            "url": "c74403d7b4f2983135b92dfa9cf3dd2b",
+            "imageData": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABXElEQVQ4jbXTP0jUcRjH8ZfnReLgeDkItrSEJS0OOdggGUEEh0NaDZeNBSEE4iIeFi25KC0VBUI5tKSIGCYhFS4q0hJiDkr/lEAvruQKLjzu8LrfXQ5HH3iWL8/z5vv58DxhZSr8fwCr6o27ad0xYTuOm9Thngqp/QH9HoiKaRHyHofx1GmP3DKq3QWTpQHXjJhzyRQi6EFrtqZU6zXuoVO6vA4CujWa0ekNqovYakNapbueoTYIWBHXJ1R0OKczGHbIdScMWfwb8MlRabzKG1jDUoHROnx2nkLAb2kzOJjX/CHzvjuwp+WslYCFA9657IimvOb8EHO66pcJ00HAstsGtBpTUzKDdUz75ovZIGDbvAUvDDqru0iU24jaknAlYyIAgI8uuuOJ55rFRSSFfMVjP/RKSroh8a9FImVTu00nnRNTpcGonxJeSrmPjcKPlTqmt75nal+VfY1/AE4mXV9N/Q9HAAAAAElFTkSuQmCC",
+            "contentType": "image/png",
+            "width": 12,
+            "height": 12,
+            "angle": 0,
+            "xoffset": 0,
+            "yoffset": 0
+          },
+          "value": "Athens",
+          "label": "Athens"
+        },
+        {
+          "symbol": {
+            "type": "esriPMS",
+            "url": "6dea8ddd0f59fac8b4014b296d478118",
+            "imageData": "iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABCElEQVQoka3SPSjEARjH8c91VxISMlDKDVJnViRKumIjMQllMchmEUaTiBQ2g2SVMlidxOCtmFCKlJTtSnck4rz8Mch3+vU8fevX0xPxRyL/LUZViLmTdGsHyd/FXMV6TRrQpFKJtAdr9sxbsmHmJzFkzJwh7R+2YW2qNYjpFrZuKih26TOo9dviRXL067Nu4a32u1inUZbwS75GM+KYeN23qFIvbtPqZzFbfiZf4Oiba5QqDFa9cZXJNUig/IN4KuXSblA8M21bh1oFr9V9YsW2LcdBccGJMmNCxtXIy8zvsezQmZ6vzd8ZMSspYd+wYlEpSecS0kYtevxZfGbcAToD8y/8+VefAF2JPPHPldG6AAAAAElFTkSuQmCC",
+            "contentType": "image/png",
+            "width": 10,
+            "height": 10,
+            "angle": 0,
+            "xoffset": 0,
+            "yoffset": 0
+          },
+          "value": "Braselton",
+          "label": "Braselton"
+        },
+        {
+          "symbol": {
+            "type": "esriPMS",
+            "url": "8f000713454b730edba80eb03d1e3dc7",
+            "imageData": "iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABCElEQVQokWNhIBOw0EIjIwMDw3/SNYrwJzO8+biUgYHhO2kaJUUqGLjYfzA8erWEFI1CDNa6ogznbiUSo9GEQVJ4IYOjsTQDAwMTQ7IvL4PEMSsGA9UPDNce/GK4em8nw/vPGQwMDF/RNZ5heP42kOH45ZkMq1qNGEzUGRiM1TkYqmY+ZLh0dwfDpy9lDAwMv3A59RbD/eehDFPW3GKYmM/AwMbKwLDr5AeGT18KCPvRXCuegY+biUE7dh+DqrQ4gxC/AlTdH/waH710Y7j9pJfh3acWhqevJBnEBLcy8PG5Mnz6tB2/xudv8xkYGG5Aec8YXr03ZmBgUCHsVIQmGPgH9jsRGokCAD4mTlZbJFA3AAAAAElFTkSuQmCC",
+            "contentType": "image/png",
+            "width": 10,
+            "height": 10,
+            "angle": 0,
+            "xoffset": 0,
+            "yoffset": 0
+          },
+          "value": "Commerce",
+          "label": "Commerce"
+        },
+        {
+          "symbol": {
+            "type": "esriPMS",
+            "url": "c9a7e9bc89a81df1420728b25fcf26de",
+            "imageData": "iVBORw0KGgoAAAANSUhEUgAAAA8AAAAXCAYAAADUUxW8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAACE0lEQVQ4jWNhoACwDD7NDQ0MTA8vGsyZv/5CEsman1wynLJo44XE4gTLTb0Ljm8gWnNDsqXQrE1X0oQFuBgOn300h4GBgXjNV598WsvCwsS8Z04cg0HIDOHMCNPm6StO1xLUXJFiYzxpyUmH6bXeDJpKIgwZYSYMmw/eLGtIM25vmHX2G17Np688XaMqL8QQ46MH5tem2zHM33Ce7c6zX0sZGBgCcWoujDFPnLD0pML26TEMTEyMYDERQS6G0kRrhr6Fx/1r0s1VW2aevI2hGRQ165Y/mOhkpsjgbq2M4pqiOEuGaStOM56//n4tAwODHobmt7dNCy/dPM27Y0YMRgByc7KC/d4y85BuTZqVcsusY3dRNAvzc8+Ul+JvX7btMiu6zX///WdYtfMqg6WB7DOYRlRnTzvwJSPUuHfW2nMVIGfqq4vDNc9ff57hzqN3DD72ajGHzz7EHmAzVp+tNNWRTivv3y0Ec/73n39ABjN42aqe7Jp3dD/O0AYBO0PZ1AlLT67de/I+g7O5IsPEJScYfv3++09bTSp4w74bDHg19y4+sc7bVvVqWe9u7V2zYhk65x5lCHTSWNI6Y99TopKnnp540JGFj264pC5ilBDh+S5vKJDMsBFTHVbN7VOP3Irx0d24ZMvlgNwo04qGhgN/SMqSKlJs0cGuWrsmLzs9CZca3IUBJBPY4JLHq5kYQJFmABgpxnUaswgaAAAAAElFTkSuQmCC",
+            "contentType": "image/png",
+            "width": 11,
+            "height": 17,
+            "angle": 0,
+            "xoffset": 0,
+            "yoffset": 0
+          },
+          "value": "Gainesville",
+          "label": "Gainesville"
+        },
+        {
+          "symbol": {
+            "type": "esriPMS",
+            "url": "adfab32e0d7742516f3c9e6a239d7e54",
+            "imageData": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAOCAYAAAAmL5yKAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAA/klEQVQoka2Tr09CYRSGn/N5kQSFdMXmKFQ2K8WNYL86pVgwOWd3Dt3MjqBJGsE7+QMsBoPVzSCjM24BgrY7BofdzTG5PyDgG8973mfv9n3HYk1Z/w8YtbL4qQdEQ57pYDs3qwF+6go4RiVkKPTdV/IH78mAXrsAk7PEvkIDre8i9Wk8YGNyB2wmAqCEVzwBmlGA51aA/SXh3xZ6y6j1TK76swgQyaC6Mg+k8c28pTUf204bz30Dysvzes3W0TAKCDTVc4x8BG9GrLSL/X3/d2It+NuHn3hPjyC1eIC5QE7HyYBAYi6BHTT0kZQv8s5LeD0KsJ0BsBffIKq1b2EGC1g8zW/cfPUAAAAASUVORK5CYII=",
+            "contentType": "image/png",
+            "width": 12,
+            "height": 10,
+            "angle": 0,
+            "xoffset": 0,
+            "yoffset": 0
+          },
+          "value": "Hoschton",
+          "label": "Hoschton"
+        },
+        {
+          "symbol": {
+            "type": "esriPMS",
+            "url": "989aea31634ffaf81b924c8ce88ce4da",
+            "imageData": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAOCAYAAAAmL5yKAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABPklEQVQokbXTO0hCARTG8b91VUR0EKE0COmx9BiKHotERG0N2WOQBKcKgqimpoakoSKIHBqCKOhWS7gmDT2mFiOiB0IO0q0rhVCBDplkiIRYWYr0wRkOnPNbDkegwAj/CwyGmtkyvQOn+QMOuZGw7xCteZaoLAGP+QGJxBKRWy02XzmiuRPYzh1wyH3c7bdRltxjiCqHl4BYB1z+DQxcqYg9L6IoAqUuNdO64CQgenID1IZxgh4Llh7wr4G0B00zvbSvrnM03AEcZAfsspEX/zT6akAB5/PwFoGbTWiZmwLcgAqI/QwU4+LpWofFlurrJ0DyQqU92VnpP3Oz29ANeL4DzlAt98cjlFrTYM1oqj6jKXEhqCeJvxqBcCagIMrF8gr6iuTNs0dp0BAPdQE7mcCGKQiM8XDy6/7XFPwLHwqIVkMv+aeNAAAAAElFTkSuQmCC",
+            "contentType": "image/png",
+            "width": 12,
+            "height": 10,
+            "angle": 0,
+            "xoffset": 0,
+            "yoffset": 0
+          },
+          "value": "JCWASA",
+          "label": "JCWASA"
+        },
+        {
+          "symbol": {
+            "type": "esriPMS",
+            "url": "a9916bf2f31018286f05ed3936f9739a",
+            "imageData": "iVBORw0KGgoAAAANSUhEUgAAABAAAAAOCAYAAAAmL5yKAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAA+0lEQVQokbXTvysEYBgH8E/XRcok5W6iJMNJKZKrK+qKUrcgJa4MFjKo0+UPoJyiTJRRFguDZDBcxGBTysRiYxGDQVLXJdw5Py7feup9eno+ve/wBpWZ4P8CM+JCLqXd/A0IyXjKLSd+D0xKGdPmSsS9qGUnPwe6VOkwJYywCscWEfs50GnFiIa3flDUtVHrNr8H+jTrN+QWE4hgSUDELLbwUhpolxFXYxn7+UohqdW5ORvmvwYSEpJ6c+cB7KEFdfl5j3E7Vt15KAYEdEtrUpnr6nH46XbDGh1ZsGa6EAiKOXXgwm7Bs97nTC2q8fgReJa1LVtyuUjK/guvi3Mw4ZLQy44AAAAASUVORK5CYII=",
+            "contentType": "image/png",
+            "width": 12,
+            "height": 10,
+            "angle": 0,
+            "xoffset": 0,
+            "yoffset": 0
+          },
+          "value": "Jefferson",
+          "label": "Jefferson"
+        },
+        {
+          "symbol": {
+            "type": "esriSMS",
+            "style": "esriSMSCircle",
+            "color": [
+              76,
+              92,
+              207,
+              255
+            ],
+            "size": 4,
+            "angle": 0,
+            "xoffset": 0,
+            "yoffset": 0,
+            "outline": {
+              "color": [
+                0,
+                0,
+                0,
+                255
+              ],
+              "width": 1
+            }
+          },
+          "value": "Maysville",
+          "label": "Maysville"
+        },
+        {
+          "symbol": {
+            "type": "esriPMS",
+            "url": "891164749ff5c53304152995d372c009",
+            "imageData": "iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAYElEQVQokWNhIBOwUKxxFcM7fgaGP5z4FL9nEH2bzsD4G0Xjf4YfExkYGOLxaeRneGnJwMBwgjpOJRWwkKxjJGpkZGC48Z+B4SA+xUwM/z9haAxjkOpgYGAAYdJsJBUAADpIESXV7LXeAAAAAElFTkSuQmCC",
+            "contentType": "image/png",
+            "width": 10,
+            "height": 10,
+            "angle": 0,
+            "xoffset": 0,
+            "yoffset": 0
+          },
+          "value": "Nicholson",
+          "label": "Nicholson"
+        },
+        {
+          "symbol": {
+            "type": "esriSMS",
+            "style": "esriSMSCircle",
+            "color": [
+              230,
+              0,
+              0,
+              255
+            ],
+            "size": 8,
+            "angle": 0,
+            "xoffset": 0,
+            "yoffset": 0,
+            "outline": {
+              "color": [
+                0,
+                0,
+                0,
+                255
+              ],
+              "width": 1
+            }
+          },
+          "value": "Private",
+          "label": "Private"
+        }
+      ],
+      "fieldDelimiter": ",",
+      "authoringInfo": {
+        "colorRamp": {
+          "type": "multipart",
+          "colorRamps": [
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                232,
+                142,
+                215,
+                255
+              ],
+              "toColor": [
+                232,
+                142,
+                215,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                134,
+                247,
+                89,
+                255
+              ],
+              "toColor": [
+                134,
+                247,
+                89,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                120,
+                227,
+                227,
+                255
+              ],
+              "toColor": [
+                120,
+                227,
+                227,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                247,
+                183,
+                109,
+                255
+              ],
+              "toColor": [
+                247,
+                183,
+                109,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                94,
+                82,
+                222,
+                255
+              ],
+              "toColor": [
+                94,
+                82,
+                222,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                128,
+                67,
+                60,
+                255
+              ],
+              "toColor": [
+                128,
+                67,
+                60,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                88,
+                133,
+                66,
+                255
+              ],
+              "toColor": [
+                88,
+                133,
+                66,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                81,
+                101,
+                150,
+                255
+              ],
+              "toColor": [
+                81,
+                101,
+                150,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                231,
+                242,
+                109,
+                255
+              ],
+              "toColor": [
+                231,
+                242,
+                109,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                250,
+                92,
+                247,
+                255
+              ],
+              "toColor": [
+                250,
+                92,
+                247,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                128,
+                50,
+                125,
+                255
+              ],
+              "toColor": [
+                128,
+                50,
+                125,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                82,
+                209,
+                150,
+                255
+              ],
+              "toColor": [
+                82,
+                209,
+                150,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                230,
+                100,
+                80,
+                255
+              ],
+              "toColor": [
+                230,
+                100,
+                80,
+                255
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "scaleSymbols": true,
+    "transparency": 0,
+    "labelingInfo": null
+  },
+  "allowGeometryUpdates": true,
+  "hasAttachments": false,
+  "viewSourceHasAttachments": false,
+  "htmlPopupType": "esriServerHTMLPopupTypeNone",
+  "hasMetadata": true,
+  "hasM": false,
+  "hasZ": false,
+  "objectIdField": "OBJECTID",
+  "uniqueIdField": {
+    "name": "OBJECTID",
+    "isSystemMaintained": true
+  },
+  "globalIdField": "GlobalID",
+  "typeIdField": "AGENCY",
+  "collation": {
+    "locale": "neutral",
+    "caseSensitive": false,
+    "accentSensitive": true
+  },
+  "fields": [
+    {
+      "name": "OBJECTID",
+      "type": "esriFieldTypeOID",
+      "alias": "OBJECTID",
+      "sqlType": "sqlTypeOther",
+      "nullable": false,
+      "editable": false,
+      "domain": null,
+      "defaultValue": null
+    },
+    {
+      "name": "Comment",
+      "type": "esriFieldTypeString",
+      "alias": "Comment",
+      "sqlType": "sqlTypeOther",
+      "length": 50,
+      "nullable": true,
+      "editable": true,
+      "domain": null,
+      "defaultValue": null
+    },
+    {
+      "name": "Name",
+      "type": "esriFieldTypeString",
+      "alias": "Name",
+      "sqlType": "sqlTypeOther",
+      "length": 25,
+      "nullable": true,
+      "editable": true,
+      "domain": null,
+      "defaultValue": null
+    },
+    {
+      "name": "Type",
+      "type": "esriFieldTypeString",
+      "alias": "Type",
+      "sqlType": "sqlTypeOther",
+      "length": 25,
+      "nullable": true,
+      "editable": true,
+      "domain": null,
+      "defaultValue": null
+    },
+    {
+      "name": "Status",
+      "type": "esriFieldTypeString",
+      "alias": "Status",
+      "sqlType": "sqlTypeOther",
+      "length": 50,
+      "nullable": true,
+      "editable": true,
+      "domain": null,
+      "defaultValue": null
+    },
+    {
+      "name": "YearInstal",
+      "type": "esriFieldTypeString",
+      "alias": "YearInstal",
+      "sqlType": "sqlTypeOther",
+      "length": 20,
+      "nullable": true,
+      "editable": true,
+      "domain": null,
+      "defaultValue": null
+    },
+    {
+      "name": "MfgDate",
+      "type": "esriFieldTypeString",
+      "alias": "MfgDate",
+      "sqlType": "sqlTypeOther",
+      "length": 20,
+      "nullable": true,
+      "editable": true,
+      "domain": null,
+      "defaultValue": null
+    },
+    {
+      "name": "Mfg",
+      "type": "esriFieldTypeString",
+      "alias": "Mfg",
+      "sqlType": "sqlTypeOther",
+      "length": 25,
+      "nullable": true,
+      "editable": true,
+      "domain": null,
+      "defaultValue": null
+    },
+    {
+      "name": "MfgYr",
+      "type": "esriFieldTypeString",
+      "alias": "MfgYr",
+      "sqlType": "sqlTypeOther",
+      "length": 15,
+      "nullable": true,
+      "editable": true,
+      "domain": null,
+      "defaultValue": null
+    },
+    {
+      "name": "FH_ID",
+      "type": "esriFieldTypeString",
+      "alias": "FH_ID",
+      "sqlType": "sqlTypeOther",
+      "length": 20,
+      "nullable": true,
+      "editable": true,
+      "domain": null,
+      "defaultValue": null
+    },
+    {
+      "name": "GPS_Date",
+      "type": "esriFieldTypeDate",
+      "alias": "GPS_Date",
+      "sqlType": "sqlTypeOther",
+      "length": 8,
+      "nullable": true,
+      "editable": true,
+      "domain": null,
+      "defaultValue": null,
+      "precision": 1
+    },
+    {
+      "name": "Size_",
+      "type": "esriFieldTypeString",
+      "alias": "Size_",
+      "sqlType": "sqlTypeOther",
+      "length": 50,
+      "nullable": true,
+      "editable": true,
+      "domain": null,
+      "defaultValue": null
+    },
+    {
+      "name": "Cut_Off_VA",
+      "type": "esriFieldTypeString",
+      "alias": "Cut_Off_VA",
+      "sqlType": "sqlTypeOther",
+      "length": 50,
+      "nullable": true,
+      "editable": true,
+      "domain": null,
+      "defaultValue": null
+    },
+    {
+      "name": "AGENCY",
+      "type": "esriFieldTypeString",
+      "alias": "AGENCY",
+      "sqlType": "sqlTypeOther",
+      "length": 50,
+      "nullable": true,
+      "editable": true,
+      "domain": null,
+      "defaultValue": null
+    },
+    {
+      "name": "arc_street",
+      "type": "esriFieldTypeString",
+      "alias": "arc_street",
+      "sqlType": "sqlTypeOther",
+      "length": 255,
+      "nullable": true,
+      "editable": true,
+      "domain": null,
+      "defaultValue": null
+    },
+    {
+      "name": "GlobalID",
+      "type": "esriFieldTypeGlobalID",
+      "alias": "GlobalID",
+      "sqlType": "sqlTypeOther",
+      "length": 38,
+      "nullable": false,
+      "editable": false,
+      "domain": null,
+      "defaultValue": null
+    }
+  ],
+  "indexes": [
+    {
+      "name": "PK__JACKSON___F4B70D850E8451A9",
+      "fields": "OBJECTID",
+      "isAscending": true,
+      "isUnique": true,
+      "description": "",
+      "indexType": "Attribute"
+    },
+    {
+      "name": "user_13410.JACKSON_BASELAYERS_HYDRANTS2_Shape_sidx",
+      "fields": "SHAPE",
+      "isAscending": true,
+      "isUnique": false,
+      "description": "",
+      "indexType": "Spatial"
+    },
+    {
+      "name": "FDO_GlobalID",
+      "fields": "GlobalID",
+      "isAscending": true,
+      "isUnique": true,
+      "description": "",
+      "indexType": "Attribute"
+    }
+  ],
+  "dateFieldsTimeReference": {
+    "timeZone": "UTC",
+    "timeZoneIANA": "Etc/UTC",
+    "respectsDaylightSaving": false
+  },
+  "preferredTimeReference": null,
+  "types": [
+    {
+      "id": "Athens",
+      "name": "Athens",
+      "domains": {},
+      "templates": [
+        {
+          "name": "Athens",
+          "description": "",
+          "drawingTool": "esriFeatureEditToolPoint",
+          "prototype": {
+            "attributes": {
+              "YearInstal": " ",
+              "Mfg": " ",
+              "MfgYr": " ",
+              "Cut_Off_VA": null,
+              "arc_street": null,
+              "Name": " ",
+              "MfgDate": " ",
+              "Comment": " ",
+              "Status": " ",
+              "Type": " ",
+              "FH_ID": " ",
+              "GPS_Date": null,
+              "Size_": null,
+              "AGENCY": "Athens"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "Braselton",
+      "name": "Braselton",
+      "domains": {},
+      "templates": [
+        {
+          "name": "Braselton",
+          "description": "",
+          "drawingTool": "esriFeatureEditToolPoint",
+          "prototype": {
+            "attributes": {
+              "YearInstal": " ",
+              "Mfg": " ",
+              "MfgYr": " ",
+              "Cut_Off_VA": null,
+              "arc_street": null,
+              "Name": " ",
+              "MfgDate": " ",
+              "Comment": " ",
+              "Status": " ",
+              "Type": " ",
+              "FH_ID": " ",
+              "GPS_Date": null,
+              "Size_": null,
+              "AGENCY": "Braselton"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "Commerce",
+      "name": "Commerce",
+      "domains": {},
+      "templates": [
+        {
+          "name": "Commerce",
+          "description": "",
+          "drawingTool": "esriFeatureEditToolPoint",
+          "prototype": {
+            "attributes": {
+              "YearInstal": " ",
+              "Mfg": " ",
+              "MfgYr": " ",
+              "Cut_Off_VA": null,
+              "arc_street": null,
+              "Name": " ",
+              "MfgDate": " ",
+              "Comment": " ",
+              "Status": " ",
+              "Type": " ",
+              "FH_ID": " ",
+              "GPS_Date": null,
+              "Size_": null,
+              "AGENCY": "Commerce"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "Gainesville",
+      "name": "Gainesville",
+      "domains": {},
+      "templates": [
+        {
+          "name": "Gainesville",
+          "description": "",
+          "drawingTool": "esriFeatureEditToolPoint",
+          "prototype": {
+            "attributes": {
+              "YearInstal": " ",
+              "Mfg": " ",
+              "MfgYr": " ",
+              "Cut_Off_VA": null,
+              "arc_street": null,
+              "Name": " ",
+              "MfgDate": " ",
+              "Comment": " ",
+              "Status": " ",
+              "Type": " ",
+              "FH_ID": " ",
+              "GPS_Date": null,
+              "Size_": null,
+              "AGENCY": "Gainesville"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "Hoschton",
+      "name": "Hoschton",
+      "domains": {},
+      "templates": [
+        {
+          "name": "Hoschton",
+          "description": "",
+          "drawingTool": "esriFeatureEditToolPoint",
+          "prototype": {
+            "attributes": {
+              "YearInstal": " ",
+              "Mfg": " ",
+              "MfgYr": " ",
+              "Cut_Off_VA": null,
+              "arc_street": null,
+              "Name": " ",
+              "MfgDate": " ",
+              "Comment": " ",
+              "Status": " ",
+              "Type": " ",
+              "FH_ID": " ",
+              "GPS_Date": null,
+              "Size_": null,
+              "AGENCY": "Hoschton"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "JCWASA",
+      "name": "JCWASA",
+      "domains": {},
+      "templates": [
+        {
+          "name": "JCWASA",
+          "description": "",
+          "drawingTool": "esriFeatureEditToolPoint",
+          "prototype": {
+            "attributes": {
+              "YearInstal": " ",
+              "Mfg": " ",
+              "MfgYr": " ",
+              "Cut_Off_VA": null,
+              "arc_street": null,
+              "Name": " ",
+              "MfgDate": " ",
+              "Comment": " ",
+              "Status": " ",
+              "Type": " ",
+              "FH_ID": " ",
+              "GPS_Date": null,
+              "Size_": null,
+              "AGENCY": "JCWASA"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "Jefferson",
+      "name": "Jefferson",
+      "domains": {},
+      "templates": [
+        {
+          "name": "Jefferson",
+          "description": "",
+          "drawingTool": "esriFeatureEditToolPoint",
+          "prototype": {
+            "attributes": {
+              "YearInstal": " ",
+              "Mfg": " ",
+              "MfgYr": " ",
+              "Cut_Off_VA": null,
+              "arc_street": null,
+              "Name": " ",
+              "MfgDate": " ",
+              "Comment": " ",
+              "Status": " ",
+              "Type": " ",
+              "FH_ID": " ",
+              "GPS_Date": null,
+              "Size_": null,
+              "AGENCY": "Jefferson"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "Maysville",
+      "name": "Maysville",
+      "domains": {},
+      "templates": [
+        {
+          "name": "Maysville",
+          "description": "",
+          "drawingTool": "esriFeatureEditToolPoint",
+          "prototype": {
+            "attributes": {
+              "YearInstal": " ",
+              "Mfg": " ",
+              "MfgYr": " ",
+              "Cut_Off_VA": null,
+              "arc_street": null,
+              "Name": " ",
+              "MfgDate": " ",
+              "Comment": " ",
+              "Status": " ",
+              "Type": " ",
+              "FH_ID": " ",
+              "GPS_Date": null,
+              "Size_": null,
+              "AGENCY": "Maysville"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "Nicholson",
+      "name": "Nicholson",
+      "domains": {},
+      "templates": [
+        {
+          "name": "Nicholson",
+          "description": "",
+          "drawingTool": "esriFeatureEditToolPoint",
+          "prototype": {
+            "attributes": {
+              "YearInstal": " ",
+              "Mfg": " ",
+              "MfgYr": " ",
+              "Cut_Off_VA": null,
+              "arc_street": null,
+              "Name": " ",
+              "MfgDate": " ",
+              "Comment": " ",
+              "Status": " ",
+              "Type": " ",
+              "FH_ID": " ",
+              "GPS_Date": null,
+              "Size_": null,
+              "AGENCY": "Nicholson"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "Private",
+      "name": "Private",
+      "domains": {},
+      "templates": [
+        {
+          "name": "Private",
+          "description": "",
+          "drawingTool": "esriFeatureEditToolPoint",
+          "prototype": {
+            "attributes": {
+              "YearInstal": " ",
+              "Mfg": " ",
+              "MfgYr": " ",
+              "Cut_Off_VA": null,
+              "arc_street": null,
+              "Name": " ",
+              "MfgDate": " ",
+              "Comment": " ",
+              "Status": " ",
+              "Type": " ",
+              "FH_ID": " ",
+              "GPS_Date": null,
+              "Size_": null,
+              "AGENCY": "Private"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "templates": [],
+  "supportedQueryFormats": "JSON, geoJSON, PBF",
+  "supportedAppendFormats": "sqlite,geoPackage,shapefile,filegdb,featureCollection,geojson,csv,excel,jsonl,featureService,pbf",
+  "supportedAppendSourceFilterFormats": "sqlite,geoPackage,shapefile,filegdb,featureService",
+  "supportedExportFormats": "csv,shapefile,sqlite,geoPackage,filegdb,featureCollection,geojson,kml,excel,parquet",
+  "supportedConvertFileFormats": "JSON,PBF,Parquet",
+  "supportedConvertContentFormats": "LayerEditCollection,FeatureCollection",
+  "supportedSpatialRelationships": [
+    "esriSpatialRelIntersects",
+    "esriSpatialRelContains",
+    "esriSpatialRelCrosses",
+    "esriSpatialRelEnvelopeIntersects",
+    "esriSpatialRelIndexIntersects",
+    "esriSpatialRelOverlaps",
+    "esriSpatialRelTouches",
+    "esriSpatialRelWithin",
+    "esriSpatialRelDisjoint",
+    "esriSpatialRelRelation"
+  ],
+  "guidFormat": "",
+  "supportsContingentValues": true,
+  "supportsEditingContingentValues": true,
+  "supportedContingentValuesFormats": "JSON, PBF",
+  "supportsFieldGroups": true,
+  "supportedSyncDataOptions": 260,
+  "hasStaticData": true,
+  "maxRecordCount": 16000,
+  "standardMaxRecordCount": 16000,
+  "maxIdsCount": 100000,
+  "standardMaxRecordCountNoGeometry": 32000,
+  "tileMaxRecordCount": 8000,
+  "maxRecordCountFactor": 1,
+  "capabilities": "Query,Extract"
+}

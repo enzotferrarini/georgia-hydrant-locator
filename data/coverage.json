@@ -1,0 +1,1274 @@
+[
+  {
+    "county": "Appling County",
+    "fips": "13001",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Atkinson County",
+    "fips": "13003",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Bacon County",
+    "fips": "13005",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Baker County",
+    "fips": "13007",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Baldwin County",
+    "fips": "13009",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Banks County",
+    "fips": "13011",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Barrow County",
+    "fips": "13013",
+    "status": "supported_partial",
+    "source_ids": "barrow",
+    "scope": "Barrow County utility mapping; completeness not certified",
+    "last_verified": "2026-10-15T18:37:07.113350+00:00"
+  },
+  {
+    "county": "Bartow County",
+    "fips": "13015",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Ben Hill County",
+    "fips": "13017",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Berrien County",
+    "fips": "13019",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Bibb County",
+    "fips": "13021",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Bleckley County",
+    "fips": "13023",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Brantley County",
+    "fips": "13025",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Brooks County",
+    "fips": "13027",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Bryan County",
+    "fips": "13029",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Bulloch County",
+    "fips": "13031",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Burke County",
+    "fips": "13033",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Butts County",
+    "fips": "13035",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Calhoun County",
+    "fips": "13037",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Camden County",
+    "fips": "13039",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Candler County",
+    "fips": "13043",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Carroll County",
+    "fips": "13045",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Catoosa County",
+    "fips": "13047",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Charlton County",
+    "fips": "13049",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Chatham County",
+    "fips": "13051",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Chattahoochee County",
+    "fips": "13053",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Chattooga County",
+    "fips": "13055",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Cherokee County",
+    "fips": "13057",
+    "status": "supported_partial",
+    "source_ids": "cherokee",
+    "scope": "Cherokee County published hydrants; completeness not certified",
+    "last_verified": "2026-10-15T18:37:07.113350+00:00"
+  },
+  {
+    "county": "Clarke County",
+    "fips": "13059",
+    "status": "supported_partial",
+    "source_ids": "clarke",
+    "scope": "Athens\u2013Clarke County published utility mapping; partial inventory, completeness not certified",
+    "last_verified": "2026-10-15T18:51:05.088534+00:00"
+  },
+  {
+    "county": "Clay County",
+    "fips": "13061",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Clayton County",
+    "fips": "13063",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Clinch County",
+    "fips": "13065",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Cobb County",
+    "fips": "13067",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Coffee County",
+    "fips": "13069",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Colquitt County",
+    "fips": "13071",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Columbia County",
+    "fips": "13073",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Cook County",
+    "fips": "13075",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Coweta County",
+    "fips": "13077",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Crawford County",
+    "fips": "13079",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Crisp County",
+    "fips": "13081",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Dade County",
+    "fips": "13083",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Dawson County",
+    "fips": "13085",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "DeKalb County",
+    "fips": "13089",
+    "status": "supported_partial",
+    "source_ids": "dekalb",
+    "scope": "DeKalb County \u2014 Hydrants All; partial published inventory, completeness not certified",
+    "last_verified": "2026-10-16T14:56:13.823088+00:00"
+  },
+  {
+    "county": "Decatur County",
+    "fips": "13087",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Dodge County",
+    "fips": "13091",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Dooly County",
+    "fips": "13093",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Dougherty County",
+    "fips": "13095",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Douglas County",
+    "fips": "13097",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Early County",
+    "fips": "13099",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Echols County",
+    "fips": "13101",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Effingham County",
+    "fips": "13103",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Elbert County",
+    "fips": "13105",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Emanuel County",
+    "fips": "13107",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Evans County",
+    "fips": "13109",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Fannin County",
+    "fips": "13111",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Fayette County",
+    "fips": "13113",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Floyd County",
+    "fips": "13115",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Forsyth County",
+    "fips": "13117",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Franklin County",
+    "fips": "13119",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Fulton County",
+    "fips": "13121",
+    "status": "supported_partial",
+    "source_ids": "roswell",
+    "scope": "Roswell only; partial Fulton County coverage",
+    "last_verified": "2026-10-15T18:37:07.113350+00:00"
+  },
+  {
+    "county": "Gilmer County",
+    "fips": "13123",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Glascock County",
+    "fips": "13125",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Glynn County",
+    "fips": "13127",
+    "status": "supported_partial",
+    "source_ids": "glynn",
+    "scope": "Glynn County published hydrants; completeness not certified",
+    "last_verified": "2026-10-15T18:37:07.113350+00:00"
+  },
+  {
+    "county": "Gordon County",
+    "fips": "13129",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Grady County",
+    "fips": "13131",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Greene County",
+    "fips": "13133",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Gwinnett County",
+    "fips": "13135",
+    "status": "supported_partial",
+    "source_ids": "gwinnett",
+    "scope": "Gwinnett County published utility mapping; partial inventory, completeness not certified",
+    "last_verified": "2026-10-15T18:50:19.910968+00:00"
+  },
+  {
+    "county": "Habersham County",
+    "fips": "13137",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Hall County",
+    "fips": "13139",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Hancock County",
+    "fips": "13141",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Haralson County",
+    "fips": "13143",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Harris County",
+    "fips": "13145",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Hart County",
+    "fips": "13147",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Heard County",
+    "fips": "13149",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Henry County",
+    "fips": "13151",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Houston County",
+    "fips": "13153",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Irwin County",
+    "fips": "13155",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Jackson County",
+    "fips": "13157",
+    "status": "supported_partial",
+    "source_ids": "jackson",
+    "scope": "Jackson County \u2014 Hydrants; partial published inventory, completeness not certified",
+    "last_verified": "2026-10-16T14:56:37.651759+00:00"
+  },
+  {
+    "county": "Jasper County",
+    "fips": "13159",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Jeff Davis County",
+    "fips": "13161",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Jefferson County",
+    "fips": "13163",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Jenkins County",
+    "fips": "13165",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Johnson County",
+    "fips": "13167",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Jones County",
+    "fips": "13169",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Lamar County",
+    "fips": "13171",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Lanier County",
+    "fips": "13173",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Laurens County",
+    "fips": "13175",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Lee County",
+    "fips": "13177",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Liberty County",
+    "fips": "13179",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Lincoln County",
+    "fips": "13181",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Long County",
+    "fips": "13183",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Lowndes County",
+    "fips": "13185",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Lumpkin County",
+    "fips": "13187",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Macon County",
+    "fips": "13193",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Madison County",
+    "fips": "13195",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Marion County",
+    "fips": "13197",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "McDuffie County",
+    "fips": "13189",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "McIntosh County",
+    "fips": "13191",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Meriwether County",
+    "fips": "13199",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Miller County",
+    "fips": "13201",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Mitchell County",
+    "fips": "13205",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Monroe County",
+    "fips": "13207",
+    "status": "supported_partial",
+    "source_ids": "monroe",
+    "scope": "Monroe County regional-commission mapping; partial inventory, completeness not certified",
+    "last_verified": "2026-10-15T18:52:09.226486+00:00"
+  },
+  {
+    "county": "Montgomery County",
+    "fips": "13209",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Morgan County",
+    "fips": "13211",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Murray County",
+    "fips": "13213",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Muscogee County",
+    "fips": "13215",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Newton County",
+    "fips": "13217",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Oconee County",
+    "fips": "13219",
+    "status": "supported_partial",
+    "source_ids": "oconee",
+    "scope": "Oconee County \u2014 Public Water Hydrants; partial published inventory, completeness not certified",
+    "last_verified": "2026-10-16T14:56:55.562739+00:00"
+  },
+  {
+    "county": "Oglethorpe County",
+    "fips": "13221",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Paulding County",
+    "fips": "13223",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Peach County",
+    "fips": "13225",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Pickens County",
+    "fips": "13227",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Pierce County",
+    "fips": "13229",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Pike County",
+    "fips": "13231",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Polk County",
+    "fips": "13233",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Pulaski County",
+    "fips": "13235",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Putnam County",
+    "fips": "13237",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Quitman County",
+    "fips": "13239",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Rabun County",
+    "fips": "13241",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Randolph County",
+    "fips": "13243",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Richmond County",
+    "fips": "13245",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Rockdale County",
+    "fips": "13247",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Schley County",
+    "fips": "13249",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Screven County",
+    "fips": "13251",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Seminole County",
+    "fips": "13253",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Spalding County",
+    "fips": "13255",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Stephens County",
+    "fips": "13257",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Stewart County",
+    "fips": "13259",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Sumter County",
+    "fips": "13261",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Talbot County",
+    "fips": "13263",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Taliaferro County",
+    "fips": "13265",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Tattnall County",
+    "fips": "13267",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Taylor County",
+    "fips": "13269",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Telfair County",
+    "fips": "13271",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Terrell County",
+    "fips": "13273",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Thomas County",
+    "fips": "13275",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Tift County",
+    "fips": "13277",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Toombs County",
+    "fips": "13279",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Towns County",
+    "fips": "13281",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Treutlen County",
+    "fips": "13283",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Troup County",
+    "fips": "13285",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Turner County",
+    "fips": "13287",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Twiggs County",
+    "fips": "13289",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Union County",
+    "fips": "13291",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Upson County",
+    "fips": "13293",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Walker County",
+    "fips": "13295",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Walton County",
+    "fips": "13297",
+    "status": "researched_unverified",
+    "source_ids": "",
+    "scope": "A June 2022 Georgia hydrant web map was found, but government ownership could not be conclusively verified. Not integrated; no inference about actual hydrants.",
+    "last_verified": "2026-10-16T14:59:56.910061+00:00"
+  },
+  {
+    "county": "Ware County",
+    "fips": "13299",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Warren County",
+    "fips": "13301",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Washington County",
+    "fips": "13303",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Wayne County",
+    "fips": "13305",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Webster County",
+    "fips": "13307",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Wheeler County",
+    "fips": "13309",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "White County",
+    "fips": "13311",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Whitfield County",
+    "fips": "13313",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Wilcox County",
+    "fips": "13315",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Wilkes County",
+    "fips": "13317",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Wilkinson County",
+    "fips": "13319",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  },
+  {
+    "county": "Worth County",
+    "fips": "13321",
+    "status": "not_researched",
+    "source_ids": "",
+    "scope": "No integrated source; not evidence of missing hydrants.",
+    "last_verified": null
+  }
+]

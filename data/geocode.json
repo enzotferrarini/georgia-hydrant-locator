@@ -1,0 +1,253 @@
+{
+  "result": {
+    "input": {
+      "address": {
+        "address": "558 McCarty Rd, Statham, GA 30666"
+      },
+      "vintage": {
+        "isDefault": true,
+        "id": "4",
+        "vintageName": "Current_Current",
+        "vintageDescription": "Current Vintage - Current Benchmark"
+      },
+      "benchmark": {
+        "isDefault": true,
+        "benchmarkDescription": "Public Address Ranges - Current Benchmark",
+        "id": "4",
+        "benchmarkName": "Public_AR_Current"
+      }
+    },
+    "addressMatches": [
+      {
+        "tigerLine": {
+          "side": "R",
+          "tigerLineId": "653485061"
+        },
+        "geographies": {
+          "States": [
+            {
+              "STATENS": "01705317",
+              "GEOID": "13",
+              "CENTLAT": "+32.6279417",
+              "AREAWATER": 4417014621,
+              "STATE": "13",
+              "BASENAME": "Georgia",
+              "STUSAB": "GA",
+              "OID": "2749048077737",
+              "LSADC": "00",
+              "FUNCSTAT": "A",
+              "INTPTLAT": "+32.6295789",
+              "DIVISION": "5",
+              "NAME": "Georgia",
+              "REGION": "3",
+              "OBJECTID": 37,
+              "CENTLON": "-083.4165286",
+              "AREALAND": 149487969421,
+              "INTPTLON": "-083.4235109",
+              "MTFCC": "G4000"
+            }
+          ],
+          "Combined Statistical Areas": [
+            {
+              "POP100": "",
+              "GEOID": "122",
+              "CENTLAT": "+33.7640720",
+              "AREAWATER": 661205369,
+              "BASENAME": "Atlanta--Athens-Clarke County--Sandy Springs, GA-AL",
+              "OID": "2619034687907977",
+              "LSADC": "M0",
+              "FUNCSTAT": "S",
+              "INTPTLAT": "+33.7644037",
+              "NAME": "Atlanta--Athens-Clarke County--Sandy Springs, GA-AL CSA",
+              "OBJECTID": 44,
+              "CSA": "122",
+              "CENTLON": "-084.3723082",
+              "INTPTLON": "-084.3727678",
+              "AREALAND": 34521740790,
+              "HU100": "",
+              "MTFCC": "G3100"
+            }
+          ],
+          "County Subdivisions": [
+            {
+              "COUSUB": "92850",
+              "GEOID": "1301392850",
+              "CENTLAT": "+33.9873149",
+              "AREAWATER": 970935,
+              "STATE": "13",
+              "BASENAME": "Statham",
+              "OID": "27690347483077",
+              "LSADC": "22",
+              "FUNCSTAT": "S",
+              "INTPTLAT": "+33.9911363",
+              "NAME": "Statham CCD",
+              "OBJECTID": 28736,
+              "CENTLON": "-083.6005653",
+              "COUSUBCC": "Z5",
+              "AREALAND": 96748216,
+              "INTPTLON": "-083.5974100",
+              "MTFCC": "G4040",
+              "COUSUBNS": "01936556",
+              "COUNTY": "013"
+            }
+          ],
+          "Counties": [
+            {
+              "GEOID": "13013",
+              "CENTLAT": "+33.9931912",
+              "AREAWATER": 4725592,
+              "STATE": "13",
+              "BASENAME": "Barrow",
+              "OID": "27590347455955",
+              "LSADC": "06",
+              "FUNCSTAT": "A",
+              "INTPTLAT": "+33.9920094",
+              "NAME": "Barrow County",
+              "OBJECTID": 2006,
+              "CENTLON": "-083.7127297",
+              "COUNTYCC": "H1",
+              "COUNTYNS": "00356976",
+              "AREALAND": 417261512,
+              "INTPTLON": "-083.7123025",
+              "MTFCC": "G4020",
+              "COUNTY": "013"
+            }
+          ],
+          "2026 State Legislative Districts - Upper": [
+            {
+              "GEOID": "13047",
+              "CENTLAT": "+34.0837397",
+              "AREAWATER": 19014216,
+              "STATE": "13",
+              "BASENAME": "47",
+              "OID": "2129042579651780",
+              "SLDU": "047",
+              "LSADC": "LU",
+              "FUNCSTAT": "N",
+              "INTPTLAT": "+34.0786700",
+              "NAME": "State Senate District 47",
+              "OBJECTID": 811,
+              "CENTLON": "-083.4013332",
+              "LSY": "2026",
+              "AREALAND": 1677584629,
+              "INTPTLON": "-083.3925056",
+              "MTFCC": "G5210",
+              "LDTYP": "O"
+            }
+          ],
+          "120th Congressional Districts": [
+            {
+              "STGEOMETRY_Area": 20050517052.904793,
+              "CD120": "10",
+              "GEOID": "1310",
+              "CENTLAT": "+33.7196135",
+              "CDSESSN": "120",
+              "AREAWATER": 353552383,
+              "STATE": "13",
+              "BASENAME": "10",
+              "OID": "2119042393277626",
+              "LSADC": "C2",
+              "FUNCSTAT": "N",
+              "INTPTLAT": "+33.7181599",
+              "NAME": "Congressional District 10",
+              "OBJECTID": 11,
+              "CENTLON": "-083.3279314",
+              "STGEOMETRY_Length": 1042458.504144774,
+              "AREALAND": 13481120742,
+              "INTPTLON": "-083.3171322",
+              "MTFCC": "G5200"
+            }
+          ],
+          "2026 State Legislative Districts - Lower": [
+            {
+              "GEOID": "13119",
+              "CENTLAT": "+34.0005160",
+              "SLDL": "119",
+              "AREAWATER": 3470925,
+              "STATE": "13",
+              "BASENAME": "119",
+              "OID": "2139042579651912",
+              "LSADC": "LL",
+              "FUNCSTAT": "N",
+              "INTPTLAT": "+34.0046567",
+              "NAME": "State House District 119",
+              "OBJECTID": 2255,
+              "CENTLON": "-083.7024276",
+              "LSY": "2026",
+              "AREALAND": 287451566,
+              "INTPTLON": "-083.6921648",
+              "MTFCC": "G5220",
+              "LDTYP": "O"
+            }
+          ],
+          "2020 Census Blocks": [
+            {
+              "SUFFIX": "",
+              "GEOID": "130131804011024",
+              "CENTLAT": "+33.9540330",
+              "BLOCK": "1024",
+              "AREAWATER": 13232,
+              "STATE": "13",
+              "BASENAME": "1024",
+              "OID": "210701005110767",
+              "LSADC": "BK",
+              "FUNCSTAT": "S",
+              "INTPTLAT": "+33.9548783",
+              "NAME": "Block 1024",
+              "OBJECTID": 1058259,
+              "TRACT": "180401",
+              "CENTLON": "-083.6139042",
+              "BLKGRP": "1",
+              "AREALAND": 492998,
+              "INTPTLON": "-083.6145626",
+              "MTFCC": "G5040",
+              "LWBLKTYP": "B",
+              "UR": "R",
+              "COUNTY": "013"
+            }
+          ],
+          "Census Tracts": [
+            {
+              "GEOID": "13013180401",
+              "CENTLAT": "+33.9922524",
+              "AREAWATER": 737133,
+              "STATE": "13",
+              "BASENAME": "1804.01",
+              "OID": "207903262890870",
+              "LSADC": "CT",
+              "FUNCSTAT": "S",
+              "INTPTLAT": "+33.9905069",
+              "NAME": "Census Tract 1804.01",
+              "OBJECTID": 46530,
+              "TRACT": "180401",
+              "CENTLON": "-083.6168773",
+              "AREALAND": 55067922,
+              "INTPTLON": "-083.6194325",
+              "MTFCC": "G5020",
+              "COUNTY": "013"
+            }
+          ]
+        },
+        "coordinates": {
+          "x": -83.617097912197,
+          "y": 33.956920962905
+        },
+        "addressComponents": {
+          "zip": "30666",
+          "streetName": "MCCARTY",
+          "preType": "",
+          "city": "STATHAM",
+          "preDirection": "",
+          "suffixDirection": "",
+          "fromAddress": "598",
+          "state": "GA",
+          "suffixType": "RD",
+          "toAddress": "506",
+          "suffixQualifier": "",
+          "preQualifier": ""
+        },
+        "matchedAddress": "558 MCCARTY RD, STATHAM, GA, 30666"
+      }
+    ]
+  }
+}
