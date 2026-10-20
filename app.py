@@ -100,7 +100,7 @@ with search_tab:
                 st.error(str(exc))
         if result:
             if not result['complete']:
-                st.warning('Some sources could not be fully checked. This is only the nearest candidate from responding layers.')
+                st.warning('Some live sources could not be fully checked. This candidate may use a dated backup; review source status below.')
             nearest = result['nearest']
             if nearest:
                 st.metric('Approximate map straight-line distance', f"{nearest['distance_ft']:,.0f} ft")
@@ -117,6 +117,8 @@ with search_tab:
                     st.markdown(f"**[{report['name']}]({report['url']})**")
                     if report['error']: st.warning(report['error'])
                     else:
+                        if report.get('is_snapshot'):
+                            st.warning(f"Using saved {report['name']} backup downloaded {report['snapshot_downloaded_at']} ({report['snapshot_age_days']} days old). Live query failed: {report['live_error']} Locations may have changed since download.")
                         st.caption(f"Records checked: {report['ids_checked']} · Publisher edit: {report['source_data_updated_at'] or 'Not supplied'} · Retrieved UTC: {report['retrieved_at']}")
             st.download_button('Download this result (contains address)',json.dumps(result,indent=2),'hydrant-result.json','application/json')
         edit = st.checkbox('Adjust property point on the map')
