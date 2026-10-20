@@ -1,0 +1,977 @@
+{
+  "displayFieldName": "NAME",
+  "fieldAliases": {
+    "NAME": "NAME",
+    "GEOID": "GEOID"
+  },
+  "fields": [
+    {
+      "name": "NAME",
+      "type": "esriFieldTypeString",
+      "alias": "NAME",
+      "length": 100
+    },
+    {
+      "name": "GEOID",
+      "type": "esriFieldTypeString",
+      "alias": "GEOID",
+      "length": 5
+    }
+  ],
+  "features": [
+    {
+      "attributes": {
+        "NAME": "Hart County",
+        "GEOID": "13147"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Effingham County",
+        "GEOID": "13103"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Schley County",
+        "GEOID": "13249"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Warren County",
+        "GEOID": "13301"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Jenkins County",
+        "GEOID": "13165"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Heard County",
+        "GEOID": "13149"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Walker County",
+        "GEOID": "13295"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Richmond County",
+        "GEOID": "13245"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Oconee County",
+        "GEOID": "13219"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Brooks County",
+        "GEOID": "13027"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Telfair County",
+        "GEOID": "13271"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Greene County",
+        "GEOID": "13133"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Fayette County",
+        "GEOID": "13113"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Hancock County",
+        "GEOID": "13141"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Tift County",
+        "GEOID": "13277"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Jasper County",
+        "GEOID": "13159"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Putnam County",
+        "GEOID": "13237"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Morgan County",
+        "GEOID": "13211"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Pike County",
+        "GEOID": "13231"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Stewart County",
+        "GEOID": "13259"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Troup County",
+        "GEOID": "13285"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Cook County",
+        "GEOID": "13075"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Glascock County",
+        "GEOID": "13125"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Wilcox County",
+        "GEOID": "13315"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Candler County",
+        "GEOID": "13043"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Muscogee County",
+        "GEOID": "13215"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Decatur County",
+        "GEOID": "13087"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Douglas County",
+        "GEOID": "13097"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Jeff Davis County",
+        "GEOID": "13161"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Bleckley County",
+        "GEOID": "13023"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Burke County",
+        "GEOID": "13033"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Marion County",
+        "GEOID": "13197"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Hall County",
+        "GEOID": "13139"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Treutlen County",
+        "GEOID": "13283"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Calhoun County",
+        "GEOID": "13037"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Chattooga County",
+        "GEOID": "13055"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Banks County",
+        "GEOID": "13011"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Wayne County",
+        "GEOID": "13305"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Seminole County",
+        "GEOID": "13253"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Glynn County",
+        "GEOID": "13127"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Lumpkin County",
+        "GEOID": "13187"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Lincoln County",
+        "GEOID": "13181"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Baldwin County",
+        "GEOID": "13009"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Bacon County",
+        "GEOID": "13005"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Jackson County",
+        "GEOID": "13157"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Haralson County",
+        "GEOID": "13143"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Clarke County",
+        "GEOID": "13059"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Coweta County",
+        "GEOID": "13077"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Elbert County",
+        "GEOID": "13105"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Harris County",
+        "GEOID": "13145"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Screven County",
+        "GEOID": "13251"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Walton County",
+        "GEOID": "13297"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Henry County",
+        "GEOID": "13151"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Atkinson County",
+        "GEOID": "13003"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Toombs County",
+        "GEOID": "13279"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Irwin County",
+        "GEOID": "13155"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Coffee County",
+        "GEOID": "13069"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Ware County",
+        "GEOID": "13299"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Floyd County",
+        "GEOID": "13115"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Clay County",
+        "GEOID": "13061"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Bartow County",
+        "GEOID": "13015"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Pulaski County",
+        "GEOID": "13235"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Ben Hill County",
+        "GEOID": "13017"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Lanier County",
+        "GEOID": "13173"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Quitman County",
+        "GEOID": "13239"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Habersham County",
+        "GEOID": "13137"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Wilkinson County",
+        "GEOID": "13319"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Meriwether County",
+        "GEOID": "13199"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Fulton County",
+        "GEOID": "13121"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Franklin County",
+        "GEOID": "13119"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Taliaferro County",
+        "GEOID": "13265"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Murray County",
+        "GEOID": "13213"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Brantley County",
+        "GEOID": "13025"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Lamar County",
+        "GEOID": "13171"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Dade County",
+        "GEOID": "13083"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Washington County",
+        "GEOID": "13303"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Randolph County",
+        "GEOID": "13243"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Houston County",
+        "GEOID": "13153"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Taylor County",
+        "GEOID": "13269"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Montgomery County",
+        "GEOID": "13209"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Bryan County",
+        "GEOID": "13029"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Twiggs County",
+        "GEOID": "13289"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Chattahoochee County",
+        "GEOID": "13053"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Colquitt County",
+        "GEOID": "13071"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Madison County",
+        "GEOID": "13195"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Cobb County",
+        "GEOID": "13067"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "McIntosh County",
+        "GEOID": "13191"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Monroe County",
+        "GEOID": "13207"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Forsyth County",
+        "GEOID": "13117"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Laurens County",
+        "GEOID": "13175"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Webster County",
+        "GEOID": "13307"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Jones County",
+        "GEOID": "13169"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Gwinnett County",
+        "GEOID": "13135"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Liberty County",
+        "GEOID": "13179"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Rockdale County",
+        "GEOID": "13247"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Dawson County",
+        "GEOID": "13085"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Johnson County",
+        "GEOID": "13167"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Echols County",
+        "GEOID": "13101"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Baker County",
+        "GEOID": "13007"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Thomas County",
+        "GEOID": "13275"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Cherokee County",
+        "GEOID": "13057"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Miller County",
+        "GEOID": "13201"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Gilmer County",
+        "GEOID": "13123"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Towns County",
+        "GEOID": "13281"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Upson County",
+        "GEOID": "13293"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Barrow County",
+        "GEOID": "13013"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Long County",
+        "GEOID": "13183"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Spalding County",
+        "GEOID": "13255"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Butts County",
+        "GEOID": "13035"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Rabun County",
+        "GEOID": "13241"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Macon County",
+        "GEOID": "13193"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Crisp County",
+        "GEOID": "13081"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Lee County",
+        "GEOID": "13177"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Dooly County",
+        "GEOID": "13093"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Worth County",
+        "GEOID": "13321"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Pierce County",
+        "GEOID": "13229"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Carroll County",
+        "GEOID": "13045"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Appling County",
+        "GEOID": "13001"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Bibb County",
+        "GEOID": "13021"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Stephens County",
+        "GEOID": "13257"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Berrien County",
+        "GEOID": "13019"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Early County",
+        "GEOID": "13099"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Chatham County",
+        "GEOID": "13051"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Evans County",
+        "GEOID": "13109"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Emanuel County",
+        "GEOID": "13107"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Dodge County",
+        "GEOID": "13091"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Newton County",
+        "GEOID": "13217"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Camden County",
+        "GEOID": "13039"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Peach County",
+        "GEOID": "13225"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "White County",
+        "GEOID": "13311"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Jefferson County",
+        "GEOID": "13163"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Grady County",
+        "GEOID": "13131"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Dougherty County",
+        "GEOID": "13095"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Catoosa County",
+        "GEOID": "13047"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Sumter County",
+        "GEOID": "13261"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Tattnall County",
+        "GEOID": "13267"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Wilkes County",
+        "GEOID": "13317"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Paulding County",
+        "GEOID": "13223"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Crawford County",
+        "GEOID": "13079"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Clinch County",
+        "GEOID": "13065"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Lowndes County",
+        "GEOID": "13185"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "DeKalb County",
+        "GEOID": "13089"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Pickens County",
+        "GEOID": "13227"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Turner County",
+        "GEOID": "13287"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Bulloch County",
+        "GEOID": "13031"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Wheeler County",
+        "GEOID": "13309"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "McDuffie County",
+        "GEOID": "13189"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Charlton County",
+        "GEOID": "13049"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Polk County",
+        "GEOID": "13233"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Oglethorpe County",
+        "GEOID": "13221"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Gordon County",
+        "GEOID": "13129"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Talbot County",
+        "GEOID": "13263"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Terrell County",
+        "GEOID": "13273"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Clayton County",
+        "GEOID": "13063"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Columbia County",
+        "GEOID": "13073"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Fannin County",
+        "GEOID": "13111"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Union County",
+        "GEOID": "13291"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Whitfield County",
+        "GEOID": "13313"
+      }
+    },
+    {
+      "attributes": {
+        "NAME": "Mitchell County",
+        "GEOID": "13205"
+      }
+    }
+  ]
+}

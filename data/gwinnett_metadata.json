@@ -1,0 +1,1163 @@
+{
+  "isCoGoEnabled": false,
+  "extent": {
+    "ymin": 1365023.5133632421,
+    "xmin": 2261910.141129162,
+    "ymax": 1513736.3415931538,
+    "xmax": 2406469.569201328,
+    "spatialReference": {
+      "falseM": -100000,
+      "xyTolerance": 0.0006561666666666666,
+      "mUnits": 10000,
+      "zUnits": 10000,
+      "latestWkid": 2240,
+      "zTolerance": 0.001,
+      "wkid": 102667,
+      "xyUnits": 3048.0060960121928,
+      "mTolerance": 0.001,
+      "falseX": -16150100,
+      "falseY": -43703500,
+      "falseZ": -100000
+    }
+  },
+  "isDataBranchVersioned": false,
+  "supportsApplyEditsWithGlobalIds": true,
+  "maxRecordCount": 2000,
+  "infoInEstimates": [
+    "extent",
+    "count"
+  ],
+  "definitionQuery": "WATERTYPE =  'Potable'",
+  "type": "Feature Layer",
+  "onlyAllowTrueCurveUpdatesByTrueCurveClients": true,
+  "supportsAttachmentsByUploadId": true,
+  "editingInfo": {
+    "lastEditDate": 1678982992634
+  },
+  "relationships": [],
+  "supportsAttachmentsResizing": true,
+  "cimVersion": "2.6.0",
+  "isDataArchived": false,
+  "id": 0,
+  "spatialReference": {
+    "falseM": -100000,
+    "xyTolerance": 0.0006561666666666666,
+    "mUnits": 10000,
+    "zUnits": 10000,
+    "latestWkid": 2240,
+    "zTolerance": 0.001,
+    "wkid": 102667,
+    "xyUnits": 3048.0060960121928,
+    "mTolerance": 0.001,
+    "falseX": -16150100,
+    "falseY": -43703500,
+    "falseZ": -100000
+  },
+  "supportsStatistics": true,
+  "supportedExportFormats": "sqlite,filegdb,shapefile,csv,geojson",
+  "standardMaxRecordCount": 16000,
+  "isDataVersioned": false,
+  "templates": [],
+  "hasGeometryProperties": true,
+  "supportsAdvancedQueries": true,
+  "parentLayer": null,
+  "currentVersion": 11.5,
+  "canScaleSymbols": false,
+  "hasZ": false,
+  "advancedEditingCapabilities": {
+    "supportsAsyncApplyEdits": true,
+    "supportsApplyEditsbyUploadID": true,
+    "supportsReturnEditResults": true,
+    "supportedSqlFormatsInCalculate": [
+      "standard"
+    ],
+    "supportedApplyEditsUploadIDFormats": "JSON,PBF"
+  },
+  "objectIdField": "objectid",
+  "supportsQuantizationEditMode": true,
+  "hasContingentValuesDefinition": false,
+  "name": "Water Hydrant",
+  "allowTrueCurvesUpdates": false,
+  "displayField": "facilityid",
+  "supportsCalculate": true,
+  "fields": [
+    {
+      "modelName": "OBJECTID",
+      "nullable": false,
+      "defaultValue": null,
+      "editable": false,
+      "domain": null,
+      "name": "objectid",
+      "alias": "OBJECTID",
+      "type": "esriFieldTypeOID"
+    },
+    {
+      "modelName": "FH_Manufacturer",
+      "nullable": true,
+      "editable": true,
+      "defaultValue": null,
+      "domain": {
+        "splitPolicy": "esriSPTDuplicate",
+        "name": "DomainFMwHydrantManufacturer",
+        "description": "",
+        "type": "codedValue",
+        "codedValues": [
+          {
+            "code": "AD",
+            "name": "AD"
+          },
+          {
+            "code": "AFC",
+            "name": "AFC"
+          },
+          {
+            "code": "CLOW",
+            "name": "CLOW"
+          },
+          {
+            "code": "KENN",
+            "name": "KENN"
+          },
+          {
+            "code": "MH",
+            "name": "MH"
+          },
+          {
+            "code": "MULL",
+            "name": "MULL"
+          },
+          {
+            "code": "US",
+            "name": "US"
+          },
+          {
+            "code": "EJ",
+            "name": "EJ"
+          },
+          {
+            "code": "WM",
+            "name": "WM"
+          },
+          {
+            "code": "PACER",
+            "name": "PACER"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue"
+      },
+      "name": "fh_manufacturer",
+      "length": 255,
+      "alias": "FH_Manufacturer",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "modelName": "FH_Type",
+      "nullable": true,
+      "editable": true,
+      "defaultValue": null,
+      "domain": {
+        "splitPolicy": "esriSPTDuplicate",
+        "name": "DomainFMwHydrantType",
+        "description": "",
+        "type": "codedValue",
+        "codedValues": [
+          {
+            "code": "2",
+            "name": "2 Way"
+          },
+          {
+            "code": "3",
+            "name": "3 Way"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue"
+      },
+      "name": "fh_type",
+      "length": 255,
+      "alias": "FH_Type",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "modelName": "GPS_X",
+      "nullable": true,
+      "editable": true,
+      "defaultValue": null,
+      "domain": null,
+      "name": "gps_x",
+      "alias": "GPS_X",
+      "type": "esriFieldTypeDouble"
+    },
+    {
+      "modelName": "GPS_Y",
+      "nullable": true,
+      "editable": true,
+      "defaultValue": null,
+      "domain": null,
+      "name": "gps_y",
+      "alias": "GPS_Y",
+      "type": "esriFieldTypeDouble"
+    },
+    {
+      "modelName": "WaterType",
+      "nullable": true,
+      "editable": true,
+      "defaultValue": "Potable",
+      "domain": {
+        "splitPolicy": "esriSPTDuplicate",
+        "name": "DomainFMwWaterType",
+        "description": "",
+        "type": "codedValue",
+        "codedValues": [
+          {
+            "code": "Potable",
+            "name": "Potable Water"
+          },
+          {
+            "code": "Raw",
+            "name": "Raw Water"
+          },
+          {
+            "code": "Sludge",
+            "name": "Sludge Line"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue"
+      },
+      "name": "watertype",
+      "length": 20,
+      "alias": "WaterType",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "modelName": "GDS_Data",
+      "nullable": true,
+      "editable": true,
+      "defaultValue": "N",
+      "domain": {
+        "splitPolicy": "esriSPTDuplicate",
+        "name": "DomainFMwGDSdata",
+        "description": "",
+        "type": "codedValue",
+        "codedValues": [
+          {
+            "code": "G",
+            "name": "GDS Created"
+          },
+          {
+            "code": "N",
+            "name": "Not GDS"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue"
+      },
+      "name": "gds_data",
+      "length": 255,
+      "alias": "GDS_Data",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "modelName": "SYMBOL_ROTATION",
+      "nullable": true,
+      "editable": true,
+      "defaultValue": null,
+      "domain": null,
+      "name": "symbol_rotation",
+      "alias": "SYMBOL_ROTATION",
+      "type": "esriFieldTypeInteger"
+    },
+    {
+      "modelName": "Subtype",
+      "nullable": true,
+      "editable": true,
+      "defaultValue": 1,
+      "domain": null,
+      "name": "subtype",
+      "alias": "SUBTYPE",
+      "type": "esriFieldTypeInteger"
+    },
+    {
+      "modelName": "PROJECT_NUMBER",
+      "nullable": true,
+      "editable": true,
+      "defaultValue": null,
+      "domain": null,
+      "name": "project_number",
+      "length": 255,
+      "alias": "PROJECT_NUMBER",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "modelName": "ANCILLARYROLE",
+      "nullable": true,
+      "editable": true,
+      "defaultValue": null,
+      "domain": null,
+      "name": "ancillaryrole",
+      "alias": "ANCILLARYROLE",
+      "type": "esriFieldTypeInteger"
+    },
+    {
+      "modelName": "Enabled",
+      "nullable": true,
+      "editable": true,
+      "defaultValue": 1,
+      "domain": {
+        "splitPolicy": "esriSPTDuplicate",
+        "name": "EnabledDomain",
+        "description": "",
+        "type": "codedValue",
+        "codedValues": [
+          {
+            "code": 0,
+            "name": "False"
+          },
+          {
+            "code": 1,
+            "name": "True"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue"
+      },
+      "name": "enabled",
+      "alias": "ENABLED",
+      "type": "esriFieldTypeSmallInteger"
+    },
+    {
+      "modelName": "FACILITYID",
+      "nullable": false,
+      "editable": true,
+      "defaultValue": 0,
+      "domain": null,
+      "name": "facilityid",
+      "alias": "FACILITYID",
+      "type": "esriFieldTypeInteger"
+    },
+    {
+      "modelName": "TEMP_STRING",
+      "nullable": true,
+      "editable": true,
+      "defaultValue": null,
+      "domain": null,
+      "name": "temp_string",
+      "length": 255,
+      "alias": "TEMP_STRING",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "modelName": "TEMP_NUMERIC",
+      "nullable": true,
+      "editable": true,
+      "defaultValue": null,
+      "domain": null,
+      "name": "temp_numeric",
+      "alias": "TEMP_NUMERIC",
+      "type": "esriFieldTypeDouble"
+    },
+    {
+      "modelName": "PROJECT_NAME",
+      "nullable": true,
+      "editable": true,
+      "defaultValue": null,
+      "domain": null,
+      "name": "project_name",
+      "length": 255,
+      "alias": "PROJECT_NAME",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "modelName": "COMMENTS",
+      "nullable": true,
+      "editable": true,
+      "defaultValue": null,
+      "domain": null,
+      "name": "comments",
+      "length": 255,
+      "alias": "COMMENTS",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "modelName": "CREATIONUSER",
+      "nullable": true,
+      "editable": true,
+      "defaultValue": null,
+      "domain": null,
+      "name": "creationuser",
+      "length": 20,
+      "alias": "CREATIONUSER",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "modelName": "CREATIONDATE",
+      "nullable": true,
+      "editable": true,
+      "defaultValue": null,
+      "domain": null,
+      "precision": 1,
+      "name": "creationdate",
+      "length": 29,
+      "alias": "CREATIONDATE",
+      "type": "esriFieldTypeDate"
+    },
+    {
+      "modelName": "LASTUSER",
+      "nullable": true,
+      "editable": true,
+      "defaultValue": null,
+      "domain": null,
+      "name": "lastuser",
+      "length": 20,
+      "alias": "LASTUSER",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "modelName": "DATEMODIFIED",
+      "nullable": true,
+      "editable": true,
+      "defaultValue": null,
+      "domain": null,
+      "precision": 1,
+      "name": "datemodified",
+      "length": 29,
+      "alias": "DATEMODIFIED",
+      "type": "esriFieldTypeDate"
+    },
+    {
+      "modelName": "TRACEWEIGHT",
+      "nullable": true,
+      "editable": true,
+      "defaultValue": null,
+      "domain": null,
+      "name": "traceweight",
+      "alias": "TRACEWEIGHT",
+      "type": "esriFieldTypeInteger"
+    },
+    {
+      "modelName": "GPS_DATE",
+      "nullable": true,
+      "editable": true,
+      "defaultValue": null,
+      "domain": null,
+      "precision": 1,
+      "name": "gps_date",
+      "length": 29,
+      "alias": "GPS_DATE",
+      "type": "esriFieldTypeDate"
+    },
+    {
+      "modelName": "DATA_COLLECTOR",
+      "nullable": true,
+      "editable": true,
+      "defaultValue": null,
+      "domain": null,
+      "name": "data_collector",
+      "length": 255,
+      "alias": "DATA_COLLECTOR",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "modelName": "GPS",
+      "nullable": true,
+      "editable": true,
+      "defaultValue": null,
+      "domain": {
+        "splitPolicy": "esriSPTDefaultValue",
+        "name": "Y/N Indicator",
+        "description": "Y/N Indicator",
+        "type": "codedValue",
+        "codedValues": [
+          {
+            "code": "Y",
+            "name": "Yes"
+          },
+          {
+            "code": "N",
+            "name": "No"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue"
+      },
+      "name": "gps",
+      "length": 50,
+      "alias": "GPS",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "modelName": "CONDITION",
+      "nullable": true,
+      "editable": true,
+      "defaultValue": null,
+      "domain": {
+        "splitPolicy": "esriSPTDuplicate",
+        "name": "DomainFMwCondition",
+        "description": "",
+        "type": "codedValue",
+        "codedValues": [
+          {
+            "code": "G",
+            "name": "Good"
+          },
+          {
+            "code": "F",
+            "name": "Fair"
+          },
+          {
+            "code": "P",
+            "name": "Poor"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue"
+      },
+      "name": "condition",
+      "length": 50,
+      "alias": "CONDITION",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "nullable": false,
+      "editable": false,
+      "defaultValue": null,
+      "length": 38,
+      "type": "esriFieldTypeGlobalID",
+      "modelName": "GLOBALID",
+      "domain": null,
+      "name": "globalid",
+      "alias": "GLOBALID"
+    },
+    {
+      "modelName": "CTY_PERMIT_NUM",
+      "nullable": true,
+      "editable": true,
+      "defaultValue": null,
+      "domain": null,
+      "name": "cty_permit_num",
+      "length": 20,
+      "alias": "County Permit Number",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "modelName": "CIP_NUMBER",
+      "nullable": true,
+      "editable": true,
+      "defaultValue": null,
+      "domain": null,
+      "name": "cip_number",
+      "length": 13,
+      "alias": "CIP Number",
+      "type": "esriFieldTypeString"
+    },
+    {
+      "modelName": "YEAR_INSTALL",
+      "nullable": true,
+      "editable": true,
+      "defaultValue": null,
+      "domain": null,
+      "name": "year_install",
+      "alias": "YEAR INSTALL",
+      "type": "esriFieldTypeInteger"
+    },
+    {
+      "modelName": "COUNTYOWNED",
+      "nullable": true,
+      "editable": true,
+      "defaultValue": null,
+      "domain": {
+        "splitPolicy": "esriSPTDefaultValue",
+        "name": "Y/N Indicator",
+        "description": "Y/N Indicator",
+        "type": "codedValue",
+        "codedValues": [
+          {
+            "code": "Y",
+            "name": "Yes"
+          },
+          {
+            "code": "N",
+            "name": "No"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue"
+      },
+      "name": "countyowned",
+      "length": 13,
+      "alias": "County Owned Feature",
+      "type": "esriFieldTypeString"
+    }
+  ],
+  "maxRecordCountFactor": 1,
+  "dateFieldsTimeReference": {
+    "timeZoneIANA": "Etc/UTC",
+    "respectsDaylightSaving": false,
+    "timeZone": "UTC"
+  },
+  "supportsFieldDescriptionProperty": true,
+  "hasM": false,
+  "allowGeometryUpdates": true,
+  "useStandardizedQueries": true,
+  "globalIdField": "globalid",
+  "sourceSpatialReference": {
+    "wkt": "PROJCS[\"NAD_1983_StatePlane_Georgia_West_FIPS_1002_Feet\",GEOGCS[\"GCS_North_American_1983\",DATUM[\"D_North_American_1983\",SPHEROID[\"GRS_1980\",6378137.0,298.257222101]],PRIMEM[\"Greenwich\",0.0],UNIT[\"Degree\",0.0174532925199433]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"False_Easting\",2296583.333333333],PARAMETER[\"False_Northing\",0.0],PARAMETER[\"Central_Meridian\",-84.16666666666667],PARAMETER[\"Scale_Factor\",0.9999],PARAMETER[\"Latitude_Of_Origin\",30.0],UNIT[\"Foot_US\",0.3048006096012192]]",
+    "falseM": -100000,
+    "mUnits": 10000,
+    "zUnits": 10000,
+    "zTolerance": 0.001,
+    "wkid": 2240,
+    "xyUnits": 3048.0060960121928,
+    "mTolerance": 0.001,
+    "falseX": -16150100,
+    "falseY": -43703500,
+    "falseZ": -100000
+  },
+  "description": "",
+  "syncCanReturnChanges": true,
+  "supportsAsyncDelete": true,
+  "supportedSpatialRelationships": [
+    "esriSpatialRelIntersects",
+    "esriSpatialRelContains",
+    "esriSpatialRelCrosses",
+    "esriSpatialRelEnvelopeIntersects",
+    "esriSpatialRelOverlaps",
+    "esriSpatialRelTouches",
+    "esriSpatialRelWithin"
+  ],
+  "supportsRollbackOnFailureParameter": true,
+  "isDataReplicaTracked": false,
+  "standardMaxRecordCountNoGeometry": 16000,
+  "supportsTruncate": true,
+  "indexes": [
+    {
+      "name": "i255facilityid",
+      "isUnique": false,
+      "description": "",
+      "fields": "facilityid",
+      "isAscending": true
+    },
+    {
+      "name": "r201_sde_rowid_uk",
+      "isUnique": true,
+      "description": "",
+      "fields": "objectid",
+      "isAscending": true
+    },
+    {
+      "name": "uuid_201",
+      "isUnique": true,
+      "description": "",
+      "fields": "globalid",
+      "isAscending": true
+    },
+    {
+      "name": "a168_ix1",
+      "isUnique": true,
+      "description": "",
+      "fields": "shape",
+      "isAscending": true
+    }
+  ],
+  "supportedAppendSourceFilterFormats": "featureService",
+  "editFieldsInfo": null,
+  "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+  "GUIDFormat": "O",
+  "minScale": 20000,
+  "hasAttachments": false,
+  "queryBinsCapabilities": {
+    "supportsFirstDayOfWeek": false,
+    "supportedNormalizationTypes": [
+      "boxCox",
+      "field",
+      "inverse",
+      "log",
+      "naturalLog",
+      "percentOfTotal",
+      "squareRoot"
+    ],
+    "supportedStatisticTypes": [
+      "count",
+      "sum",
+      "min",
+      "max",
+      "avg",
+      "stddev",
+      "var",
+      "percentile_cont",
+      "percentile_disc"
+    ],
+    "supportsNormalization": true,
+    "supportsSnapToData": true,
+    "supportsFixedIntervalBin": true,
+    "supportsStackBy": true,
+    "supportsAutoIntervalBin": true,
+    "supportsFixedBoundariesBin": true,
+    "supportsDateBin": true,
+    "supportsSplitBy": true,
+    "supportsReturnFullIntervalBin": true
+  },
+  "advancedQueryCapabilities": {
+    "supportsSqlExpression": true,
+    "supportsQueryWithResultType": true,
+    "supportsQueryRelatedPagination": true,
+    "supportsQueryWithCacheHint": false,
+    "supportsQueryWithDatumTransformation": true,
+    "supportsCurrentUserQueries": true,
+    "supportsQueryAttachmentsWithReturnUrl": true,
+    "fullTextSearchCapabilities": {
+      "supportsOperator": true,
+      "supportsSearchOperator": true
+    },
+    "supportsDefaultSR": true,
+    "supportsQueryDateBins": false,
+    "supportsQueryWithLodSR": true,
+    "supportsPaginationOnAggregatedQueries": true,
+    "supportsPagination": true,
+    "supportsMaxRecordCountFactor": true,
+    "fullTextSearchableFields": [],
+    "supportsStatistics": true,
+    "supportsOrderBy": true,
+    "supportsFullTextSearch": true,
+    "supportsQueryWithDistance": true,
+    "supportsLod": true,
+    "supportsSpatialAggregationStatistics": false,
+    "supportsCountDistinct": true,
+    "supportsAdvancedQueryRelated": true,
+    "supportsQueryAttachments": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryAttachmentsCountOnly": true,
+    "supportsOrderByOnlyOnLayerFields": false,
+    "supportsOutFieldSqlExpression": true,
+    "supportsTopFeaturesQuery": true,
+    "supportsReturningGeometryEnvelope": false,
+    "supportsDistinct": true,
+    "supportsReturningGeometryCentroid": false,
+    "supportsQueryAnalytic": true,
+    "supportsPercentileStatistics": true,
+    "supportsHavingClause": true
+  },
+  "supportsValidateSQL": true,
+  "enableZDefaults": true,
+  "serviceItemId": "9b708e4e2fc3406780b6fa0c40dfafaa",
+  "allowUpdateWithoutMValues": true,
+  "supportsCoordinatesQuantization": true,
+  "types": [
+    {
+      "templates": [
+        {
+          "name": "Black Top Hydrant",
+          "description": "",
+          "drawingTool": "esriFeatureEditToolPoint",
+          "prototype": {
+            "attributes": {
+              "creationdate": null,
+              "gps_x": null,
+              "facilityid": 0,
+              "traceweight": null,
+              "gps_y": null,
+              "data_collector": null,
+              "project_name": null,
+              "enabled": 1,
+              "datemodified": null,
+              "subtype": 23,
+              "symbol_rotation": null,
+              "temp_string": null,
+              "gps_date": null,
+              "cip_number": null,
+              "watertype": "Potable",
+              "temp_numeric": null,
+              "comments": null,
+              "year_install": null,
+              "ancillaryrole": null,
+              "countyowned": null,
+              "gps": null,
+              "fh_manufacturer": null,
+              "condition": null,
+              "fh_type": null,
+              "lastuser": null,
+              "project_number": null,
+              "gds_data": "N",
+              "creationuser": null,
+              "cty_permit_num": null
+            }
+          }
+        }
+      ],
+      "name": "Black Top Hydrant",
+      "domains": {
+        "fh_type": {
+          "type": "inherited"
+        },
+        "watertype": {
+          "type": "inherited"
+        },
+        "gds_data": {
+          "type": "inherited"
+        },
+        "fh_manufacturer": {
+          "type": "inherited"
+        },
+        "enabled": {
+          "type": "inherited"
+        }
+      },
+      "id": 23
+    },
+    {
+      "templates": [
+        {
+          "name": "Hydrant",
+          "description": "",
+          "drawingTool": "esriFeatureEditToolPoint",
+          "prototype": {
+            "attributes": {
+              "creationdate": null,
+              "gps_x": null,
+              "facilityid": 0,
+              "traceweight": null,
+              "gps_y": null,
+              "data_collector": null,
+              "project_name": null,
+              "enabled": 1,
+              "datemodified": null,
+              "subtype": 1,
+              "symbol_rotation": null,
+              "temp_string": null,
+              "gps_date": null,
+              "cip_number": null,
+              "watertype": "Potable",
+              "temp_numeric": null,
+              "comments": null,
+              "year_install": null,
+              "ancillaryrole": null,
+              "countyowned": null,
+              "gps": null,
+              "fh_manufacturer": null,
+              "condition": null,
+              "fh_type": null,
+              "lastuser": null,
+              "project_number": null,
+              "gds_data": "N",
+              "creationuser": null,
+              "cty_permit_num": null
+            }
+          }
+        }
+      ],
+      "name": "Hydrant",
+      "domains": {
+        "fh_type": {
+          "type": "inherited"
+        },
+        "watertype": {
+          "type": "inherited"
+        },
+        "gds_data": {
+          "type": "inherited"
+        },
+        "fh_manufacturer": {
+          "type": "inherited"
+        },
+        "enabled": {
+          "type": "inherited"
+        }
+      },
+      "id": 1
+    }
+  ],
+  "capabilities": "Query",
+  "maxScale": 0,
+  "supportsAppend": true,
+  "supportsExceedsLimitStatistics": true,
+  "defaultVisibility": false,
+  "advancedQueryAnalyticCapabilities": {
+    "supportsAsync": true,
+    "supportsLinearRegression": true,
+    "supportsPercentileAnalytic": false
+  },
+  "hasMetadata": true,
+  "supportedAppendFormats": "csv,excel,featureCollection,featureService,geojson,imageCollection,jsonl,pbf,shapefile",
+  "tileMaxRecordCount": 4000,
+  "typeIdField": "subtype",
+  "modelName": "MMAbandonable:MMAbandoned:W_Hydrant",
+  "supportsASyncCalculate": true,
+  "supportedQueryFormats": "JSON, geoJSON, PBF",
+  "sqlParserVersion": "PG_11.4.0",
+  "drawingInfo": {
+    "renderer": {
+      "field1": "subtype",
+      "authoringInfo": {
+        "colorRamp": {
+          "colorRamps": [
+            {
+              "toColor": [
+                59,
+                58,
+                61,
+                255
+              ],
+              "fromColor": [
+                59,
+                58,
+                61,
+                255
+              ],
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm"
+            },
+            {
+              "toColor": [
+                240,
+                233,
+                247,
+                255
+              ],
+              "fromColor": [
+                240,
+                233,
+                247,
+                255
+              ],
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm"
+            },
+            {
+              "toColor": [
+                145,
+                138,
+                150,
+                255
+              ],
+              "fromColor": [
+                145,
+                138,
+                150,
+                255
+              ],
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm"
+            },
+            {
+              "toColor": [
+                101,
+                95,
+                107,
+                255
+              ],
+              "fromColor": [
+                101,
+                95,
+                107,
+                255
+              ],
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm"
+            },
+            {
+              "toColor": [
+                197,
+                186,
+                207,
+                255
+              ],
+              "fromColor": [
+                197,
+                186,
+                207,
+                255
+              ],
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm"
+            },
+            {
+              "toColor": [
+                224,
+                211,
+                237,
+                255
+              ],
+              "fromColor": [
+                224,
+                211,
+                237,
+                255
+              ],
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm"
+            },
+            {
+              "toColor": [
+                169,
+                165,
+                173,
+                255
+              ],
+              "fromColor": [
+                169,
+                165,
+                173,
+                255
+              ],
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm"
+            },
+            {
+              "toColor": [
+                80,
+                77,
+                84,
+                255
+              ],
+              "fromColor": [
+                80,
+                77,
+                84,
+                255
+              ],
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm"
+            },
+            {
+              "toColor": [
+                121,
+                117,
+                125,
+                255
+              ],
+              "fromColor": [
+                121,
+                117,
+                125,
+                255
+              ],
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm"
+            },
+            {
+              "toColor": [
+                210,
+                204,
+                217,
+                255
+              ],
+              "fromColor": [
+                210,
+                204,
+                217,
+                255
+              ],
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm"
+            },
+            {
+              "toColor": [
+                161,
+                152,
+                171,
+                255
+              ],
+              "fromColor": [
+                161,
+                152,
+                171,
+                255
+              ],
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm"
+            },
+            {
+              "toColor": [
+                178,
+                168,
+                189,
+                255
+              ],
+              "fromColor": [
+                178,
+                168,
+                189,
+                255
+              ],
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm"
+            },
+            {
+              "toColor": [
+                240,
+                227,
+                252,
+                255
+              ],
+              "fromColor": [
+                240,
+                227,
+                252,
+                255
+              ],
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm"
+            }
+          ],
+          "type": "multipart"
+        }
+      },
+      "defaultSymbol": {
+        "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAB8UlEQVQ4jb3TX0hTYRjH8e92ls5VSrW00oTEhQqyQ6YwY0EESd2MoC68UYQgZKuIwoigi4jssj9gd0XphSUFQXQzSxkVzSm6cFOMGMxa5nTgCqZyzurG1jyezppKz9X7/p73+XDeF46BdS7D/wYrAYci8wGvVgtagXZFdnstIAAmcyFCrpHEzDTSwrzmjFZzq6Xh+Cmx+QyltkMALP6IM3T/liPU/7Lv67D3aTagsa718kN7243D6WHOpnxsZ6+W7D164u7rK61C2Od5ogWWAy6Aoup9tQcuXKv/26dvs1TtLDviuBP2eQ4CEvAc6FOCJcA5gOL9dvTCn9bk+36m/AOITS425JkAEJucRd57N52JWBTgsxqYqoLde1Lrn7LMs5ZjSPMJAGpPtwEg5OSSX1zKEqh65TRESq11gsCumnoiQ+/YYa1TnJNXzKqCsx+Dy/Ynu3pJytKyZ4h9GmduMqQJBoFGgNmJQE10zH9+e6VV+N1MxwBGex4EFr7PXV/aDquB00A3QGTE2z3+4nFSp9NfNFdU69OhpCzh7+yYWIxNNQBf/unKAAMd7Zeio4Mmc4XoKqwSMRjziEfCfPswGNy8cYvN3/Morjan+RuFPO63IY/bpYjdgCqWEVxNZQJ7AbsiW/Fu2YAzwJsMZ7ICs65feyyZ1tvOIxoAAAAASUVORK5CYII=",
+        "yoffset": 0,
+        "width": 15,
+        "xoffset": 0,
+        "angle": 0,
+        "type": "esriPMS",
+        "contentType": "image/png",
+        "url": "4bab8fd9d748fa0f5c5cb75e9d9ac9d8",
+        "height": 15
+      },
+      "defaultLabel": "<all other values>",
+      "uniqueValueInfos": [
+        {
+          "symbol": {
+            "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABtUlEQVQ4jb2TPUhbURTHf8kL1gYasNVoMAhiO1iQxGrEDyKIQ6FLELt071J8UgqidOlQxHTUCq6iUyoI7eKStJGghagoGQxiB0lJMEYrNEv8eCYdXjB5z+cLUel/uff8zz2/c+6Fa+KOZfrfwGbAo/LWge83BToAr8qbug1QltkKQiVkUiCd6NboJR/SNPCa1mGw98nOWRo2Jz3EloLshxfLAVbiej9Hz0S/wq2wQOcHO09eTvPjjUAitKAHfAyIAFifuej62H3t7I+e2mjyfCYR6gUk4BsQVAPtwFsA6t1gLErFlyG5Bk4RTGbZcwzVsv5piMwhQFwLWJClsbDPXcDXFyBl5Lh9VF6Fe/CggTxQ88oFZaXC3iCArRv2f0Jdh/Jc7uJKqTbwOKqMBwNyk+JnON6B9J4uMAq8AuDPdhuHkXfUOITLrFHVOzq7zenf8Xy0pQVMAT4AkmEfv75kMRhHqG4xKkBZCSIzu5wnnwMJvQmVWvOOcbBhptopYnWC6T6kf0NqI4qlqovIfFqrTP/rxfyrxPyiyvUDmrDSwBuoFDAAuFXelXcrB3gErJQ4UxawbP0D5VNySLS9BNoAAAAASUVORK5CYII=",
+            "yoffset": 0,
+            "width": 15,
+            "xoffset": 0,
+            "angle": 0,
+            "type": "esriPMS",
+            "contentType": "image/png",
+            "url": "e9c7d9f461c2e58eca9297e91d9cc692",
+            "height": 15
+          },
+          "label": "Black Top Hydrant",
+          "value": "23"
+        },
+        {
+          "symbol": {
+            "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABtUlEQVQ4jb2TPUhbURTHf8kL1gYasNVoMAhiO1iQxGrEDyKIQ6FLELt071J8UgqidOlQxHTUCq6iUyoI7eKStJGghagoGQxiB0lJMEYrNEv8eCYdXjB5z+cLUel/uff8zz2/c+6Fa+KOZfrfwGbAo/LWge83BToAr8qbug1QltkKQiVkUiCd6NboJR/SNPCa1mGw98nOWRo2Jz3EloLshxfLAVbiej9Hz0S/wq2wQOcHO09eTvPjjUAitKAHfAyIAFifuej62H3t7I+e2mjyfCYR6gUk4BsQVAPtwFsA6t1gLErFlyG5Bk4RTGbZcwzVsv5piMwhQFwLWJClsbDPXcDXFyBl5Lh9VF6Fe/CggTxQ88oFZaXC3iCArRv2f0Jdh/Jc7uJKqTbwOKqMBwNyk+JnON6B9J4uMAq8AuDPdhuHkXfUOITLrFHVOzq7zenf8Xy0pQVMAT4AkmEfv75kMRhHqG4xKkBZCSIzu5wnnwMJvQmVWvOOcbBhptopYnWC6T6kf0NqI4qlqovIfFqrTP/rxfyrxPyiyvUDmrDSwBuoFDAAuFXelXcrB3gErJQ4UxawbP0D5VNySLS9BNoAAAAASUVORK5CYII=",
+            "yoffset": 0,
+            "width": 15,
+            "xoffset": 0,
+            "angle": 0,
+            "type": "esriPMS",
+            "contentType": "image/png",
+            "url": "e9c7d9f461c2e58eca9297e91d9cc692",
+            "height": 15
+          },
+          "label": "Hydrant",
+          "value": "1"
+        }
+      ],
+      "type": "uniqueValue",
+      "fieldDelimiter": ","
+    },
+    "scaleSymbols": true,
+    "transparency": 0,
+    "labelingInfo": null
+  },
+  "geometryField": {
+    "sqlType": "sqlTypeDistinct",
+    "nullable": true,
+    "editable": true,
+    "name": "shape",
+    "typeName": "st_point",
+    "length": 2147483647,
+    "type": "esriFieldTypeGeometry"
+  },
+  "copyrightText": "",
+  "zDefault": 0,
+  "geometryType": "esriGeometryPoint",
+  "supportsLayerOverrides": true
+}

@@ -1,0 +1,27 @@
+{
+  "synthetic": true,
+  "notice": "Fictional address and arbitrary coordinates for offline tests only. Never submit to a geocoder.",
+  "result": {
+    "input": {},
+    "addressMatches": [
+      {
+        "matchedAddress": "100 SYNTHETIC TEST RD, TESTVILLE, GA, 00000",
+        "addressComponents": {
+          "state": "GA"
+        },
+        "coordinates": {
+          "x": -83.5,
+          "y": 33.5
+        },
+        "geographies": {
+          "Counties": [
+            {
+              "NAME": "Barrow County",
+              "GEOID": "13013"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

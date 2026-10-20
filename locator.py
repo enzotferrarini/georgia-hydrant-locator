@@ -1,0 +1,185 @@
+"""Read-only government GIS queries and WGS84 ellipsoidal distances."""
+from concurrent.futures import ThreadPoolExecutor
+from datetime import datetime, timezone
+from pathlib import Path
+import json
+import math
+import time
+import urllib.error
+import urllib.parse
+import urllib.request
+from pyproj import Geod
+
+DATA = Path(__file__).parent / 'data'
+GEOD = Geod(ellps='WGS84')
+CENSUS = 'https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress'
+DISCLAIMER = ('Map straight-line distance only; not underwriting-approved hydrant distance. '
+              'The address point may be interpolated along a street. Confirm the building, '
+              'accessible hose route, hydrant operation and insurer requirements with the relevant authority. '
+              'An absence of mapped results is never proof that no hydrant exists.')
+
+class LookupError(Exception):
+    """An expected external-service or input failure safe to show to users."""
+
+def now():
+    return datetime.now(timezone.utc).isoformat()
+
+def get_json(url, params=None):
+    query = urllib.parse.urlencode({'f': 'json', **(params or {})})
+    request = urllib.request.Request(url + '?' + query)
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(request, timeout=25) as response:
+                data = json.load(response)
+            if not isinstance(data, dict):
+                raise LookupError('The service returned an unexpected response.')
+            if data.get('error') or data.get('errors'):
+                raise LookupError('The government service reported: ' + str(data.get('error') or data['errors'])[:300])
+            return data
+        except urllib.error.HTTPError as exc:
+            if exc.code in (429, 500, 502, 503, 504) and attempt < 2:
+                time.sleep(attempt + 1)
+                continue
+            raise LookupError(f'Service unavailable (HTTP {exc.code}). Try again later.') from exc
+        except (urllib.error.URLError, TimeoutError, OSError) as exc:
+            if attempt < 2:
+                time.sleep(attempt + 1)
+                continue
+            raise LookupError('Could not reach the government service. Check connectivity and retry.') from exc
+        except (ValueError, UnicodeError) as exc:
+            raise LookupError('The government service returned invalid JSON.') from exc
+
+def load_sources():
+    return json.loads((DATA / 'sources.json').read_text(encoding='utf-8'))
+
+def load_coverage():
+    return json.loads((DATA / 'coverage.json').read_text(encoding='utf-8'))
+
+def valid_point(lon, lat):
+    return all(isinstance(v, (int, float)) and not isinstance(v, bool) and math.isfinite(v) for v in (lon, lat)) and -180 <= lon <= 180 and -90 <= lat <= 90
+
+def parse_matches(data):
+    matches = data.get('result', {}).get('addressMatches')
+    if not isinstance(matches, list):
+        raise LookupError('Geocoder response is missing address matches.')
+    accepted = []
+    for match in matches:
+        counties = match.get('geographies', {}).get('Counties', [])
+        coord = match.get('coordinates', {})
+        if match.get('addressComponents', {}).get('state') != 'GA':
+            continue
+        if len(counties) != 1 or not counties[0].get('GEOID', '').startswith('13'):
+            continue
+        if not valid_point(coord.get('x'), coord.get('y')):
+            continue
+        accepted.append({'address': match['matchedAddress'], 'lon': coord['x'], 'lat': coord['y'],
+                         'county': counties[0]['NAME'], 'county_fips': counties[0]['GEOID'],
+                         'provider': 'US Census Geocoder', 'precision': 'Street address-range interpolation; not rooftop',
+                         'benchmark': data['result'].get('input', {}).get('benchmark'),
+                         'vintage': data['result'].get('input', {}).get('vintage'),
+                         'retrieved_at': now(), 'source_url': CENSUS})
+    if not accepted:
+        raise LookupError('No verified Georgia street-address match. Include the street number, street, city, GA and ZIP; check spelling. This says nothing about hydrants.')
+    return accepted
+
+def geocode(address):
+    if len(address.strip()) < 8 or len(address) > 300 or not any(c.isdigit() for c in address):
+        raise LookupError('Enter a full street address including a street number, Georgia city and ZIP.')
+    return parse_matches(get_json(CENSUS, {'address': address.strip(), 'benchmark': 'Public_AR_Current',
+                                         'vintage': 'Current_Current', 'format': 'json'}))
+
+def distance_feet(lon1, lat1, lon2, lat2):
+    if not valid_point(lon1, lat1) or not valid_point(lon2, lat2):
+        raise LookupError('Invalid map coordinates.')
+    return GEOD.inv(lon1, lat1, lon2, lat2)[2] / 0.3048
+
+def search_envelope(lon, lat, radius_ft):
+    # Conservative WGS84 envelope for Georgia (29–36 N), including all points
+    # in the search circle. 110 km/degree is below local meridional scale.
+    if not valid_point(lon, lat) or not 29 <= lat <= 36 or not -86 <= lon <= -80:
+        raise LookupError('Search location is outside the Georgia region.')
+    if not 0 < radius_ft <= 52800:
+        raise LookupError('Search radius must be greater than zero and at most 10 miles.')
+    dy = radius_ft * 0.3048 / 110000
+    dx = dy / math.cos(math.radians(abs(lat) + dy))
+    return {'xmin': lon-dx, 'ymin': lat-dy, 'xmax': lon+dx, 'ymax': lat+dy,
+            'spatialReference': {'wkid': 4326}}
+
+def timestamp(value):
+    try:
+        return datetime.fromtimestamp(value / 1000, timezone.utc).isoformat() if value is not None else None
+    except (TypeError, ValueError, OverflowError, OSError):
+        return None
+
+def query_source(source, lon, lat, radius_ft, fetch=get_json):
+    url = source['url']
+    meta = fetch(url)
+    if meta.get('geometryType') != 'esriGeometryPoint':
+        raise LookupError('Configured layer is no longer a point layer.')
+    oid = meta.get('objectIdField') or next((f['name'] for f in meta.get('fields', []) if f['type'] == 'esriFieldTypeOID'), None)
+    if not oid:
+        raise LookupError('Layer has no object ID field; completeness cannot be verified.')
+    spatial = {'where': '1=1', 'geometry': json.dumps(search_envelope(lon, lat, radius_ft)),
+                                  'geometryType': 'esriGeometryEnvelope', 'inSR': 4326,
+                                  'spatialRel': 'esriSpatialRelIntersects'}
+    found = fetch(url + '/query', {**spatial, 'returnIdsOnly': 'true'})
+    ids = found.get('objectIds')
+    # Some Enterprise services use null for an empty ID set. Verify with count.
+    if 'objectIds' in found and ids is None and not found.get('exceededTransferLimit'):
+        count = fetch(url + '/query', {**spatial, 'returnCountOnly': 'true'})
+        if count.get('count') == 0:
+            ids = []
+    if not isinstance(ids, list) or any(not isinstance(i, int) for i in ids) or found.get('exceededTransferLimit'):
+        raise LookupError('Incomplete ID response; nearest result cannot be determined.')
+    ids = sorted(set(ids))
+    if len(ids) > 50000:
+        raise LookupError('Too many records in this area. Reduce the search radius.')
+    candidates, invalid = [], 0
+    batch_size = max(1, min(200, int(meta.get('maxRecordCount') or 200)))
+    for start in range(0, len(ids), batch_size):
+        batch = ids[start:start+batch_size]
+        response = fetch(url + '/query', {'objectIds': ','.join(map(str, batch)), 'outFields': '*',
+                                         'returnGeometry': 'true', 'outSR': 4326})
+        sr = response.get('spatialReference', {})
+        if sr.get('latestWkid', sr.get('wkid')) != 4326:
+            raise LookupError('Service did not return WGS84 geometry; distance was not calculated.')
+        features = response.get('features', [])
+        returned = {f.get('attributes', {}).get(oid) for f in features}
+        if response.get('exceededTransferLimit') or returned != set(batch) or len(features) != len(batch):
+            raise LookupError('Incomplete feature batch or changing dataset. Retry; no nearest claim is available.')
+        for feature in features:
+            geometry = feature.get('geometry') or {}
+            x, y = geometry.get('x'), geometry.get('y')
+            if not valid_point(x, y):
+                invalid += 1
+                continue
+            distance = distance_feet(lon, lat, x, y)
+            if distance <= radius_ft + 0.001:
+                attrs = feature['attributes']
+                candidates.append({'lon': x, 'lat': y, 'distance_ft': distance, 'object_id': attrs[oid],
+                                   'source_id': source['id'], 'source_name': source['name'], 'source_url': url,
+                                   'attributes': attrs, 'feature_updated_at': timestamp(attrs.get(source.get('date_field')))})
+    if invalid:
+        raise LookupError(f'{invalid} records have missing or invalid geometry; nearest result cannot be verified.')
+    return {'source_id': source['id'], 'name': source['name'], 'url': url, 'retrieved_at': now(),
+            'source_data_updated_at': timestamp((meta.get('editingInfo') or {}).get('dataLastEditDate') or (meta.get('editingInfo') or {}).get('lastEditDate')),
+            'ids_checked': len(ids), 'candidates': sorted(candidates, key=lambda x: x['distance_ft']), 'error': None}
+
+def locate(match, radius_ft=26400, sources=None, query=query_source):
+    sources = sources if sources is not None else load_sources()
+    def safe(source):
+        try:
+            return query(source, match['lon'], match['lat'], radius_ft)
+        except LookupError as exc:
+            return {'source_id': source['id'], 'name': source['name'], 'url': source['url'],
+                    'retrieved_at': now(), 'error': str(exc), 'candidates': []}
+    # Search every integrated layer: county boundaries must not truncate the search.
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        reports = list(pool.map(safe, sources))
+    candidates = sorted([c for r in reports for c in r['candidates']], key=lambda x: x['distance_ft'])
+    errors = [r for r in reports if r['error']]
+    return {'address': match, 'radius_ft': radius_ft, 'queried_at': now(), 'complete': not errors,
+            'status': 'partial' if errors else ('found' if candidates else 'no_mapped_result'),
+            'nearest': candidates[0] if candidates else None, 'candidates': candidates[:20],
+            'sources': [{k: v for k, v in r.items() if k != 'candidates'} for r in reports],
+            'disclaimer': DISCLAIMER, 'scope': 'Nearest among integrated public government layers within the selected radius; not all actual hydrants.'}

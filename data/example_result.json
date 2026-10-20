@@ -1,0 +1,49 @@
+{
+  "synthetic": true,
+  "address": {
+    "address": "100 SYNTHETIC TEST RD, TESTVILLE, GA, 00000",
+    "lon": -83.5,
+    "lat": 33.5,
+    "county": "Barrow County",
+    "county_fips": "13013",
+    "provider": "Synthetic offline fixture",
+    "precision": "Invented point; not a residence",
+    "benchmark": null,
+    "vintage": null,
+    "retrieved_at": "2000-01-01T00:00:00+00:00",
+    "source_url": "https://example.invalid/synthetic"
+  },
+  "radius_ft": 5280,
+  "queried_at": "2000-01-01T00:00:00+00:00",
+  "complete": true,
+  "status": "found",
+  "nearest": {
+    "lon": -83.49967198487278,
+    "lat": 33.49999999956582,
+    "distance_ft": 100,
+    "object_id": "SYNTHETIC-1",
+    "source_id": "barrow",
+    "source_name": "Synthetic hydrant fixture",
+    "source_url": "https://example.invalid/synthetic",
+    "feature_updated_at": null,
+    "also_reported_by": []
+  },
+  "candidates": [
+    {
+      "lon": -83.49967198487278,
+      "lat": 33.49999999956582,
+      "distance_ft": 100,
+      "object_id": "SYNTHETIC-1",
+      "source_id": "barrow",
+      "source_name": "Synthetic hydrant fixture",
+      "source_url": "https://example.invalid/synthetic",
+      "feature_updated_at": null,
+      "also_reported_by": []
+    }
+  ],
+  "candidate_count": 1,
+  "display_limit": 250,
+  "sources": [],
+  "disclaimer": "Map straight-line distance only; not underwriting-approved hydrant distance. The address point may be interpolated along a street. Confirm the building, accessible hose route, hydrant operation and insurer requirements with the relevant authority. An absence of mapped results is never proof that no hydrant exists.",
+  "scope": "Synthetic offline test only; no real property or equipment."
+}

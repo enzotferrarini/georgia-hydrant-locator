@@ -1,0 +1,201 @@
+{
+  "currentVersion": 11.5,
+  "cimVersion": "3.5.0",
+  "id": 1,
+  "name": "Fire Hydrants",
+  "type": "Feature Layer",
+  "description": "",
+  "geometryType": "esriGeometryPoint",
+  "sourceSpatialReference": {
+    "wkid": 102667,
+    "latestWkid": 2240,
+    "xyTolerance": 0.003280833333333333,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -16150100,
+    "falseY": -43703500,
+    "xyUnits": 3048.0060960121928,
+    "falseZ": 0,
+    "zUnits": 1,
+    "falseM": 0,
+    "mUnits": 1
+  },
+  "spatialReference": {
+    "wkid": 102667,
+    "latestWkid": 2240,
+    "xyTolerance": 0.003280833333333333,
+    "zTolerance": 2,
+    "mTolerance": 0.001,
+    "falseX": -16150100,
+    "falseY": -43703500,
+    "xyUnits": 137255279.03396165,
+    "falseZ": 0,
+    "zUnits": 1,
+    "falseM": -100000,
+    "mUnits": 10000
+  },
+  "copyrightText": "",
+  "parentLayer": null,
+  "subLayers": [],
+  "minScale": 45000,
+  "maxScale": 0,
+  "referenceScale": 0.0,
+  "drawingInfo": {
+    "renderer": {
+      "type": "simple",
+      "symbol": {
+        "type": "esriPMS",
+        "url": "c45f0b5f571c062abbc55d55ec35a5dc",
+        "imageData": "iVBORw0KGgoAAAANSUhEUgAAAA8AAAATCAYAAABPwleqAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABYElEQVQ4jbXTz0tUURjG8c91HAdMR0r8mQOJERqibkRctBGiP8CFmyDErQuRWrZqVQSF6E5B2gfuRJAIClyIaAu3gySIgmIbSxx15DKXsOsdEcJnd857vuc85znvqfQfqrwNuA1PUY89LGL/JvBElskRTnLUblNcYCrNqx1mr4Nr0rze5l720uQbdDGNORST4KoqVpEdSrBzROYum4c8ToIrMtTnrwmxk0flbBf/ELRx1kwqDoappTkoB/efMp7jQ56WU/xEOwJ0Y4sX6MNGHP42yN4xdb/xBIXorZajBb3M5ynskovDPtH0HCt4gM94hs2ovkRT3yXr/8AzpWcIerCOsch6R1R/h/Mydx79SGM7Ew20fI8cvMWdaMF7Xp6U9rsCz+Nh2GHhoBXDscQHmPvKryQ4DPV+gdSWqwrD+1Hq+US4OuDLDkF4fJIqWEMmCT4qkvrbuAk6i41v5T/fSBf0FkyDod4TcgAAAABJRU5ErkJggg==",
+        "contentType": "image/png",
+        "width": 11,
+        "height": 14,
+        "angle": 0,
+        "xoffset": 0,
+        "yoffset": 0
+      }
+    },
+    "scaleSymbols": true,
+    "transparency": 0,
+    "labelingInfo": null
+  },
+  "defaultVisibility": false,
+  "extent": {
+    "xmin": 2220217.536522411,
+    "ymin": 1446208.838853158,
+    "xmax": 2266677.220505744,
+    "ymax": 1494597.1889266595,
+    "spatialReference": {
+      "wkid": 102667,
+      "latestWkid": 2240,
+      "xyTolerance": 0.003280833333333333,
+      "zTolerance": 2,
+      "mTolerance": 0.001,
+      "falseX": -16150100,
+      "falseY": -43703500,
+      "xyUnits": 137255279.03396165,
+      "falseZ": 0,
+      "zUnits": 1,
+      "falseM": -100000,
+      "mUnits": 10000
+    }
+  },
+  "hasAttachments": false,
+  "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+  "displayField": "Str_name",
+  "typeIdField": null,
+  "subtypeFieldName": null,
+  "subtypeField": null,
+  "defaultSubtypeCode": null,
+  "fields": [
+    {
+      "name": "OBJECTID",
+      "type": "esriFieldTypeOID",
+      "alias": "OBJECTID",
+      "domain": null
+    },
+    {
+      "name": "Hydr_Num",
+      "type": "esriFieldTypeString",
+      "alias": "Hydrant Number",
+      "length": 16,
+      "domain": null
+    },
+    {
+      "name": "Zones",
+      "type": "esriFieldTypeString",
+      "alias": "Zones",
+      "length": 16,
+      "domain": null
+    },
+    {
+      "name": "Shape",
+      "type": "esriFieldTypeGeometry",
+      "alias": "Shape",
+      "domain": null
+    }
+  ],
+  "geometryField": {
+    "name": "Shape",
+    "type": "esriFieldTypeGeometry",
+    "alias": "Shape"
+  },
+  "indexes": [
+    {
+      "name": "S775_idx",
+      "fields": "Shape",
+      "isAscending": true,
+      "isUnique": true,
+      "description": ""
+    }
+  ],
+  "subtypes": [],
+  "relationships": [],
+  "canModifyLayer": false,
+  "canScaleSymbols": false,
+  "hasLabels": false,
+  "capabilities": "Map,Query,Data",
+  "maxRecordCount": 1000,
+  "maxSelectionCount": 2000,
+  "supportsStatistics": true,
+  "supportsExceedsLimitStatistics": true,
+  "supportsAdvancedQueries": true,
+  "supportedQueryFormats": "JSON, geoJSON, PBF",
+  "isDataVersioned": true,
+  "ownershipBasedAccessControlForFeatures": {
+    "allowOthersToQuery": true
+  },
+  "useStandardizedQueries": true,
+  "supportedSpatialRelationships": [
+    "esriSpatialRelIntersects",
+    "esriSpatialRelContains",
+    "esriSpatialRelCrosses",
+    "esriSpatialRelEnvelopeIntersects",
+    "esriSpatialRelIndexIntersects",
+    "esriSpatialRelOverlaps",
+    "esriSpatialRelTouches",
+    "esriSpatialRelWithin",
+    "esriSpatialRelRelation"
+  ],
+  "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": true,
+    "supportsPercentileStatistics": true,
+    "supportsHavingClause": true,
+    "supportsOrderBy": true,
+    "supportsDistinct": true,
+    "supportsCountDistinct": true,
+    "supportsAdvancedQueryRelated": true,
+    "supportsQueryRelatedPagination": true,
+    "supportsPagination": true,
+    "supportsLod": false,
+    "supportsQueryWithLodSR": false,
+    "supportsTrueCurve": true,
+    "supportsQueryWithDatumTransformation": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true,
+    "supportsSqlExpression": true,
+    "supportsTimeRelation": true,
+    "supportsSqlFormat": false,
+    "supportsQueryAnalytic": true,
+    "supportsCurrentUserQueries": true
+  },
+  "supportsDatumTransformation": true,
+  "advancedQueryAnalyticCapabilities": {
+    "supportsLinearRegression": true,
+    "supportsAsync": false,
+    "supportsPercentileAnalytic": true
+  },
+  "dateFieldsTimeReference": null,
+  "preferredTimeReference": null,
+  "datesInUnknownTimezone": false,
+  "hasMetadata": false,
+  "isDataArchived": false,
+  "archivingInfo": {
+    "supportsQueryWithHistoricMoment": false,
+    "startArchivingMoment": -1
+  },
+  "supportsCoordinatesQuantization": true,
+  "supportsDynamicLegends": true,
+  "serviceItemId": "2b0f1d8e5ddc407bb621ced2658a32df"
+}

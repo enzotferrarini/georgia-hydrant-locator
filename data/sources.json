@@ -1,0 +1,167 @@
+[
+  {
+    "id": "barrow",
+    "name": "Barrow County \u2014 Hydrants",
+    "url": "https://services5.arcgis.com/OVFGXfRTCVcPwl55/ArcGIS/rest/services/BCGIS_Utility_Layers/FeatureServer/17",
+    "county_fips": [
+      "13013"
+    ],
+    "scope": "Barrow County utility mapping; completeness not certified",
+    "evidence_url": "https://www.barrowga.org/526/GIS",
+    "date_field": "last_edited_date",
+    "verified_at": "2026-10-15T18:37:07.113350+00:00",
+    "verified_record_count": 1639,
+    "notes": "Anonymous metadata, full ID list and WGS84 feature query verified. Map presence does not establish operation or public access.",
+    "ownership_chain": [
+      "https://www.barrowga.org/526/GIS",
+      "https://experience.arcgis.com/experience/cbd734c0037e41e38fc08b186e1ee896/",
+      "https://www.arcgis.com/sharing/rest/content/items/cbd734c0037e41e38fc08b186e1ee896/data?f=json",
+      "https://www.arcgis.com/sharing/rest/content/items/7ab7f87122234b5ea04a56b0aafc6934/data?f=json",
+      "https://services5.arcgis.com/OVFGXfRTCVcPwl55/ArcGIS/rest/services/BCGIS_Utility_Layers/FeatureServer/17"
+    ]
+  },
+  {
+    "id": "cherokee",
+    "name": "Cherokee County \u2014 Hydrants2026",
+    "url": "https://gis.cherokeecountyga.gov/arcgis/rest/services/Hydrants2026/FeatureServer/0",
+    "county_fips": [
+      "13057"
+    ],
+    "scope": "Cherokee County published hydrants; completeness not certified",
+    "evidence_url": "https://gis.cherokeecountyga.gov/arcgis/rest/services/Hydrants2026/FeatureServer",
+    "date_field": "last_edited_date",
+    "verified_at": "2026-10-15T18:37:07.113350+00:00",
+    "verified_record_count": 12073,
+    "notes": "Anonymous metadata, full ID list and WGS84 feature query verified. Map presence does not establish operation or public access."
+  },
+  {
+    "id": "glynn",
+    "name": "Glynn County \u2014 Fire Hydrants",
+    "url": "https://gis-web.glynncounty-ga.gov/gis-server/rest/services/Fire_Hydrants/FeatureServer/0",
+    "county_fips": [
+      "13127"
+    ],
+    "scope": "Glynn County published hydrants; completeness not certified",
+    "evidence_url": "https://gis-web.glynncounty-ga.gov/gis-server/rest/services/Fire_Hydrants/FeatureServer",
+    "date_field": "LASTUPDATE",
+    "verified_at": "2026-10-15T18:37:07.113350+00:00",
+    "verified_record_count": 5126,
+    "notes": "Anonymous metadata, full ID list and WGS84 feature query verified. Map presence does not establish operation or public access."
+  },
+  {
+    "id": "roswell",
+    "name": "City of Roswell \u2014 Fire Hydrants",
+    "url": "https://gisweb.ci.roswell.ga.us/arcgis/rest/services/PublicViewer/FirePublic/MapServer/1",
+    "county_fips": [
+      "13121"
+    ],
+    "scope": "Roswell only; partial Fulton County coverage",
+    "evidence_url": "https://gisweb.ci.roswell.ga.us/arcgis/rest/services/PublicViewer/FirePublic/MapServer/1",
+    "date_field": null,
+    "verified_at": "2026-10-15T18:37:07.113350+00:00",
+    "verified_record_count": 5175,
+    "notes": "Anonymous metadata, full ID list and WGS84 feature query verified. Map presence does not establish operation or public access."
+  },
+  {
+    "id": "gwinnett",
+    "name": "Gwinnett County \u2014 Water Hydrant",
+    "url": "https://dwrarcgis.gwinnettcounty.com/server/rest/services/Hosted/Water_Hydrant/FeatureServer/0",
+    "county_fips": [
+      "13135"
+    ],
+    "scope": "Gwinnett County published utility mapping; partial inventory, completeness not certified",
+    "evidence_url": "https://dwrarcgis.gwinnettcounty.com/server/rest/services/Hosted/Water_Hydrant/FeatureServer",
+    "date_field": "datemodified",
+    "verified_at": "2026-10-15T18:50:19.910968+00:00",
+    "verified_record_count": 46889,
+    "notes": "Published by Gwinnett County Department of Water Resources. Anonymous metadata, ID and WGS84 spatial queries verified."
+  },
+  {
+    "id": "clarke",
+    "name": "Athens\u2013Clarke County \u2014 Hydrants",
+    "url": "https://enigma.accgov.com/server/rest/services/Public_Utilities/MapServer/2",
+    "county_fips": [
+      "13059"
+    ],
+    "scope": "Athens\u2013Clarke County published utility mapping; partial inventory, completeness not certified",
+    "evidence_url": "https://accgov.com/7342/Water-Maps-GIS",
+    "date_field": "last_edited_date",
+    "verified_at": "2026-10-15T18:51:05.088534+00:00",
+    "verified_record_count": 6251,
+    "notes": "Athens\u2013Clarke Public Utilities government-hosted layer. Utility locations are approximate and should be field verified."
+  },
+  {
+    "id": "monroe",
+    "name": "Monroe County \u2014 MGRC Fire Hydrants",
+    "url": "https://services1.arcgis.com/Ug5xGQbHsD8zuZzM/arcgis/rest/services/Fire_Hydrants/FeatureServer/12",
+    "county_fips": [
+      "13207"
+    ],
+    "scope": "Monroe County regional-commission mapping; partial inventory, completeness not certified",
+    "evidence_url": "https://www.arcgis.com/home/item.html?id=9a13c7491b124c988573206dc61af984",
+    "date_field": null,
+    "verified_at": "2026-10-15T18:52:09.226486+00:00",
+    "verified_record_count": 1307,
+    "notes": "Published by MGRC GIS analyst Nicole Williams (nwilliams_MGRC). Sample geometry corresponds to coordinates rounded to 0.001 degrees (roughly 300\u2013360 ft per degree-thousandth); position accuracy is unverified. No field observation date is exposed. Dataset extent includes points outside Monroe County. The old mgrcmaps.org EMS service was unresponsive; this is the separately published hosted layer.",
+    "ownership_chain": [
+      "https://www.middlegeorgiarc.org/about-us/staff/",
+      "https://www.arcgis.com/sharing/rest/community/users/nwilliams_MGRC?f=json",
+      "https://www.arcgis.com/home/item.html?id=9a13c7491b124c988573206dc61af984",
+      "https://services1.arcgis.com/Ug5xGQbHsD8zuZzM/arcgis/rest/services/Fire_Hydrants/FeatureServer/12"
+    ],
+    "result_caution": "Monroe source positions may be coarse: the verified sample corresponds to coordinates rounded to 0.001 degrees. Treat distances as approximate and confirm hydrant position locally."
+  },
+  {
+    "id": "jackson",
+    "name": "Jackson County \u2014 Hydrants",
+    "url": "https://services8.arcgis.com/bcbi4lYRFOsss0F5/arcgis/rest/services/hydrants/FeatureServer/1",
+    "county_fips": [
+      "13157"
+    ],
+    "scope": "Jackson County \u2014 Hydrants; partial published inventory, completeness not certified",
+    "evidence_url": "https://www.jacksoncountygov.com/directory.aspx?did=18",
+    "date_field": null,
+    "verified_at": "2026-10-16T14:56:37.651759+00:00",
+    "verified_record_count": 8062,
+    "notes": "Published by joellogan; county directory identifies Joel Logan as GIS Manager. GPS_Date is not treated as a record edit date.",
+    "ownership_chain": [
+      "https://www.jacksoncountygov.com/directory.aspx?did=18",
+      "https://www.arcgis.com/home/item.html?id=24e566526efd4b28b0c7a0a67f4f155b",
+      "https://services8.arcgis.com/bcbi4lYRFOsss0F5/arcgis/rest/services/hydrants/FeatureServer/1"
+    ]
+  },
+  {
+    "id": "oconee",
+    "name": "Oconee County \u2014 Public Water Hydrants",
+    "url": "https://utility.arcgis.com/usrsvcs/servers/e59a525183fe4767887ea33941b7e1f7/rest/services/Services_Public/Water_Resources_Water_Data_Public/FeatureServer/1",
+    "county_fips": [
+      "13219"
+    ],
+    "scope": "Oconee County \u2014 Public Water Hydrants; partial published inventory, completeness not certified",
+    "evidence_url": "https://www.oconeecountyga.gov/1176/Geographic-Information-System",
+    "date_field": "last_edited_date",
+    "verified_at": "2026-10-16T14:56:55.562739+00:00",
+    "verified_record_count": 2882,
+    "notes": "Public county water layer, published by MattDBealGIS; official GIS page identifies Matt Beal. Publisher says locations may be generalized for public distribution.",
+    "result_caution": "Oconee County says these public locations may be generalized. Distances are approximate; verify the hydrant position with the county.",
+    "ownership_chain": [
+      "https://www.oconeecountyga.gov/1176/Geographic-Information-System",
+      "https://www.arcgis.com/home/item.html?id=e59a525183fe4767887ea33941b7e1f7",
+      "https://utility.arcgis.com/usrsvcs/servers/e59a525183fe4767887ea33941b7e1f7/rest/services/Services_Public/Water_Resources_Water_Data_Public/FeatureServer/1"
+    ]
+  },
+  {
+    "id": "dekalb",
+    "name": "DeKalb County \u2014 Hydrants All",
+    "url": "https://dcgis.dekalbcountyga.gov/mapping/rest/services/Hydrants/MapServer/2",
+    "county_fips": [
+      "13089"
+    ],
+    "scope": "DeKalb County \u2014 Hydrants All; partial published inventory, completeness not certified",
+    "evidence_url": "https://dcgis.dekalbcountyga.gov/mapping/rest/services/Hydrants/MapServer",
+    "date_field": "last_edited_date",
+    "verified_at": "2026-10-16T14:56:13.823088+00:00",
+    "verified_record_count": 27230,
+    "notes": "Government-hosted Hydrants - All layer. Records may include inactive equipment; operational status is not certified."
+  }
+]

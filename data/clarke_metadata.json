@@ -1,0 +1,1077 @@
+{
+  "currentVersion": 11.3,
+  "cimVersion": "3.3.0",
+  "id": 2,
+  "name": "Hydrants",
+  "type": "Feature Layer",
+  "description": "gis_webservices.DBO.Hydrants",
+  "geometryType": "esriGeometryPoint",
+  "sourceSpatialReference": {
+    "wkid": 102667,
+    "latestWkid": 2240,
+    "xyTolerance": 0.00328083333333333,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -16150100,
+    "falseY": -43703500,
+    "xyUnits": 3048.00609601219,
+    "falseZ": 0,
+    "zUnits": 1,
+    "falseM": 0,
+    "mUnits": 1
+  },
+  "copyrightText": "",
+  "parentLayer": {
+    "id": 0,
+    "name": "Water System"
+  },
+  "subLayers": [],
+  "minScale": 0,
+  "maxScale": 0,
+  "referenceScale": 0.0,
+  "drawingInfo": {
+    "renderer": {
+      "type": "simple",
+      "symbol": {
+        "type": "esriSMS",
+        "style": "esriSMSCircle",
+        "color": [
+          219,
+          200,
+          164,
+          255
+        ],
+        "size": 6,
+        "angle": 0,
+        "xoffset": 0,
+        "yoffset": 0,
+        "outline": {
+          "color": [
+            255,
+            255,
+            255,
+            255
+          ],
+          "width": 0.75
+        }
+      }
+    },
+    "scaleSymbols": true,
+    "transparency": 0,
+    "labelingInfo": null
+  },
+  "defaultVisibility": true,
+  "extent": {
+    "xmin": 2485518.0643192604,
+    "ymin": 1400659.1012126952,
+    "xmax": 2576709.099784594,
+    "ymax": 1470493.7125274464,
+    "spatialReference": {
+      "wkid": 102667,
+      "latestWkid": 2240,
+      "xyTolerance": 0.003280833333333333,
+      "zTolerance": 0.001,
+      "mTolerance": 0.001,
+      "falseX": -16150100,
+      "falseY": -43703500,
+      "xyUnits": 3048.0060960121928,
+      "falseZ": 0,
+      "zUnits": 1,
+      "falseM": 0,
+      "mUnits": 1
+    }
+  },
+  "hasAttachments": false,
+  "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+  "displayField": "FACILITYID",
+  "typeIdField": null,
+  "subtypeFieldName": null,
+  "subtypeField": null,
+  "defaultSubtypeCode": null,
+  "fields": [
+    {
+      "name": "OBJECTID",
+      "type": "esriFieldTypeOID",
+      "alias": "OBJECTID",
+      "domain": null
+    },
+    {
+      "name": "FACILITYID",
+      "type": "esriFieldTypeString",
+      "alias": "Facility Identifier",
+      "length": 20,
+      "domain": null
+    },
+    {
+      "name": "INSTALLDATE",
+      "type": "esriFieldTypeDate",
+      "alias": "Install Date",
+      "length": 8,
+      "domain": null
+    },
+    {
+      "name": "LOCDESC",
+      "type": "esriFieldTypeString",
+      "alias": "Location Description",
+      "length": 200,
+      "domain": null
+    },
+    {
+      "name": "ROTATION",
+      "type": "esriFieldTypeDouble",
+      "alias": "Rotation",
+      "domain": null
+    },
+    {
+      "name": "MANUFACTURER",
+      "type": "esriFieldTypeString",
+      "alias": "Manufacturer",
+      "length": 30,
+      "domain": {
+        "type": "codedValue",
+        "name": "wHydrantManufacturer",
+        "description": "The name of the hydrant manufacturer",
+        "codedValues": [
+          {
+            "name": "Other",
+            "code": "Other"
+          },
+          {
+            "name": "Unknown",
+            "code": "Unknown"
+          },
+          {
+            "name": "American",
+            "code": "American"
+          },
+          {
+            "name": "Clow",
+            "code": "Clow"
+          },
+          {
+            "name": "Kennedy",
+            "code": "Kennedy"
+          },
+          {
+            "name": "Mueller",
+            "code": "Mueller"
+          },
+          {
+            "name": "RD Woods",
+            "code": "RD Woods"
+          },
+          {
+            "name": "RW",
+            "code": "RW"
+          },
+          {
+            "name": "American Flow Control",
+            "code": "American Flow Control"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDuplicate"
+      }
+    },
+    {
+      "name": "OPERABLE",
+      "type": "esriFieldTypeSmallInteger",
+      "alias": "Operable",
+      "domain": {
+        "type": "codedValue",
+        "name": "BooleanDomain",
+        "description": "A 0/1 boolean domain",
+        "codedValues": [
+          {
+            "name": "False",
+            "code": 0
+          },
+          {
+            "name": "True",
+            "code": 1
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDuplicate"
+      }
+    },
+    {
+      "name": "LASTSERVICE",
+      "type": "esriFieldTypeDate",
+      "alias": "Last Service Date",
+      "length": 8,
+      "domain": null
+    },
+    {
+      "name": "ENABLED",
+      "type": "esriFieldTypeSmallInteger",
+      "alias": "Enabled",
+      "domain": {
+        "type": "codedValue",
+        "name": "EnabledDomain",
+        "description": "Geometric Network Enabled domain",
+        "codedValues": [
+          {
+            "name": "False",
+            "code": 0
+          },
+          {
+            "name": "True",
+            "code": 1
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      }
+    },
+    {
+      "name": "ACTIVEFLAG",
+      "type": "esriFieldTypeSmallInteger",
+      "alias": "Active Flag",
+      "domain": {
+        "type": "codedValue",
+        "name": "BooleanDomain",
+        "description": "A 0/1 boolean domain",
+        "codedValues": [
+          {
+            "name": "False",
+            "code": 0
+          },
+          {
+            "name": "True",
+            "code": 1
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDuplicate"
+      }
+    },
+    {
+      "name": "OWNEDBY",
+      "type": "esriFieldTypeSmallInteger",
+      "alias": "Owned By",
+      "domain": {
+        "type": "codedValue",
+        "name": "AssetOwner",
+        "description": "The owner of the asset",
+        "codedValues": [
+          {
+            "name": "Private",
+            "code": -1
+          },
+          {
+            "name": "Other",
+            "code": -2
+          },
+          {
+            "name": "PUD",
+            "code": 1
+          },
+          {
+            "name": "UGA",
+            "code": -3
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      }
+    },
+    {
+      "name": "MAINTBY",
+      "type": "esriFieldTypeSmallInteger",
+      "alias": "Managed By",
+      "domain": {
+        "type": "codedValue",
+        "name": "AssetManager",
+        "description": "The manager of the asset",
+        "codedValues": [
+          {
+            "name": "Private",
+            "code": -1
+          },
+          {
+            "name": "Other",
+            "code": -2
+          },
+          {
+            "name": "PUD",
+            "code": 1
+          },
+          {
+            "name": "UGA",
+            "code": -3
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      }
+    },
+    {
+      "name": "LASTUPDATE",
+      "type": "esriFieldTypeDate",
+      "alias": "Last Update Date",
+      "length": 8,
+      "domain": null
+    },
+    {
+      "name": "LASTEDITOR",
+      "type": "esriFieldTypeString",
+      "alias": "Last Editor",
+      "length": 50,
+      "domain": null
+    },
+    {
+      "name": "ORIGIN",
+      "type": "esriFieldTypeString",
+      "alias": "Origin",
+      "length": 50,
+      "domain": {
+        "type": "codedValue",
+        "name": "PUD_Map_Origin",
+        "description": "Map Origin",
+        "codedValues": [
+          {
+            "name": "Paper",
+            "code": "Paper"
+          },
+          {
+            "name": "Digital",
+            "code": "Digital"
+          },
+          {
+            "name": "Scan",
+            "code": "Scan"
+          },
+          {
+            "name": "Digital Survey",
+            "code": "Digital Survey"
+          },
+          {
+            "name": "COGO Points",
+            "code": "COGO Points"
+          },
+          {
+            "name": "GPS Mapping",
+            "code": "GPS Mapping"
+          },
+          {
+            "name": "COGO Points St Pl",
+            "code": "COGO Points St Pl"
+          },
+          {
+            "name": "Survey St Pl",
+            "code": "Survey St Pl"
+          },
+          {
+            "name": "GPS Survey",
+            "code": "GSP Survey"
+          },
+          {
+            "name": "Digital Survey St Pl",
+            "code": "Digital Survey St Pl"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDuplicate"
+      }
+    },
+    {
+      "name": "MAPDATE",
+      "type": "esriFieldTypeDate",
+      "alias": "Map Date",
+      "length": 8,
+      "domain": null
+    },
+    {
+      "name": "ACCEPTDATE",
+      "type": "esriFieldTypeDate",
+      "alias": "Acceptance Date",
+      "length": 8,
+      "domain": null
+    },
+    {
+      "name": "PROJECTID",
+      "type": "esriFieldTypeDouble",
+      "alias": "Project ID",
+      "domain": null
+    },
+    {
+      "name": "STATUS",
+      "type": "esriFieldTypeString",
+      "alias": "Status",
+      "length": 50,
+      "domain": {
+        "type": "codedValue",
+        "name": "PUD_LifecycleStatus",
+        "description": "",
+        "codedValues": [
+          {
+            "name": "Proposed",
+            "code": "Proposed"
+          },
+          {
+            "name": "Active",
+            "code": "Active"
+          },
+          {
+            "name": "In-Active",
+            "code": "In-Active"
+          },
+          {
+            "name": "Abandoned",
+            "code": "Abandoned"
+          },
+          {
+            "name": "Removed",
+            "code": "Removed"
+          },
+          {
+            "name": "Deadend Valve",
+            "code": "Deadend Valve"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDuplicate"
+      }
+    },
+    {
+      "name": "BARRELDIAM",
+      "type": "esriFieldTypeDouble",
+      "alias": "Barrel Diameter",
+      "domain": {
+        "type": "codedValue",
+        "name": "wHydrantNozzleDiameter",
+        "description": "",
+        "codedValues": [
+          {
+            "name": "1/2\"",
+            "code": 0.5
+          },
+          {
+            "name": "3/4\"",
+            "code": 0.75
+          },
+          {
+            "name": "1\"",
+            "code": 1
+          },
+          {
+            "name": "1 1/4\"",
+            "code": 1.25
+          },
+          {
+            "name": "1 1/2\"",
+            "code": 1.5
+          },
+          {
+            "name": "1 3/4\"",
+            "code": 1.75
+          },
+          {
+            "name": "2\"",
+            "code": 2
+          },
+          {
+            "name": "2 1/4\"",
+            "code": 2.25
+          },
+          {
+            "name": "2 1/2\"",
+            "code": 2.5
+          },
+          {
+            "name": "2 3/4\"",
+            "code": 2.75
+          },
+          {
+            "name": "3\"",
+            "code": 3
+          },
+          {
+            "name": "3 1/4\"",
+            "code": 3.25
+          },
+          {
+            "name": "3 1/2\"",
+            "code": 3.5
+          },
+          {
+            "name": "3 3/4\"",
+            "code": 3.75
+          },
+          {
+            "name": "4\"",
+            "code": 4
+          },
+          {
+            "name": "4 1/4\"",
+            "code": 4.25
+          },
+          {
+            "name": "4 1/2\"",
+            "code": 4.5
+          },
+          {
+            "name": "4 3/4\"",
+            "code": 4.75
+          },
+          {
+            "name": "5\"",
+            "code": 5
+          },
+          {
+            "name": "5 1/4\"",
+            "code": 5.25
+          },
+          {
+            "name": "5 1/2\"",
+            "code": 5.5
+          },
+          {
+            "name": "5 3/4\"",
+            "code": 5.75
+          },
+          {
+            "name": "6\"",
+            "code": 6
+          },
+          {
+            "name": "8\"",
+            "code": 8
+          },
+          {
+            "name": "10\"",
+            "code": 10
+          },
+          {
+            "name": "12\"",
+            "code": 12
+          },
+          {
+            "name": "Other",
+            "code": -1
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDuplicate"
+      }
+    },
+    {
+      "name": "LPUMPER",
+      "type": "esriFieldTypeDouble",
+      "alias": "Large Pumper Diameter",
+      "domain": {
+        "type": "codedValue",
+        "name": "wHydrantNozzleDiameter",
+        "description": "",
+        "codedValues": [
+          {
+            "name": "1/2\"",
+            "code": 0.5
+          },
+          {
+            "name": "3/4\"",
+            "code": 0.75
+          },
+          {
+            "name": "1\"",
+            "code": 1
+          },
+          {
+            "name": "1 1/4\"",
+            "code": 1.25
+          },
+          {
+            "name": "1 1/2\"",
+            "code": 1.5
+          },
+          {
+            "name": "1 3/4\"",
+            "code": 1.75
+          },
+          {
+            "name": "2\"",
+            "code": 2
+          },
+          {
+            "name": "2 1/4\"",
+            "code": 2.25
+          },
+          {
+            "name": "2 1/2\"",
+            "code": 2.5
+          },
+          {
+            "name": "2 3/4\"",
+            "code": 2.75
+          },
+          {
+            "name": "3\"",
+            "code": 3
+          },
+          {
+            "name": "3 1/4\"",
+            "code": 3.25
+          },
+          {
+            "name": "3 1/2\"",
+            "code": 3.5
+          },
+          {
+            "name": "3 3/4\"",
+            "code": 3.75
+          },
+          {
+            "name": "4\"",
+            "code": 4
+          },
+          {
+            "name": "4 1/4\"",
+            "code": 4.25
+          },
+          {
+            "name": "4 1/2\"",
+            "code": 4.5
+          },
+          {
+            "name": "4 3/4\"",
+            "code": 4.75
+          },
+          {
+            "name": "5\"",
+            "code": 5
+          },
+          {
+            "name": "5 1/4\"",
+            "code": 5.25
+          },
+          {
+            "name": "5 1/2\"",
+            "code": 5.5
+          },
+          {
+            "name": "5 3/4\"",
+            "code": 5.75
+          },
+          {
+            "name": "6\"",
+            "code": 6
+          },
+          {
+            "name": "8\"",
+            "code": 8
+          },
+          {
+            "name": "10\"",
+            "code": 10
+          },
+          {
+            "name": "12\"",
+            "code": 12
+          },
+          {
+            "name": "Other",
+            "code": -1
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDuplicate"
+      }
+    },
+    {
+      "name": "NOZ1DIAM",
+      "type": "esriFieldTypeDouble",
+      "alias": "Nozzle 1 Diameter",
+      "domain": {
+        "type": "codedValue",
+        "name": "wHydrantNozzleDiameter",
+        "description": "",
+        "codedValues": [
+          {
+            "name": "1/2\"",
+            "code": 0.5
+          },
+          {
+            "name": "3/4\"",
+            "code": 0.75
+          },
+          {
+            "name": "1\"",
+            "code": 1
+          },
+          {
+            "name": "1 1/4\"",
+            "code": 1.25
+          },
+          {
+            "name": "1 1/2\"",
+            "code": 1.5
+          },
+          {
+            "name": "1 3/4\"",
+            "code": 1.75
+          },
+          {
+            "name": "2\"",
+            "code": 2
+          },
+          {
+            "name": "2 1/4\"",
+            "code": 2.25
+          },
+          {
+            "name": "2 1/2\"",
+            "code": 2.5
+          },
+          {
+            "name": "2 3/4\"",
+            "code": 2.75
+          },
+          {
+            "name": "3\"",
+            "code": 3
+          },
+          {
+            "name": "3 1/4\"",
+            "code": 3.25
+          },
+          {
+            "name": "3 1/2\"",
+            "code": 3.5
+          },
+          {
+            "name": "3 3/4\"",
+            "code": 3.75
+          },
+          {
+            "name": "4\"",
+            "code": 4
+          },
+          {
+            "name": "4 1/4\"",
+            "code": 4.25
+          },
+          {
+            "name": "4 1/2\"",
+            "code": 4.5
+          },
+          {
+            "name": "4 3/4\"",
+            "code": 4.75
+          },
+          {
+            "name": "5\"",
+            "code": 5
+          },
+          {
+            "name": "5 1/4\"",
+            "code": 5.25
+          },
+          {
+            "name": "5 1/2\"",
+            "code": 5.5
+          },
+          {
+            "name": "5 3/4\"",
+            "code": 5.75
+          },
+          {
+            "name": "6\"",
+            "code": 6
+          },
+          {
+            "name": "8\"",
+            "code": 8
+          },
+          {
+            "name": "10\"",
+            "code": 10
+          },
+          {
+            "name": "12\"",
+            "code": 12
+          },
+          {
+            "name": "Other",
+            "code": -1
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDuplicate"
+      }
+    },
+    {
+      "name": "NOZ2DIAM",
+      "type": "esriFieldTypeDouble",
+      "alias": "Nozzle 2 Diameter",
+      "domain": {
+        "type": "codedValue",
+        "name": "wHydrantNozzleDiameter",
+        "description": "",
+        "codedValues": [
+          {
+            "name": "1/2\"",
+            "code": 0.5
+          },
+          {
+            "name": "3/4\"",
+            "code": 0.75
+          },
+          {
+            "name": "1\"",
+            "code": 1
+          },
+          {
+            "name": "1 1/4\"",
+            "code": 1.25
+          },
+          {
+            "name": "1 1/2\"",
+            "code": 1.5
+          },
+          {
+            "name": "1 3/4\"",
+            "code": 1.75
+          },
+          {
+            "name": "2\"",
+            "code": 2
+          },
+          {
+            "name": "2 1/4\"",
+            "code": 2.25
+          },
+          {
+            "name": "2 1/2\"",
+            "code": 2.5
+          },
+          {
+            "name": "2 3/4\"",
+            "code": 2.75
+          },
+          {
+            "name": "3\"",
+            "code": 3
+          },
+          {
+            "name": "3 1/4\"",
+            "code": 3.25
+          },
+          {
+            "name": "3 1/2\"",
+            "code": 3.5
+          },
+          {
+            "name": "3 3/4\"",
+            "code": 3.75
+          },
+          {
+            "name": "4\"",
+            "code": 4
+          },
+          {
+            "name": "4 1/4\"",
+            "code": 4.25
+          },
+          {
+            "name": "4 1/2\"",
+            "code": 4.5
+          },
+          {
+            "name": "4 3/4\"",
+            "code": 4.75
+          },
+          {
+            "name": "5\"",
+            "code": 5
+          },
+          {
+            "name": "5 1/4\"",
+            "code": 5.25
+          },
+          {
+            "name": "5 1/2\"",
+            "code": 5.5
+          },
+          {
+            "name": "5 3/4\"",
+            "code": 5.75
+          },
+          {
+            "name": "6\"",
+            "code": 6
+          },
+          {
+            "name": "8\"",
+            "code": 8
+          },
+          {
+            "name": "10\"",
+            "code": 10
+          },
+          {
+            "name": "12\"",
+            "code": 12
+          },
+          {
+            "name": "Other",
+            "code": -1
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDuplicate"
+      }
+    },
+    {
+      "name": "YEAR",
+      "type": "esriFieldTypeString",
+      "alias": "Year",
+      "length": 50,
+      "domain": null
+    },
+    {
+      "name": "HYDRANTNUMBER",
+      "type": "esriFieldTypeString",
+      "alias": "Hydrant Number",
+      "length": 10,
+      "domain": null
+    },
+    {
+      "name": "ACCFDREGION",
+      "type": "esriFieldTypeString",
+      "alias": "ACCFD Region",
+      "length": 30,
+      "domain": null
+    },
+    {
+      "name": "ELEVATION",
+      "type": "esriFieldTypeDouble",
+      "alias": "Elevation",
+      "domain": null
+    },
+    {
+      "name": "created_user",
+      "type": "esriFieldTypeString",
+      "alias": "created_user",
+      "length": 255,
+      "domain": null
+    },
+    {
+      "name": "created_date",
+      "type": "esriFieldTypeDate",
+      "alias": "created_date",
+      "length": 8,
+      "domain": null
+    },
+    {
+      "name": "last_edited_user",
+      "type": "esriFieldTypeString",
+      "alias": "last_edited_user",
+      "length": 255,
+      "domain": null
+    },
+    {
+      "name": "last_edited_date",
+      "type": "esriFieldTypeDate",
+      "alias": "last_edited_date",
+      "length": 8,
+      "domain": null
+    },
+    {
+      "name": "SHAPE",
+      "type": "esriFieldTypeGeometry",
+      "alias": "Shape",
+      "domain": null
+    }
+  ],
+  "geometryField": {
+    "name": "SHAPE",
+    "type": "esriFieldTypeGeometry",
+    "alias": "Shape"
+  },
+  "indexes": [
+    {
+      "name": "R3331_pk",
+      "fields": "OBJECTID",
+      "isAscending": true,
+      "isUnique": true,
+      "description": ""
+    },
+    {
+      "name": "S2932_idx",
+      "fields": "SHAPE",
+      "isAscending": true,
+      "isUnique": true,
+      "description": ""
+    }
+  ],
+  "subtypes": [],
+  "relationships": [],
+  "canModifyLayer": true,
+  "canScaleSymbols": false,
+  "hasLabels": false,
+  "capabilities": "Map,Query,Data",
+  "maxRecordCount": 2000,
+  "supportsStatistics": true,
+  "supportsExceedsLimitStatistics": true,
+  "supportsAdvancedQueries": true,
+  "supportedQueryFormats": "JSON, geoJSON, PBF",
+  "isDataVersioned": false,
+  "effectiveMinScale": 10025.807349615061,
+  "ownershipBasedAccessControlForFeatures": {
+    "allowOthersToQuery": true
+  },
+  "useStandardizedQueries": true,
+  "supportedSpatialRelationships": [
+    "esriSpatialRelIntersects",
+    "esriSpatialRelContains",
+    "esriSpatialRelCrosses",
+    "esriSpatialRelEnvelopeIntersects",
+    "esriSpatialRelIndexIntersects",
+    "esriSpatialRelOverlaps",
+    "esriSpatialRelTouches",
+    "esriSpatialRelWithin",
+    "esriSpatialRelRelation"
+  ],
+  "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": true,
+    "supportsPercentileStatistics": true,
+    "supportsHavingClause": true,
+    "supportsOrderBy": true,
+    "supportsDistinct": true,
+    "supportsCountDistinct": true,
+    "supportsAdvancedQueryRelated": true,
+    "supportsQueryRelatedPagination": true,
+    "supportsPagination": true,
+    "supportsLod": false,
+    "supportsQueryWithLodSR": false,
+    "supportsTrueCurve": true,
+    "supportsQueryWithDatumTransformation": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true,
+    "supportsSqlExpression": true,
+    "supportsTimeRelation": true,
+    "supportsSqlFormat": false,
+    "supportsQueryAnalytic": true,
+    "supportsCurrentUserQueries": true
+  },
+  "supportsDatumTransformation": true,
+  "advancedQueryAnalyticCapabilities": {
+    "supportsLinearRegression": true,
+    "supportsAsync": false,
+    "supportsPercentileAnalytic": true
+  },
+  "dateFieldsTimeReference": null,
+  "preferredTimeReference": null,
+  "datesInUnknownTimezone": false,
+  "hasMetadata": true,
+  "isDataArchived": false,
+  "archivingInfo": {
+    "supportsQueryWithHistoricMoment": false,
+    "startArchivingMoment": -1
+  },
+  "supportsCoordinatesQuantization": true,
+  "supportsDynamicLegends": true,
+  "serviceItemId": "72da552cd08f456b8441c51798dd6d8c"
+}

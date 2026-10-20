@@ -1,0 +1,75 @@
+{
+  "item": {
+    "id": "9a13c7491b124c988573206dc61af984",
+    "owner": "nwilliams_MGRC",
+    "ownerId": "9e99242a39e6450b88e5d0f496984437",
+    "orgId": "Ug5xGQbHsD8zuZzM",
+    "created": 1761046646000,
+    "modified": 1761046654000,
+    "guid": null,
+    "name": "Fire_Hydrants",
+    "title": "Fire Hydrants",
+    "type": "Feature Service",
+    "typeKeywords": [
+      "ArcGIS Server",
+      "Data",
+      "Feature Access",
+      "Feature Service",
+      "Metadata",
+      "Service",
+      "Singlelayer",
+      "Hosted Service"
+    ],
+    "description": "",
+    "tags": [
+      "Monroe",
+      "FIre Hydrants"
+    ],
+    "snippet": "Monroe County Fire Hydrants",
+    "thumbnail": "thumbnail/thumbnail.png",
+    "documentation": null,
+    "extent": [
+      [
+        -84.20276738463404,
+        32.01268096749911
+      ],
+      [
+        -82.97984630280871,
+        33.92447904569653
+      ]
+    ],
+    "categories": [],
+    "spatialReference": "102667",
+    "accessInformation": "",
+    "classification": null,
+    "licenseInfo": "",
+    "culture": "en-us",
+    "properties": null,
+    "advancedSettings": null,
+    "url": "https://services1.arcgis.com/Ug5xGQbHsD8zuZzM/arcgis/rest/services/Fire_Hydrants/FeatureServer",
+    "proxyFilter": null,
+    "access": "public",
+    "size": 253952,
+    "subInfo": 0,
+    "appCategories": [],
+    "industries": [],
+    "languages": [],
+    "largeThumbnail": null,
+    "banner": null,
+    "screenshots": [],
+    "listed": false,
+    "commentsEnabled": true,
+    "numComments": 0,
+    "numRatings": 0,
+    "avgRating": 0,
+    "numViews": 72,
+    "scoreCompleteness": 48,
+    "groupDesignations": null,
+    "apiToken1ExpirationDate": -1,
+    "apiToken2ExpirationDate": -1,
+    "lastViewed": 1792072800000
+  },
+  "staff_evidence": "https://www.middlegeorgiarc.org/about-us/staff/",
+  "public_profile": "https://www.arcgis.com/sharing/rest/community/users/nwilliams_MGRC?f=json",
+  "checked_at": "2026-10-15T18:53:02.852878+00:00"
+}

@@ -1,0 +1,2366 @@
+{
+  "currentVersion": 11.3,
+  "cimVersion": "3.3.0",
+  "id": 0,
+  "name": "Hydrant",
+  "type": "Feature Layer",
+  "parentLayer": null,
+  "defaultVisibility": true,
+  "minScale": 250000,
+  "maxScale": 0,
+  "canScaleSymbols": false,
+  "geometryType": "esriGeometryPoint",
+  "description": "",
+  "copyrightText": "",
+  "editFieldsInfo": null,
+  "ownershipBasedAccessControlForFeatures": null,
+  "syncCanReturnChanges": true,
+  "relationships": [],
+  "isDataVersioned": true,
+  "isDataArchived": false,
+  "infoInEstimates": [
+    "extent"
+  ],
+  "isDataBranchVersioned": false,
+  "isDataReplicaTracked": false,
+  "isCoGoEnabled": false,
+  "supportsRollbackOnFailureParameter": false,
+  "archivingInfo": {
+    "supportsQueryWithHistoricMoment": false,
+    "startArchivingMoment": -1
+  },
+  "supportsStatistics": true,
+  "supportsExceedsLimitStatistics": true,
+  "supportsAdvancedQueries": true,
+  "supportsValidateSQL": true,
+  "supportsCoordinatesQuantization": true,
+  "supportsQuantizationEditMode": true,
+  "supportsCalculate": true,
+  "supportsASyncCalculate": true,
+  "supportsDatumTransformation": true,
+  "advancedQueryCapabilities": {
+    "supportsPagination": true,
+    "supportsTrueCurve": true,
+    "supportsQueryWithDistance": true,
+    "supportsReturningQueryExtent": true,
+    "supportsStatistics": true,
+    "supportsPercentileStatistics": true,
+    "supportsHavingClause": true,
+    "supportsOrderBy": true,
+    "supportsDistinct": true,
+    "supportsCountDistinct": true,
+    "supportsAdvancedQueryRelated": true,
+    "supportsQueryRelatedPagination": true,
+    "supportsCurrentUserQueries": true,
+    "supportsQueryWithResultType": true,
+    "supportsReturningGeometryCentroid": false,
+    "supportsSqlExpression": true,
+    "supportsQueryWithDatumTransformation": true,
+    "supportsLod": false,
+    "supportsQueryWithLodSR": false,
+    "supportsQueryAnalytic": true
+  },
+  "advancedQueryAnalyticCapabilities": {
+    "supportsLinearRegression": true,
+    "supportsAsync": true,
+    "supportsPercentileAnalytic": true
+  },
+  "advancedEditingCapabilities": {
+    "supportedSqlFormatsInCalculate": [
+      "standard"
+    ],
+    "supportsAsyncApplyEdits": true,
+    "supportsApplyEditsbyUploadID": true,
+    "supportedApplyEditsUploadIDFormats": "JSON"
+  },
+  "hasMetadata": true,
+  "extent": {
+    "xmin": 786641.6546974964,
+    "ymin": 370455.2065720707,
+    "xmax": 921411.1305648275,
+    "ymax": 519304.37344007194,
+    "spatialReference": {
+      "wkid": 102666,
+      "latestWkid": 2239,
+      "xyTolerance": 0.0032808333333333335,
+      "zTolerance": 2,
+      "mTolerance": 2,
+      "falseX": -17790500,
+      "falseY": -43703500,
+      "xyUnits": 137255279.03396165,
+      "falseZ": 0,
+      "zUnits": 1,
+      "falseM": -100000,
+      "mUnits": 10000
+    }
+  },
+  "sourceSpatialReference": {
+    "wkid": 102666,
+    "latestWkid": 2239,
+    "xyTolerance": 0.003280833333333333,
+    "zTolerance": 0.001,
+    "mTolerance": 0.001,
+    "falseX": -17790500,
+    "falseY": -43703500,
+    "xyUnits": 3048.0060960121928,
+    "falseZ": 0,
+    "zUnits": 1,
+    "falseM": 0,
+    "mUnits": 1
+  },
+  "drawingInfo": {
+    "renderer": {
+      "type": "uniqueValue",
+      "field1": "HYDRANT_CO",
+      "defaultSymbol": {
+        "type": "esriPMS",
+        "url": "a90d00b262dde5a308b1c472504a4420",
+        "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABuUlEQVQ4jcWUP2gTYRiHn+SOGgMGgjG2NAgldVAoidVIYykiFIQuoa2Ls4NDAiKUSpcOIo2jJeAqdKqIoItL+gchFmJCJUOC2KFEDEkTG+gNxrZpLXcXmtx5hqQt9bfc+/7e957v/T7uPpETlnjawCtAQOclgMWjAj1AWOfNHgeoyuoEwQKVIlR/N31HbFKz4x57wLUQuO6ozo4Eqy8CZD8sk4+/bQdowTc1x+DMsMbtsMHAtIvL9yIsPTSTi71pBuwFQkrk7Pfhf3rrn7Ofv9qFezRCLnYbqALvgWU90AU8UqLuITA3lH58hEIcvCEQrarnCV4k8TxIpaR0GAHrsvXU4z978G4Eqr/U/Mak+hTOwLlL1ICGW65rX95FTSYBuvyQX4HOm9o+eTGdjIHljDYfX1AXaTyG8leQ1psCZcp9JdpMX6eUeswFj3BYbYQp3a/SbG89q2VfjIBFYF6JCvF51l7vYzJP4Ogza0DypKmX39gt3AVyrW1Z1ufwEzaSVhzeEE4viGdB+g7FZAab3U9qTmr/18tGP5GNqt9mXVHAEPZfrq8FYEjn/XVu7QB/ArHWZmsN2LYOAPWYckyIZuZXAAAAAElFTkSuQmCC",
+        "contentType": "image/png",
+        "width": 15,
+        "height": 15,
+        "angle": 0,
+        "xoffset": 0,
+        "yoffset": 0
+      },
+      "defaultLabel": "<all other values>",
+      "uniqueValueGroups": [
+        {
+          "heading": "Hydrant Color",
+          "classes": [
+            {
+              "label": "Black",
+              "description": "Black",
+              "symbol": {
+                "type": "esriPMS",
+                "url": "295853a6f7bfdc0dba187c782512e48f",
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABv0lEQVQ4jcWUTUsCURSG3xkHRoQZRxFiBhcOKOqqRbRIiDZBS9etWyZEEPQHgtbhP2glRIvWFW0KhBbhIhepIKIgTc44Kn7gV8zNZDQdtKLe1bnnzn3mPedcLoNfFvPXwDCA6FTuEcDtd4GrAE6ncmc/ARKxLAuaptHpdDAYDCzPMBZ7LkmS9nw+HzweD0n0ej3kcrlouVy+03X9chmgPRAInIfD4e2JjxkGwWDQK0lSPJVK0aqqXlgB/QBiRiAIwnooFIrMs85xnCiKYlxV1S3DOIArAHfTQC+AAyNwu92gKGq8UalUoGkaZFmGzWYjOVmWV7LZ7L7RVwDFWcCxHA7HOB4Oh0gmk+j3+x9l+I1CQIZkt9vJoOaVPAH5lOHU5XIRh4IgzOuCNbBer0+sI5EI+Ym5DY1GA81m0xKYBrA7Aq7VarVDnudtZqdmFQqF5263ezJaPs0CvgJIGIGmaYlSqTSgKOqI4zjaDDKc5vP5l3a7vQOgZOVwQplM5rharTqcTmeM53ky3VarBV3X0yzLbhSLxdqscwwspCjKg6Io5G6adA1gJuxfnq8bAJtTuS99Wwb4BuB+MW+LAZfWO+eel4eFKkyAAAAAAElFTkSuQmCC",
+                "contentType": "image/png",
+                "width": 15,
+                "height": 15,
+                "angle": 0,
+                "xoffset": 0,
+                "yoffset": 0
+              },
+              "values": [
+                [
+                  "Black"
+                ]
+              ]
+            },
+            {
+              "label": "Green",
+              "description": "Green",
+              "symbol": {
+                "type": "esriPMS",
+                "url": "878a6d46b0c41416a0c52b6b4804ff19",
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABpklEQVQ4jcWUTShEURTHf95MPGJQiolQvr+iJF/JRimUtbIgO6akfJS1smaWNrKayIItUiI1ZEimEFEzC8YMBjHlqzdvYjzPawbx39xzzj3nd8+53a6eX5b+r4EFQKsitgEsfRdYCowqYmM/AfoVlQRCFPgu4NmnXaPX2Es0NtOV0QFJtXLg8RaOJ2g9W2T52sZsOEAx28RU/jANH5JjIbePNGML5t0BBI+VGS1gNmCSjIQSKvIGqfmq9bgcjClNmD1W6qXGgTlgWQlMA3r9s1ZCRNCOex2ubJDZCbpoOZbZQfKRmR6f2+861IBvikl/t1+ewNoOT/eyn9Utr0IkiKkQAKqO/A6RhggoQgeJ5XC5CQllisTnz7WqwNvDj37VtHxI8DVIOXen2kA70CYZN/uUe+30GQrRvXWqONoxzd7jDSMB16YGPAcsknG5hcU57x+o31CIEAySOj2Z5ODhnEbAGdLIko7GGfJuE2MowhRfDIII90643sEuilQ7ZvCq1enRkGuFNdeK/DaDtADqsH/5vhaBOkXs072FA7wAVkPrLTRg2HoFKylxVh9TqBIAAAAASUVORK5CYII=",
+                "contentType": "image/png",
+                "width": 15,
+                "height": 15,
+                "angle": 0,
+                "xoffset": 0,
+                "yoffset": 0
+              },
+              "values": [
+                [
+                  "Green"
+                ]
+              ]
+            },
+            {
+              "label": "Orange",
+              "description": "Orange",
+              "symbol": {
+                "type": "esriPMS",
+                "url": "660844e4b5d306ef0fe84fd231572462",
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABu0lEQVQ4jcWUT0gUURzHP4zTNokeQiFjVw0zQlPUFhEVWQ+RuCl7DjpseKuFXEiFzoHn2m5dQjwsige9eHDTkGJBxXUPDvgndKmtEO3QLvi3IWZHdmfHadi1qO9lvr/ve+/zfu/xGJG/LPFfA2sAjyFbBN6eF9gADBuyF38CTKm0GC5egN0EHB5brxEtxi7fa6LP2wntN7UgeQCvZ/GEosxFYkzkA5R83Yw883BHHxZJ4Hfj6LlNYGAUYWGTcStgNeBTTX0lzYO9tP2u9RtlXHU3EVjYxAWcAJPAnBHoAJ6opuU6iEJmILwOkW142AmXbFrmdXElMM3jvWSq/GwGTKuiNON/KvDgFewfafWju9rXJoK9BE6BpkdO60TJ+AIBnFWw9BEar2XPU3TzLIEbX7PrsX5tE/01bHyD2K41UAbuq2btC075E/7acgrSEwXDJmFWE/s8Py0jZsAdIKia5S2CU8soCDyttZOFUjt98471nWO6gHhOR1b1cpqhlRiFt+z46spBskH8O0S3kaUSWsdn+WG2TsRC8zIf5mXtbeo0A+aw//L7CgEdhuzMveUDVB/G+9x6yw2Yt34BUftyM2BraIQAAAAASUVORK5CYII=",
+                "contentType": "image/png",
+                "width": 15,
+                "height": 15,
+                "angle": 0,
+                "xoffset": 0,
+                "yoffset": 0
+              },
+              "values": [
+                [
+                  "Orange"
+                ]
+              ]
+            },
+            {
+              "label": "Purple",
+              "description": "Purple",
+              "symbol": {
+                "type": "esriPMS",
+                "url": "00f6b1731fd2f787fb7abf600aed9131",
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABrklEQVQ4jcWUSyhEURjHf82DISVFkgnJFIMooSHZqCmEhZSyIDumpDxK2Sm2zEo2shIpLJQ8EylkZhamxpBobCYWHpEwdK9H13XdZhD/zfm+/3e+X985nY6OX5bur4EZQLXM2waWvgvMAfpl3uBPgKKiiUVPOBeccc+dao9OpRZTSEWzlUYyKRaNG66ZY6TayeKKF8dUKEBDDbaxenrKpGYkUdTSbrRQaR+mU+Nha1INmAbYhCCV7Pw6uoq+Gj0RU0IB5XYPW6XAAzADrMiBRqBNCNIpRCspudnkAAdWmggnQvSsNMbPYG+95FxIfUrAd8WR9B4HeGSABu64FfMqWsRVTxixJPIKVDyyBCKc4kUatJjIY58d0siV7Qt86lUE+vB+yHuZ4JGHD9dwihc/x6pAN1D/AvTkneBuT8KsfStKYYJWmdi74arvNXUoAf3AuBB42R3fYDbwBB3JmDVSkDDpPKP71/it4qDBPuxphrqPcEYmk2lLIQs9Bs455RCXOwqDZZnJS6U+HSpysbbhYk18mxItAIqwf/m+FoESmffp3kIBngHrwc0WHDBkPQOX2XMpVrzg3QAAAABJRU5ErkJggg==",
+                "contentType": "image/png",
+                "width": 15,
+                "height": 15,
+                "angle": 0,
+                "xoffset": 0,
+                "yoffset": 0
+              },
+              "values": [
+                [
+                  "Purple"
+                ]
+              ]
+            },
+            {
+              "label": "Red",
+              "description": "Red",
+              "symbol": {
+                "type": "esriPMS",
+                "url": "f5da5d0a9ed8a4db86945785450432ae",
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABbUlEQVQ4jcXUMUhVURzH8Q96SROXQJBQmnTICgWJMBGXIFDBOXBQ2uqBCJrgHDTXG1uiSRSHWjUEKQKVXg4+UCfBFsmlAglU5PSu8rhdn+9V5G+5///vnP/3/P+Xw4n8Y0X/G3gdgwlvBe/+FNiOZwnv+d8Af6kBNfiKn+fURCXWrvTzcBjdsfEDLxlcYDHHXCXA2gyvp7hXbNZjjOYBshNULTNbCtiCTAhucfsJd89qvZWrfWSX6cUB3mAxCWzGaAjuJBY+IocRXI69YRqzPN4rpDtpwFNdK4oPMYT9OH8Ufy+hCXslRj5VmOFE1ejEKjoS+45SalOBW4l8Jj4kSuzZPgeYx4MQbNCZZ6yt0GDqyTOsf+dpnObS9u1iOgSfmH5bmGi8japiUOj0FZu73MeXskYOesHkZ+pukLkZLmZcvUa+lq5ZvqXVRUpoiQ9L8d0s0rwzYBfyfC2gJ+H99t8qAYYH5n15vZUHrFjHAr5KdP+VuP0AAAAASUVORK5CYII=",
+                "contentType": "image/png",
+                "width": 15,
+                "height": 15,
+                "angle": 0,
+                "xoffset": 0,
+                "yoffset": 0
+              },
+              "values": [
+                [
+                  "Red"
+                ]
+              ]
+            },
+            {
+              "label": "White",
+              "description": "White",
+              "symbol": {
+                "type": "esriPMS",
+                "url": "b2de92bb6a5437a8ee1bca32f0c0aac1",
+                "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAB2klEQVQ4jc2UP2giQRTGP3YX/FMI23gEgiCkiSAuhhMMyCEEAjZBsUmdwsKFEDg8bCzkUEtDwFbYKnJckcZmDUHYCEMWgoUiaQS5A9FrtBALPcLsBW+zt1n0LoT7mn3vm5nfvDfMLIdXFvfWwF0ARwbvDsD13wIDAIoG7/xfgJrcbjfsdjtGoxHm87nlGs5ijE8kEieiKCIajWrGdDpFuVw+qtfrN4SQr5sA7dlsVioUCgd60+VyIZfLbSeTyYtUKsUoivLFCrgDQKRBMBh8n8/n918q3efzbcXj8QtFUT4AWAC4AnBjBG4DOKVBJBIBx/0eajabIISAtu90OjUvnU6/K5VK6fF4TNNvZsCVvF7vKl4ul4jFYpjNZlqeyWS0r81mg8fjwRPQtOWVFgvaxS+xLItwOIxWq4VQKPRsHt3MKFNgt9t9ljcaDW0T/TH0ej30+31LIKUc06DT6ey12+2zQCDAribqYFTVarUzmUw+P6X3ZsARgEsaEEIua7XaT4ZhPvr9fkYPopVWKpWH4XB4COD7Wi1TFYvFT6qqOgVBEAVBgMPhwGAwgKqqXZ7nw5IkTc3WcbCQLMu3siyLRps+mv/m99Wg99zg/XFumwB/AFDWq2094MZ6BHs4mZehk8OKAAAAAElFTkSuQmCC",
+                "contentType": "image/png",
+                "width": 15,
+                "height": 15,
+                "angle": 0,
+                "xoffset": 0,
+                "yoffset": 0
+              },
+              "values": [
+                [
+                  "White"
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "uniqueValueInfos": [
+        {
+          "symbol": {
+            "type": "esriPMS",
+            "url": "295853a6f7bfdc0dba187c782512e48f",
+            "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABv0lEQVQ4jcWUTUsCURSG3xkHRoQZRxFiBhcOKOqqRbRIiDZBS9etWyZEEPQHgtbhP2glRIvWFW0KhBbhIhepIKIgTc44Kn7gV8zNZDQdtKLe1bnnzn3mPedcLoNfFvPXwDCA6FTuEcDtd4GrAE6ncmc/ARKxLAuaptHpdDAYDCzPMBZ7LkmS9nw+HzweD0n0ej3kcrlouVy+03X9chmgPRAInIfD4e2JjxkGwWDQK0lSPJVK0aqqXlgB/QBiRiAIwnooFIrMs85xnCiKYlxV1S3DOIArAHfTQC+AAyNwu92gKGq8UalUoGkaZFmGzWYjOVmWV7LZ7L7RVwDFWcCxHA7HOB4Oh0gmk+j3+x9l+I1CQIZkt9vJoOaVPAH5lOHU5XIRh4IgzOuCNbBer0+sI5EI+Ym5DY1GA81m0xKYBrA7Aq7VarVDnudtZqdmFQqF5263ezJaPs0CvgJIGIGmaYlSqTSgKOqI4zjaDDKc5vP5l3a7vQOgZOVwQplM5rharTqcTmeM53ky3VarBV3X0yzLbhSLxdqscwwspCjKg6Io5G6adA1gJuxfnq8bAJtTuS99Wwb4BuB+MW+LAZfWO+eel4eFKkyAAAAAAElFTkSuQmCC",
+            "contentType": "image/png",
+            "width": 15,
+            "height": 15,
+            "angle": 0,
+            "xoffset": 0,
+            "yoffset": 0
+          },
+          "value": "Black",
+          "label": "Black"
+        },
+        {
+          "symbol": {
+            "type": "esriPMS",
+            "url": "878a6d46b0c41416a0c52b6b4804ff19",
+            "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABpklEQVQ4jcWUTShEURTHf95MPGJQiolQvr+iJF/JRimUtbIgO6akfJS1smaWNrKayIItUiI1ZEimEFEzC8YMBjHlqzdvYjzPawbx39xzzj3nd8+53a6eX5b+r4EFQKsitgEsfRdYCowqYmM/AfoVlQRCFPgu4NmnXaPX2Es0NtOV0QFJtXLg8RaOJ2g9W2T52sZsOEAx28RU/jANH5JjIbePNGML5t0BBI+VGS1gNmCSjIQSKvIGqfmq9bgcjClNmD1W6qXGgTlgWQlMA3r9s1ZCRNCOex2ubJDZCbpoOZbZQfKRmR6f2+861IBvikl/t1+ewNoOT/eyn9Utr0IkiKkQAKqO/A6RhggoQgeJ5XC5CQllisTnz7WqwNvDj37VtHxI8DVIOXen2kA70CYZN/uUe+30GQrRvXWqONoxzd7jDSMB16YGPAcsknG5hcU57x+o31CIEAySOj2Z5ODhnEbAGdLIko7GGfJuE2MowhRfDIII90643sEuilQ7ZvCq1enRkGuFNdeK/DaDtADqsH/5vhaBOkXs072FA7wAVkPrLTRg2HoFKylxVh9TqBIAAAAASUVORK5CYII=",
+            "contentType": "image/png",
+            "width": 15,
+            "height": 15,
+            "angle": 0,
+            "xoffset": 0,
+            "yoffset": 0
+          },
+          "value": "Green",
+          "label": "Green"
+        },
+        {
+          "symbol": {
+            "type": "esriPMS",
+            "url": "660844e4b5d306ef0fe84fd231572462",
+            "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABu0lEQVQ4jcWUT0gUURzHP4zTNokeQiFjVw0zQlPUFhEVWQ+RuCl7DjpseKuFXEiFzoHn2m5dQjwsige9eHDTkGJBxXUPDvgndKmtEO3QLvi3IWZHdmfHadi1qO9lvr/ve+/zfu/xGJG/LPFfA2sAjyFbBN6eF9gADBuyF38CTKm0GC5egN0EHB5brxEtxi7fa6LP2wntN7UgeQCvZ/GEosxFYkzkA5R83Yw883BHHxZJ4Hfj6LlNYGAUYWGTcStgNeBTTX0lzYO9tP2u9RtlXHU3EVjYxAWcAJPAnBHoAJ6opuU6iEJmILwOkW142AmXbFrmdXElMM3jvWSq/GwGTKuiNON/KvDgFewfafWju9rXJoK9BE6BpkdO60TJ+AIBnFWw9BEar2XPU3TzLIEbX7PrsX5tE/01bHyD2K41UAbuq2btC075E/7acgrSEwXDJmFWE/s8Py0jZsAdIKia5S2CU8soCDyttZOFUjt98471nWO6gHhOR1b1cpqhlRiFt+z46spBskH8O0S3kaUSWsdn+WG2TsRC8zIf5mXtbeo0A+aw//L7CgEdhuzMveUDVB/G+9x6yw2Yt34BUftyM2BraIQAAAAASUVORK5CYII=",
+            "contentType": "image/png",
+            "width": 15,
+            "height": 15,
+            "angle": 0,
+            "xoffset": 0,
+            "yoffset": 0
+          },
+          "value": "Orange",
+          "label": "Orange"
+        },
+        {
+          "symbol": {
+            "type": "esriPMS",
+            "url": "00f6b1731fd2f787fb7abf600aed9131",
+            "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABrklEQVQ4jcWUSyhEURjHf82DISVFkgnJFIMooSHZqCmEhZSyIDumpDxK2Sm2zEo2shIpLJQ8EylkZhamxpBobCYWHpEwdK9H13XdZhD/zfm+/3e+X985nY6OX5bur4EZQLXM2waWvgvMAfpl3uBPgKKiiUVPOBeccc+dao9OpRZTSEWzlUYyKRaNG66ZY6TayeKKF8dUKEBDDbaxenrKpGYkUdTSbrRQaR+mU+Nha1INmAbYhCCV7Pw6uoq+Gj0RU0IB5XYPW6XAAzADrMiBRqBNCNIpRCspudnkAAdWmggnQvSsNMbPYG+95FxIfUrAd8WR9B4HeGSABu64FfMqWsRVTxixJPIKVDyyBCKc4kUatJjIY58d0siV7Qt86lUE+vB+yHuZ4JGHD9dwihc/x6pAN1D/AvTkneBuT8KsfStKYYJWmdi74arvNXUoAf3AuBB42R3fYDbwBB3JmDVSkDDpPKP71/it4qDBPuxphrqPcEYmk2lLIQs9Bs455RCXOwqDZZnJS6U+HSpysbbhYk18mxItAIqwf/m+FoESmffp3kIBngHrwc0WHDBkPQOX2XMpVrzg3QAAAABJRU5ErkJggg==",
+            "contentType": "image/png",
+            "width": 15,
+            "height": 15,
+            "angle": 0,
+            "xoffset": 0,
+            "yoffset": 0
+          },
+          "value": "Purple",
+          "label": "Purple"
+        },
+        {
+          "symbol": {
+            "type": "esriPMS",
+            "url": "f5da5d0a9ed8a4db86945785450432ae",
+            "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABbUlEQVQ4jcXUMUhVURzH8Q96SROXQJBQmnTICgWJMBGXIFDBOXBQ2uqBCJrgHDTXG1uiSRSHWjUEKQKVXg4+UCfBFsmlAglU5PSu8rhdn+9V5G+5///vnP/3/P+Xw4n8Y0X/G3gdgwlvBe/+FNiOZwnv+d8Af6kBNfiKn+fURCXWrvTzcBjdsfEDLxlcYDHHXCXA2gyvp7hXbNZjjOYBshNULTNbCtiCTAhucfsJd89qvZWrfWSX6cUB3mAxCWzGaAjuJBY+IocRXI69YRqzPN4rpDtpwFNdK4oPMYT9OH8Ufy+hCXslRj5VmOFE1ejEKjoS+45SalOBW4l8Jj4kSuzZPgeYx4MQbNCZZ6yt0GDqyTOsf+dpnObS9u1iOgSfmH5bmGi8japiUOj0FZu73MeXskYOesHkZ+pukLkZLmZcvUa+lq5ZvqXVRUpoiQ9L8d0s0rwzYBfyfC2gJ+H99t8qAYYH5n15vZUHrFjHAr5KdP+VuP0AAAAASUVORK5CYII=",
+            "contentType": "image/png",
+            "width": 15,
+            "height": 15,
+            "angle": 0,
+            "xoffset": 0,
+            "yoffset": 0
+          },
+          "value": "Red",
+          "label": "Red"
+        },
+        {
+          "symbol": {
+            "type": "esriPMS",
+            "url": "b2de92bb6a5437a8ee1bca32f0c0aac1",
+            "imageData": "iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAB2klEQVQ4jc2UP2giQRTGP3YX/FMI23gEgiCkiSAuhhMMyCEEAjZBsUmdwsKFEDg8bCzkUEtDwFbYKnJckcZmDUHYCEMWgoUiaQS5A9FrtBALPcLsBW+zt1n0LoT7mn3vm5nfvDfMLIdXFvfWwF0ARwbvDsD13wIDAIoG7/xfgJrcbjfsdjtGoxHm87nlGs5ijE8kEieiKCIajWrGdDpFuVw+qtfrN4SQr5sA7dlsVioUCgd60+VyIZfLbSeTyYtUKsUoivLFCrgDQKRBMBh8n8/n918q3efzbcXj8QtFUT4AWAC4AnBjBG4DOKVBJBIBx/0eajabIISAtu90OjUvnU6/K5VK6fF4TNNvZsCVvF7vKl4ul4jFYpjNZlqeyWS0r81mg8fjwRPQtOWVFgvaxS+xLItwOIxWq4VQKPRsHt3MKFNgt9t9ljcaDW0T/TH0ej30+31LIKUc06DT6ey12+2zQCDAribqYFTVarUzmUw+P6X3ZsARgEsaEEIua7XaT4ZhPvr9fkYPopVWKpWH4XB4COD7Wi1TFYvFT6qqOgVBEAVBgMPhwGAwgKqqXZ7nw5IkTc3WcbCQLMu3siyLRps+mv/m99Wg99zg/XFumwB/AFDWq2094MZ6BHs4mZehk8OKAAAAAElFTkSuQmCC",
+            "contentType": "image/png",
+            "width": 15,
+            "height": 15,
+            "angle": 0,
+            "xoffset": 0,
+            "yoffset": 0
+          },
+          "value": "White",
+          "label": "White"
+        }
+      ],
+      "fieldDelimiter": ",",
+      "authoringInfo": {
+        "colorRamp": {
+          "type": "multipart",
+          "colorRamps": [
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                196,
+                201,
+                135,
+                255
+              ],
+              "toColor": [
+                196,
+                201,
+                135,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                139,
+                106,
+                247,
+                255
+              ],
+              "toColor": [
+                139,
+                106,
+                247,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                158,
+                66,
+                94,
+                255
+              ],
+              "toColor": [
+                158,
+                66,
+                94,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                97,
+                165,
+                207,
+                255
+              ],
+              "toColor": [
+                97,
+                165,
+                207,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                86,
+                232,
+                108,
+                255
+              ],
+              "toColor": [
+                86,
+                232,
+                108,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                250,
+                92,
+                216,
+                255
+              ],
+              "toColor": [
+                250,
+                92,
+                216,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                117,
+                250,
+                232,
+                255
+              ],
+              "toColor": [
+                117,
+                250,
+                232,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                60,
+                69,
+                128,
+                255
+              ],
+              "toColor": [
+                60,
+                69,
+                128,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                59,
+                138,
+                114,
+                255
+              ],
+              "toColor": [
+                59,
+                138,
+                114,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                201,
+                124,
+                83,
+                255
+              ],
+              "toColor": [
+                201,
+                124,
+                83,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                199,
+                145,
+                217,
+                255
+              ],
+              "toColor": [
+                199,
+                145,
+                217,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                210,
+                230,
+                85,
+                255
+              ],
+              "toColor": [
+                210,
+                230,
+                85,
+                255
+              ]
+            },
+            {
+              "type": "algorithmic",
+              "algorithm": "esriCIELabAlgorithm",
+              "fromColor": [
+                133,
+                117,
+                85,
+                255
+              ],
+              "toColor": [
+                133,
+                117,
+                85,
+                255
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "scaleSymbols": true,
+    "transparency": 0,
+    "labelingInfo": [
+      {
+        "labelExpression": "[ID]",
+        "labelPlacement": "esriServerPointLabelPlacementAboveRight",
+        "deconflictionStrategy": "dynamic",
+        "removeDuplicates": "none",
+        "stackLabel": false,
+        "useCodedValues": true,
+        "maxScale": 0,
+        "minScale": 5000,
+        "name": "Default",
+        "priority": 1,
+        "symbol": {
+          "type": "esriTS",
+          "color": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "backgroundColor": null,
+          "borderLineColor": null,
+          "borderLineSize": null,
+          "verticalAlignment": "bottom",
+          "horizontalAlignment": "center",
+          "rightToLeft": false,
+          "angle": 0,
+          "xoffset": 0,
+          "yoffset": 0,
+          "kerning": true,
+          "haloColor": null,
+          "haloSize": null,
+          "font": {
+            "family": "Arial",
+            "size": 8,
+            "style": "italic",
+            "weight": "bold",
+            "decoration": "none"
+          }
+        }
+      }
+    ]
+  },
+  "hasM": false,
+  "hasZ": false,
+  "allowGeometryUpdates": true,
+  "allowTrueCurvesUpdates": true,
+  "onlyAllowTrueCurveUpdatesByTrueCurveClients": true,
+  "hasAttachments": false,
+  "supportsApplyEditsWithGlobalIds": false,
+  "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+  "objectIdField": "OBJECTID",
+  "globalIdField": "GlobalID",
+  "displayField": "EDITOR_NAME",
+  "typeIdField": "HYDRANT_CO",
+  "subtypeField": "",
+  "fields": [
+    {
+      "name": "OBJECTID",
+      "type": "esriFieldTypeOID",
+      "alias": "OBJECTID",
+      "domain": null,
+      "editable": false,
+      "nullable": false,
+      "defaultValue": null,
+      "modelName": "OBJECTID"
+    },
+    {
+      "name": "FACILITYID",
+      "type": "esriFieldTypeString",
+      "alias": "Facility Identifier",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 20,
+      "defaultValue": null,
+      "modelName": "FACILITYID"
+    },
+    {
+      "name": "INSTALLDATE",
+      "type": "esriFieldTypeDate",
+      "alias": "Install Date",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 8,
+      "defaultValue": null,
+      "modelName": "INSTALLDATE"
+    },
+    {
+      "name": "ROTATION",
+      "type": "esriFieldTypeDouble",
+      "alias": "Rotation",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "defaultValue": null,
+      "modelName": "ROTATION"
+    },
+    {
+      "name": "MANUFACTURER",
+      "type": "esriFieldTypeString",
+      "alias": "Manufacturer",
+      "domain": {
+        "type": "codedValue",
+        "name": "wHydrantManufacturer",
+        "description": "The name of the hydrant manufacturer",
+        "codedValues": [
+          {
+            "name": "American Darling",
+            "code": "American Darling"
+          },
+          {
+            "name": "Clow Corporation",
+            "code": "Clow Corporation"
+          },
+          {
+            "name": "Corey",
+            "code": "Corey"
+          },
+          {
+            "name": "Dresser",
+            "code": "Dresser"
+          },
+          {
+            "name": "Eddy",
+            "code": "Eddy"
+          },
+          {
+            "name": "Iowa Valve",
+            "code": "Iowa Valve"
+          },
+          {
+            "name": "Kennedy Valve",
+            "code": "Kennedy Valve"
+          },
+          {
+            "name": "M&H Valve",
+            "code": "M&H Valve"
+          },
+          {
+            "name": "M&H Valve / Dresser",
+            "code": "M&H Valve / Dresser"
+          },
+          {
+            "name": "Mueller Company",
+            "code": "Mueller Company"
+          },
+          {
+            "name": "Traverse City",
+            "code": "Traverse City"
+          },
+          {
+            "name": "US Pipe",
+            "code": "US Pipe"
+          },
+          {
+            "name": "Waterous",
+            "code": "Waterous"
+          },
+          {
+            "name": "Wood-Matthews",
+            "code": "Wood-Matthews"
+          },
+          {
+            "name": "Other",
+            "code": "Other"
+          },
+          {
+            "name": "Unknown",
+            "code": "Unknown"
+          },
+          {
+            "name": "AVK",
+            "code": "AVK"
+          },
+          {
+            "name": "Dry Hydrant",
+            "code": "Dry Hydrant"
+          },
+          {
+            "name": "James B. Glow",
+            "code": "James B. Glow"
+          },
+          {
+            "name": "East Jordan Iron Works",
+            "code": "East Jordan Iron Works"
+          },
+          {
+            "name": "Kupferle Foundary Co.",
+            "code": "Kupferle Foundary Co."
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDuplicate"
+      },
+      "editable": true,
+      "nullable": true,
+      "length": 30,
+      "defaultValue": null,
+      "modelName": "MANUFACTURER"
+    },
+    {
+      "name": "OPERABLE",
+      "type": "esriFieldTypeSmallInteger",
+      "alias": "Operable",
+      "domain": {
+        "type": "codedValue",
+        "name": "BooleanDomain",
+        "description": "A 0/1 boolean domain",
+        "codedValues": [
+          {
+            "name": "False",
+            "code": 0
+          },
+          {
+            "name": "True",
+            "code": 1
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDuplicate"
+      },
+      "editable": true,
+      "nullable": true,
+      "defaultValue": 1,
+      "modelName": "OPERABLE"
+    },
+    {
+      "name": "LASTSERVICE",
+      "type": "esriFieldTypeDate",
+      "alias": "Last Service Date",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 8,
+      "defaultValue": null,
+      "modelName": "LASTSERVICE"
+    },
+    {
+      "name": "ENABLED",
+      "type": "esriFieldTypeSmallInteger",
+      "alias": "Enabled",
+      "domain": {
+        "type": "codedValue",
+        "name": "EnabledDomain_1",
+        "description": "Geometric Network Enabled domain",
+        "codedValues": [
+          {
+            "name": "False",
+            "code": 0
+          },
+          {
+            "name": "True",
+            "code": 1
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      },
+      "editable": true,
+      "nullable": true,
+      "defaultValue": 1,
+      "modelName": "ENABLED"
+    },
+    {
+      "name": "ACTIVEFLAG",
+      "type": "esriFieldTypeSmallInteger",
+      "alias": "Active Flag",
+      "domain": {
+        "type": "codedValue",
+        "name": "BooleanDomain",
+        "description": "A 0/1 boolean domain",
+        "codedValues": [
+          {
+            "name": "False",
+            "code": 0
+          },
+          {
+            "name": "True",
+            "code": 1
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDuplicate"
+      },
+      "editable": true,
+      "nullable": true,
+      "defaultValue": 1,
+      "modelName": "ACTIVEFLAG"
+    },
+    {
+      "name": "OWNEDBY",
+      "type": "esriFieldTypeSmallInteger",
+      "alias": "Owned By",
+      "domain": {
+        "type": "codedValue",
+        "name": "AssetOwner",
+        "description": "The owner of the asset",
+        "codedValues": [
+          {
+            "name": "Private",
+            "code": -1
+          },
+          {
+            "name": "Other",
+            "code": -2
+          },
+          {
+            "name": "JWSC",
+            "code": 1
+          },
+          {
+            "name": "Undetermined",
+            "code": 2
+          },
+          {
+            "name": "Proposed",
+            "code": 3
+          },
+          {
+            "name": "FLETC",
+            "code": 4
+          },
+          {
+            "name": "County",
+            "code": 5
+          },
+          {
+            "name": "City",
+            "code": 6
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      },
+      "editable": true,
+      "nullable": true,
+      "defaultValue": 1,
+      "modelName": "OWNEDBY"
+    },
+    {
+      "name": "MAINTBY",
+      "type": "esriFieldTypeSmallInteger",
+      "alias": "Managed By",
+      "domain": {
+        "type": "codedValue",
+        "name": "AssetManager",
+        "description": "The manager of the asset",
+        "codedValues": [
+          {
+            "name": "Private",
+            "code": -1
+          },
+          {
+            "name": "Other",
+            "code": -2
+          },
+          {
+            "name": "JWSC",
+            "code": 1
+          },
+          {
+            "name": "Undetermind",
+            "code": 2
+          },
+          {
+            "name": "Proposed",
+            "code": 3
+          },
+          {
+            "name": "FLETC",
+            "code": 4
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      },
+      "editable": true,
+      "nullable": true,
+      "defaultValue": 1,
+      "modelName": "MAINTBY"
+    },
+    {
+      "name": "LASTUPDATE",
+      "type": "esriFieldTypeDate",
+      "alias": "Last Update Date",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 8,
+      "defaultValue": null,
+      "modelName": "LASTUPDATE"
+    },
+    {
+      "name": "LASTEDITOR",
+      "type": "esriFieldTypeString",
+      "alias": "Last Editor",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 50,
+      "defaultValue": null,
+      "modelName": "LASTEDITOR"
+    },
+    {
+      "name": "FLOW",
+      "type": "esriFieldTypeDouble",
+      "alias": "Flow Rate (GPM)",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "defaultValue": null,
+      "modelName": "FLOW"
+    },
+    {
+      "name": "ID",
+      "type": "esriFieldTypeInteger",
+      "alias": "Hydrant ID",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "defaultValue": null,
+      "modelName": "ID"
+    },
+    {
+      "name": "SHUTOFF_VA",
+      "type": "esriFieldTypeString",
+      "alias": "Shutoff Valve",
+      "domain": {
+        "type": "codedValue",
+        "name": "xYN",
+        "description": "",
+        "codedValues": [
+          {
+            "name": "No",
+            "code": "N"
+          },
+          {
+            "name": "Yes",
+            "code": "Y"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      },
+      "editable": true,
+      "nullable": true,
+      "length": 20,
+      "defaultValue": null,
+      "modelName": "SHUTOFF_VA"
+    },
+    {
+      "name": "LARGEST_SI",
+      "type": "esriFieldTypeString",
+      "alias": "Largest Size",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 20,
+      "defaultValue": null,
+      "modelName": "LARGEST_SI"
+    },
+    {
+      "name": "FLOW_RATE",
+      "type": "esriFieldTypeInteger",
+      "alias": "Flow Rate",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "defaultValue": null,
+      "modelName": "FLOW_RATE"
+    },
+    {
+      "name": "YEAR_HYDRA",
+      "type": "esriFieldTypeSmallInteger",
+      "alias": "Hydrant Year",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "defaultValue": null,
+      "modelName": "YEAR_HYDRA"
+    },
+    {
+      "name": "HYDRANT_CO",
+      "type": "esriFieldTypeString",
+      "alias": "Hydrant Color",
+      "domain": {
+        "type": "codedValue",
+        "name": "HYDRANT COLOR",
+        "description": "HYDRANT COLORS",
+        "codedValues": [
+          {
+            "name": "Red",
+            "code": "Red"
+          },
+          {
+            "name": "Green",
+            "code": "Green"
+          },
+          {
+            "name": "Orange",
+            "code": "Orange"
+          },
+          {
+            "name": "Purple",
+            "code": "Purple"
+          },
+          {
+            "name": "White",
+            "code": "White"
+          },
+          {
+            "name": "Black",
+            "code": "Black"
+          },
+          {
+            "name": "Blue",
+            "code": "Blue"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      },
+      "editable": true,
+      "nullable": true,
+      "length": 20,
+      "defaultValue": null,
+      "modelName": "HYDRANT_CO"
+    },
+    {
+      "name": "SHUTOFF_DI",
+      "type": "esriFieldTypeSmallInteger",
+      "alias": "Shutoff Distance",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "defaultValue": null,
+      "modelName": "SHUTOFF_DI"
+    },
+    {
+      "name": "OWNERSHIP",
+      "type": "esriFieldTypeString",
+      "alias": "Ownership",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 20,
+      "defaultValue": null,
+      "modelName": "OWNERSHIP"
+    },
+    {
+      "name": "MARKER",
+      "type": "esriFieldTypeString",
+      "alias": "Marker",
+      "domain": {
+        "type": "codedValue",
+        "name": "xYN",
+        "description": "",
+        "codedValues": [
+          {
+            "name": "No",
+            "code": "N"
+          },
+          {
+            "name": "Yes",
+            "code": "Y"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      },
+      "editable": true,
+      "nullable": true,
+      "length": 20,
+      "defaultValue": null,
+      "modelName": "MARKER"
+    },
+    {
+      "name": "COMMENT_",
+      "type": "esriFieldTypeString",
+      "alias": "Comments",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 100,
+      "defaultValue": null,
+      "modelName": "COMMENT_"
+    },
+    {
+      "name": "LATITUDE",
+      "type": "esriFieldTypeDouble",
+      "alias": "Latitude",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "defaultValue": null,
+      "modelName": "LATITUDE"
+    },
+    {
+      "name": "LONGITUDE",
+      "type": "esriFieldTypeDouble",
+      "alias": "Longitude",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "defaultValue": null,
+      "modelName": "LONGITUDE"
+    },
+    {
+      "name": "STATION",
+      "type": "esriFieldTypeString",
+      "alias": "Fire Station",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 3,
+      "defaultValue": null,
+      "modelName": "STATION"
+    },
+    {
+      "name": "DISTRICT",
+      "type": "esriFieldTypeString",
+      "alias": "Fire District",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 5,
+      "defaultValue": null,
+      "modelName": "DISTRICT"
+    },
+    {
+      "name": "MODEL",
+      "type": "esriFieldTypeString",
+      "alias": "Model",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 10,
+      "defaultValue": null,
+      "modelName": "MODEL"
+    },
+    {
+      "name": "BARREL_SIZE",
+      "type": "esriFieldTypeDouble",
+      "alias": "Barrel Size",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "defaultValue": null,
+      "modelName": "BARREL_SIZE"
+    },
+    {
+      "name": "MAIN_SIZE",
+      "type": "esriFieldTypeDouble",
+      "alias": "Main Size",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "defaultValue": null,
+      "modelName": "MAIN_SIZE"
+    },
+    {
+      "name": "BARR_LENGTH",
+      "type": "esriFieldTypeDouble",
+      "alias": "Barrel Length",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "defaultValue": null,
+      "modelName": "BARR_LENGTH"
+    },
+    {
+      "name": "MAIN_TYPE",
+      "type": "esriFieldTypeString",
+      "alias": "Main Type",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 6,
+      "defaultValue": null,
+      "modelName": "MAIN_TYPE"
+    },
+    {
+      "name": "VALVE_LOC",
+      "type": "esriFieldTypeString",
+      "alias": "Valve Location",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 25,
+      "defaultValue": null,
+      "modelName": "VALVE_LOC"
+    },
+    {
+      "name": "STEAMER_SIZE",
+      "type": "esriFieldTypeDouble",
+      "alias": "Steamer Size",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "defaultValue": null,
+      "modelName": "STEAMER_SIZE"
+    },
+    {
+      "name": "EDIT_DATE",
+      "type": "esriFieldTypeDate",
+      "alias": "Edit Date",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 8,
+      "defaultValue": null,
+      "modelName": "EDIT_DATE"
+    },
+    {
+      "name": "EDITOR_NAME",
+      "type": "esriFieldTypeString",
+      "alias": "Editor Name",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 50,
+      "defaultValue": null,
+      "modelName": "EDITOR_NAME"
+    },
+    {
+      "name": "LOCATION",
+      "type": "esriFieldTypeString",
+      "alias": "Location",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 250,
+      "defaultValue": null,
+      "modelName": "LOCATION"
+    },
+    {
+      "name": "LIFECYCE",
+      "type": "esriFieldTypeString",
+      "alias": "Lifecycle",
+      "domain": {
+        "type": "codedValue",
+        "name": "xStatus",
+        "description": "",
+        "codedValues": [
+          {
+            "name": "Abandoned",
+            "code": "ABN"
+          },
+          {
+            "name": "Active",
+            "code": "ACT"
+          },
+          {
+            "name": "Being Repaired",
+            "code": "REP"
+          },
+          {
+            "name": "Offline / Out of Service",
+            "code": "OFF"
+          },
+          {
+            "name": "Proposed",
+            "code": "PRO"
+          },
+          {
+            "name": "Removed",
+            "code": "REM"
+          },
+          {
+            "name": "Under Construction",
+            "code": "UNC"
+          },
+          {
+            "name": "Unknown",
+            "code": "UNK"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      },
+      "editable": true,
+      "nullable": true,
+      "length": 10,
+      "defaultValue": null,
+      "modelName": "LIFECYCE"
+    },
+    {
+      "name": "CONDITION",
+      "type": "esriFieldTypeSmallInteger",
+      "alias": "Condition",
+      "domain": {
+        "type": "codedValue",
+        "name": "Condition",
+        "description": "Physical condition of feature",
+        "codedValues": [
+          {
+            "name": "Excellent",
+            "code": 1
+          },
+          {
+            "name": "Failed",
+            "code": 2
+          },
+          {
+            "name": "Fair",
+            "code": 3
+          },
+          {
+            "name": "Good",
+            "code": 4
+          },
+          {
+            "name": "Poor",
+            "code": 5
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      },
+      "editable": true,
+      "nullable": true,
+      "defaultValue": null,
+      "modelName": "CONDITION"
+    },
+    {
+      "name": "CONDITIONDATE",
+      "type": "esriFieldTypeDate",
+      "alias": "Condition Date",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 8,
+      "defaultValue": null,
+      "modelName": "CONDITIONDATE"
+    },
+    {
+      "name": "WARRANTYDATE",
+      "type": "esriFieldTypeDate",
+      "alias": "Warranty Date",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 8,
+      "defaultValue": null,
+      "modelName": "WARRANTYDATE"
+    },
+    {
+      "name": "CRITICALASSET",
+      "type": "esriFieldTypeString",
+      "alias": "Critical Asset",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 20,
+      "defaultValue": null,
+      "modelName": "CRITICALASSET"
+    },
+    {
+      "name": "INSTALLVALUE",
+      "type": "esriFieldTypeInteger",
+      "alias": "Install Value",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "defaultValue": null,
+      "modelName": "INSTALLVALUE"
+    },
+    {
+      "name": "DEPRECIATEDVALUE",
+      "type": "esriFieldTypeInteger",
+      "alias": "Depreciated Value",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "defaultValue": null,
+      "modelName": "DEPRECIATEDVALUE"
+    },
+    {
+      "name": "USEFULLIFE",
+      "type": "esriFieldTypeInteger",
+      "alias": "Useful Life",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "defaultValue": null,
+      "modelName": "USEFULLIFE"
+    },
+    {
+      "name": "LEGACYID",
+      "type": "esriFieldTypeString",
+      "alias": "Legacy ID",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 50,
+      "defaultValue": null,
+      "modelName": "LEGACYID"
+    },
+    {
+      "name": "ADDR",
+      "type": "esriFieldTypeString",
+      "alias": "Address",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 50,
+      "defaultValue": null,
+      "modelName": "ADDR"
+    },
+    {
+      "name": "X_STREET",
+      "type": "esriFieldTypeString",
+      "alias": "Cross Street",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 50,
+      "defaultValue": null,
+      "modelName": "X_STREET"
+    },
+    {
+      "name": "GlobalID",
+      "type": "esriFieldTypeGlobalID",
+      "alias": "GlobalID",
+      "domain": null,
+      "editable": false,
+      "nullable": false,
+      "length": 38,
+      "defaultValue": null,
+      "modelName": "GlobalID"
+    },
+    {
+      "name": "RESIDUAL",
+      "type": "esriFieldTypeDouble",
+      "alias": "Residual",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "defaultValue": null,
+      "modelName": "RESIDUAL"
+    },
+    {
+      "name": "STATIC",
+      "type": "esriFieldTypeDouble",
+      "alias": "Static",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "defaultValue": null,
+      "modelName": "STATIC"
+    },
+    {
+      "name": "WorkOrder",
+      "type": "esriFieldTypeString",
+      "alias": "Work Order",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 15,
+      "defaultValue": null,
+      "modelName": "WorkOrder"
+    },
+    {
+      "name": "GPSDATE",
+      "type": "esriFieldTypeDate",
+      "alias": "GPS Date",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "length": 8,
+      "defaultValue": null,
+      "modelName": "GPSDATE"
+    },
+    {
+      "name": "GPS",
+      "type": "esriFieldTypeString",
+      "alias": "GPS",
+      "domain": {
+        "type": "codedValue",
+        "name": "Gps",
+        "description": "yes/no/dip/Unk",
+        "codedValues": [
+          {
+            "name": "Yes",
+            "code": "Yes"
+          },
+          {
+            "name": "No",
+            "code": "No"
+          },
+          {
+            "name": "Dip",
+            "code": "Dip"
+          },
+          {
+            "name": "Unk",
+            "code": "Unk"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      },
+      "editable": true,
+      "nullable": true,
+      "length": 5,
+      "defaultValue": null,
+      "modelName": "GPS"
+    },
+    {
+      "name": "GPS_SOURCE",
+      "type": "esriFieldTypeString",
+      "alias": "GPS Source",
+      "domain": {
+        "type": "codedValue",
+        "name": "GPS_SOURCE",
+        "description": "Survey or Map Grade",
+        "codedValues": [
+          {
+            "name": "Map Grade",
+            "code": "Map Grade"
+          },
+          {
+            "name": "Survey Grade",
+            "code": "Survey Grade"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      },
+      "editable": true,
+      "nullable": true,
+      "length": 50,
+      "defaultValue": null,
+      "modelName": "GPS_SOURCE"
+    },
+    {
+      "name": "NORTHING",
+      "type": "esriFieldTypeDouble",
+      "alias": "NORTHING",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "defaultValue": null,
+      "modelName": "NORTHING"
+    },
+    {
+      "name": "EASTING",
+      "type": "esriFieldTypeDouble",
+      "alias": "EASTING",
+      "domain": null,
+      "editable": true,
+      "nullable": true,
+      "defaultValue": null,
+      "modelName": "EASTING"
+    }
+  ],
+  "geometryField": {
+    "name": "Shape",
+    "type": "esriFieldTypeGeometry",
+    "alias": "Shape",
+    "domain": null,
+    "editable": true,
+    "nullable": true,
+    "defaultValue": null,
+    "modelName": "Shape"
+  },
+  "indexes": [
+    {
+      "name": "R11730_pk",
+      "fields": "OBJECTID",
+      "isAscending": true,
+      "isUnique": true,
+      "description": ""
+    },
+    {
+      "name": "UUID_11730",
+      "fields": "GlobalID",
+      "isAscending": true,
+      "isUnique": false,
+      "description": ""
+    },
+    {
+      "name": "UUID_OID_11730",
+      "fields": "GlobalID,OBJECTID",
+      "isAscending": true,
+      "isUnique": true,
+      "description": ""
+    },
+    {
+      "name": "S6853_idx",
+      "fields": "Shape",
+      "isAscending": true,
+      "isUnique": true,
+      "description": ""
+    }
+  ],
+  "datesInUnknownTimezone": false,
+  "dateFieldsTimeReference": {
+    "timeZone": "UTC",
+    "respectsDaylightSaving": false
+  },
+  "preferredTimeReference": null,
+  "types": [
+    {
+      "id": "Black",
+      "name": "Black",
+      "domains": {
+        "MANUFACTURER": {
+          "type": "inherited"
+        },
+        "OPERABLE": {
+          "type": "inherited"
+        },
+        "ENABLED": {
+          "type": "inherited"
+        },
+        "ACTIVEFLAG": {
+          "type": "inherited"
+        },
+        "OWNEDBY": {
+          "type": "inherited"
+        },
+        "MAINTBY": {
+          "type": "inherited"
+        },
+        "SHUTOFF_VA": {
+          "type": "inherited"
+        },
+        "HYDRANT_CO": {
+          "type": "inherited"
+        },
+        "MARKER": {
+          "type": "inherited"
+        },
+        "LIFECYCE": {
+          "type": "inherited"
+        },
+        "CONDITION": {
+          "type": "inherited"
+        },
+        "GPS": {
+          "type": "inherited"
+        },
+        "GPS_SOURCE": {
+          "type": "inherited"
+        }
+      },
+      "templates": [
+        {
+          "name": "Black",
+          "description": "",
+          "prototype": {
+            "attributes": {
+              "NORTHING": null,
+              "GPS_SOURCE": null,
+              "FACILITYID": null,
+              "INSTALLDATE": null,
+              "ROTATION": null,
+              "MANUFACTURER": null,
+              "OPERABLE": 1,
+              "LASTSERVICE": null,
+              "ENABLED": 1,
+              "ACTIVEFLAG": 1,
+              "OWNEDBY": 1,
+              "MAINTBY": 1,
+              "LASTUPDATE": null,
+              "LASTEDITOR": null,
+              "FLOW": null,
+              "ID": null,
+              "SHUTOFF_VA": null,
+              "LARGEST_SI": null,
+              "FLOW_RATE": null,
+              "YEAR_HYDRA": null,
+              "HYDRANT_CO": "Black",
+              "SHUTOFF_DI": null,
+              "OWNERSHIP": null,
+              "MARKER": null,
+              "COMMENT_": null,
+              "LATITUDE": null,
+              "LONGITUDE": null,
+              "STATION": null,
+              "DISTRICT": null,
+              "MODEL": null,
+              "BARREL_SIZE": null,
+              "MAIN_SIZE": null,
+              "BARR_LENGTH": null,
+              "MAIN_TYPE": null,
+              "VALVE_LOC": null,
+              "STEAMER_SIZE": null,
+              "EDIT_DATE": null,
+              "EDITOR_NAME": null,
+              "LOCATION": null,
+              "LIFECYCE": null,
+              "CONDITION": null,
+              "CONDITIONDATE": null,
+              "WARRANTYDATE": null,
+              "CRITICALASSET": null,
+              "INSTALLVALUE": null,
+              "DEPRECIATEDVALUE": null,
+              "USEFULLIFE": null,
+              "LEGACYID": null,
+              "ADDR": null,
+              "X_STREET": null,
+              "EASTING": null,
+              "RESIDUAL": null,
+              "STATIC": null,
+              "WorkOrder": null,
+              "GPSDATE": null,
+              "GPS": null
+            }
+          },
+          "drawingTool": "esriFeatureEditToolPoint"
+        }
+      ]
+    },
+    {
+      "id": "Green",
+      "name": "Green",
+      "domains": {
+        "MANUFACTURER": {
+          "type": "inherited"
+        },
+        "OPERABLE": {
+          "type": "inherited"
+        },
+        "ENABLED": {
+          "type": "inherited"
+        },
+        "ACTIVEFLAG": {
+          "type": "inherited"
+        },
+        "OWNEDBY": {
+          "type": "inherited"
+        },
+        "MAINTBY": {
+          "type": "inherited"
+        },
+        "SHUTOFF_VA": {
+          "type": "inherited"
+        },
+        "HYDRANT_CO": {
+          "type": "inherited"
+        },
+        "MARKER": {
+          "type": "inherited"
+        },
+        "LIFECYCE": {
+          "type": "inherited"
+        },
+        "CONDITION": {
+          "type": "inherited"
+        },
+        "GPS": {
+          "type": "inherited"
+        },
+        "GPS_SOURCE": {
+          "type": "inherited"
+        }
+      },
+      "templates": [
+        {
+          "name": "Green",
+          "description": "",
+          "prototype": {
+            "attributes": {
+              "NORTHING": null,
+              "GPS_SOURCE": null,
+              "FACILITYID": null,
+              "INSTALLDATE": null,
+              "ROTATION": null,
+              "MANUFACTURER": null,
+              "OPERABLE": 1,
+              "LASTSERVICE": null,
+              "ENABLED": 1,
+              "ACTIVEFLAG": 1,
+              "OWNEDBY": 1,
+              "MAINTBY": 1,
+              "LASTUPDATE": null,
+              "LASTEDITOR": null,
+              "FLOW": null,
+              "ID": null,
+              "SHUTOFF_VA": null,
+              "LARGEST_SI": null,
+              "FLOW_RATE": null,
+              "YEAR_HYDRA": null,
+              "HYDRANT_CO": "Green",
+              "SHUTOFF_DI": null,
+              "OWNERSHIP": null,
+              "MARKER": null,
+              "COMMENT_": null,
+              "LATITUDE": null,
+              "LONGITUDE": null,
+              "STATION": null,
+              "DISTRICT": null,
+              "MODEL": null,
+              "BARREL_SIZE": null,
+              "MAIN_SIZE": null,
+              "BARR_LENGTH": null,
+              "MAIN_TYPE": null,
+              "VALVE_LOC": null,
+              "STEAMER_SIZE": null,
+              "EDIT_DATE": null,
+              "EDITOR_NAME": null,
+              "LOCATION": null,
+              "LIFECYCE": null,
+              "CONDITION": null,
+              "CONDITIONDATE": null,
+              "WARRANTYDATE": null,
+              "CRITICALASSET": null,
+              "INSTALLVALUE": null,
+              "DEPRECIATEDVALUE": null,
+              "USEFULLIFE": null,
+              "LEGACYID": null,
+              "ADDR": null,
+              "X_STREET": null,
+              "EASTING": null,
+              "RESIDUAL": null,
+              "STATIC": null,
+              "WorkOrder": null,
+              "GPSDATE": null,
+              "GPS": null
+            }
+          },
+          "drawingTool": "esriFeatureEditToolPoint"
+        }
+      ]
+    },
+    {
+      "id": "Orange",
+      "name": "Orange",
+      "domains": {
+        "MANUFACTURER": {
+          "type": "inherited"
+        },
+        "OPERABLE": {
+          "type": "inherited"
+        },
+        "ENABLED": {
+          "type": "inherited"
+        },
+        "ACTIVEFLAG": {
+          "type": "inherited"
+        },
+        "OWNEDBY": {
+          "type": "inherited"
+        },
+        "MAINTBY": {
+          "type": "inherited"
+        },
+        "SHUTOFF_VA": {
+          "type": "inherited"
+        },
+        "HYDRANT_CO": {
+          "type": "inherited"
+        },
+        "MARKER": {
+          "type": "inherited"
+        },
+        "LIFECYCE": {
+          "type": "inherited"
+        },
+        "CONDITION": {
+          "type": "inherited"
+        },
+        "GPS": {
+          "type": "inherited"
+        },
+        "GPS_SOURCE": {
+          "type": "inherited"
+        }
+      },
+      "templates": [
+        {
+          "name": "Orange",
+          "description": "",
+          "prototype": {
+            "attributes": {
+              "NORTHING": null,
+              "GPS_SOURCE": null,
+              "FACILITYID": null,
+              "INSTALLDATE": null,
+              "ROTATION": null,
+              "MANUFACTURER": null,
+              "OPERABLE": 1,
+              "LASTSERVICE": null,
+              "ENABLED": 1,
+              "ACTIVEFLAG": 1,
+              "OWNEDBY": 1,
+              "MAINTBY": 1,
+              "LASTUPDATE": null,
+              "LASTEDITOR": null,
+              "FLOW": null,
+              "ID": null,
+              "SHUTOFF_VA": null,
+              "LARGEST_SI": null,
+              "FLOW_RATE": null,
+              "YEAR_HYDRA": null,
+              "HYDRANT_CO": "Orange",
+              "SHUTOFF_DI": null,
+              "OWNERSHIP": null,
+              "MARKER": null,
+              "COMMENT_": null,
+              "LATITUDE": null,
+              "LONGITUDE": null,
+              "STATION": null,
+              "DISTRICT": null,
+              "MODEL": null,
+              "BARREL_SIZE": null,
+              "MAIN_SIZE": null,
+              "BARR_LENGTH": null,
+              "MAIN_TYPE": null,
+              "VALVE_LOC": null,
+              "STEAMER_SIZE": null,
+              "EDIT_DATE": null,
+              "EDITOR_NAME": null,
+              "LOCATION": null,
+              "LIFECYCE": null,
+              "CONDITION": null,
+              "CONDITIONDATE": null,
+              "WARRANTYDATE": null,
+              "CRITICALASSET": null,
+              "INSTALLVALUE": null,
+              "DEPRECIATEDVALUE": null,
+              "USEFULLIFE": null,
+              "LEGACYID": null,
+              "ADDR": null,
+              "X_STREET": null,
+              "EASTING": null,
+              "RESIDUAL": null,
+              "STATIC": null,
+              "WorkOrder": null,
+              "GPSDATE": null,
+              "GPS": null
+            }
+          },
+          "drawingTool": "esriFeatureEditToolPoint"
+        }
+      ]
+    },
+    {
+      "id": "Purple",
+      "name": "Purple",
+      "domains": {
+        "MANUFACTURER": {
+          "type": "inherited"
+        },
+        "OPERABLE": {
+          "type": "inherited"
+        },
+        "ENABLED": {
+          "type": "inherited"
+        },
+        "ACTIVEFLAG": {
+          "type": "inherited"
+        },
+        "OWNEDBY": {
+          "type": "inherited"
+        },
+        "MAINTBY": {
+          "type": "inherited"
+        },
+        "SHUTOFF_VA": {
+          "type": "inherited"
+        },
+        "HYDRANT_CO": {
+          "type": "inherited"
+        },
+        "MARKER": {
+          "type": "inherited"
+        },
+        "LIFECYCE": {
+          "type": "inherited"
+        },
+        "CONDITION": {
+          "type": "inherited"
+        },
+        "GPS": {
+          "type": "inherited"
+        },
+        "GPS_SOURCE": {
+          "type": "inherited"
+        }
+      },
+      "templates": [
+        {
+          "name": "Purple",
+          "description": "",
+          "prototype": {
+            "attributes": {
+              "NORTHING": null,
+              "GPS_SOURCE": null,
+              "FACILITYID": null,
+              "INSTALLDATE": null,
+              "ROTATION": null,
+              "MANUFACTURER": null,
+              "OPERABLE": 1,
+              "LASTSERVICE": null,
+              "ENABLED": 1,
+              "ACTIVEFLAG": 1,
+              "OWNEDBY": 1,
+              "MAINTBY": 1,
+              "LASTUPDATE": null,
+              "LASTEDITOR": null,
+              "FLOW": null,
+              "ID": null,
+              "SHUTOFF_VA": null,
+              "LARGEST_SI": null,
+              "FLOW_RATE": null,
+              "YEAR_HYDRA": null,
+              "HYDRANT_CO": "Purple",
+              "SHUTOFF_DI": null,
+              "OWNERSHIP": null,
+              "MARKER": null,
+              "COMMENT_": null,
+              "LATITUDE": null,
+              "LONGITUDE": null,
+              "STATION": null,
+              "DISTRICT": null,
+              "MODEL": null,
+              "BARREL_SIZE": null,
+              "MAIN_SIZE": null,
+              "BARR_LENGTH": null,
+              "MAIN_TYPE": null,
+              "VALVE_LOC": null,
+              "STEAMER_SIZE": null,
+              "EDIT_DATE": null,
+              "EDITOR_NAME": null,
+              "LOCATION": null,
+              "LIFECYCE": null,
+              "CONDITION": null,
+              "CONDITIONDATE": null,
+              "WARRANTYDATE": null,
+              "CRITICALASSET": null,
+              "INSTALLVALUE": null,
+              "DEPRECIATEDVALUE": null,
+              "USEFULLIFE": null,
+              "LEGACYID": null,
+              "ADDR": null,
+              "X_STREET": null,
+              "EASTING": null,
+              "RESIDUAL": null,
+              "STATIC": null,
+              "WorkOrder": null,
+              "GPSDATE": null,
+              "GPS": null
+            }
+          },
+          "drawingTool": "esriFeatureEditToolPoint"
+        }
+      ]
+    },
+    {
+      "id": "Red",
+      "name": "Red",
+      "domains": {
+        "MANUFACTURER": {
+          "type": "inherited"
+        },
+        "OPERABLE": {
+          "type": "inherited"
+        },
+        "ENABLED": {
+          "type": "inherited"
+        },
+        "ACTIVEFLAG": {
+          "type": "inherited"
+        },
+        "OWNEDBY": {
+          "type": "inherited"
+        },
+        "MAINTBY": {
+          "type": "inherited"
+        },
+        "SHUTOFF_VA": {
+          "type": "inherited"
+        },
+        "HYDRANT_CO": {
+          "type": "inherited"
+        },
+        "MARKER": {
+          "type": "inherited"
+        },
+        "LIFECYCE": {
+          "type": "inherited"
+        },
+        "CONDITION": {
+          "type": "inherited"
+        },
+        "GPS": {
+          "type": "inherited"
+        },
+        "GPS_SOURCE": {
+          "type": "inherited"
+        }
+      },
+      "templates": [
+        {
+          "name": "Red",
+          "description": "",
+          "prototype": {
+            "attributes": {
+              "NORTHING": null,
+              "GPS_SOURCE": null,
+              "FACILITYID": null,
+              "INSTALLDATE": null,
+              "ROTATION": null,
+              "MANUFACTURER": null,
+              "OPERABLE": 1,
+              "LASTSERVICE": null,
+              "ENABLED": 1,
+              "ACTIVEFLAG": 1,
+              "OWNEDBY": 1,
+              "MAINTBY": 1,
+              "LASTUPDATE": null,
+              "LASTEDITOR": null,
+              "FLOW": null,
+              "ID": null,
+              "SHUTOFF_VA": null,
+              "LARGEST_SI": null,
+              "FLOW_RATE": null,
+              "YEAR_HYDRA": null,
+              "HYDRANT_CO": "Red",
+              "SHUTOFF_DI": null,
+              "OWNERSHIP": null,
+              "MARKER": null,
+              "COMMENT_": null,
+              "LATITUDE": null,
+              "LONGITUDE": null,
+              "STATION": null,
+              "DISTRICT": null,
+              "MODEL": null,
+              "BARREL_SIZE": null,
+              "MAIN_SIZE": null,
+              "BARR_LENGTH": null,
+              "MAIN_TYPE": null,
+              "VALVE_LOC": null,
+              "STEAMER_SIZE": null,
+              "EDIT_DATE": null,
+              "EDITOR_NAME": null,
+              "LOCATION": null,
+              "LIFECYCE": null,
+              "CONDITION": null,
+              "CONDITIONDATE": null,
+              "WARRANTYDATE": null,
+              "CRITICALASSET": null,
+              "INSTALLVALUE": null,
+              "DEPRECIATEDVALUE": null,
+              "USEFULLIFE": null,
+              "LEGACYID": null,
+              "ADDR": null,
+              "X_STREET": null,
+              "EASTING": null,
+              "RESIDUAL": null,
+              "STATIC": null,
+              "WorkOrder": null,
+              "GPSDATE": null,
+              "GPS": null
+            }
+          },
+          "drawingTool": "esriFeatureEditToolPoint"
+        }
+      ]
+    },
+    {
+      "id": "White",
+      "name": "White",
+      "domains": {
+        "MANUFACTURER": {
+          "type": "inherited"
+        },
+        "OPERABLE": {
+          "type": "inherited"
+        },
+        "ENABLED": {
+          "type": "inherited"
+        },
+        "ACTIVEFLAG": {
+          "type": "inherited"
+        },
+        "OWNEDBY": {
+          "type": "inherited"
+        },
+        "MAINTBY": {
+          "type": "inherited"
+        },
+        "SHUTOFF_VA": {
+          "type": "inherited"
+        },
+        "HYDRANT_CO": {
+          "type": "inherited"
+        },
+        "MARKER": {
+          "type": "inherited"
+        },
+        "LIFECYCE": {
+          "type": "inherited"
+        },
+        "CONDITION": {
+          "type": "inherited"
+        },
+        "GPS": {
+          "type": "inherited"
+        },
+        "GPS_SOURCE": {
+          "type": "inherited"
+        }
+      },
+      "templates": [
+        {
+          "name": "White",
+          "description": "",
+          "prototype": {
+            "attributes": {
+              "NORTHING": null,
+              "GPS_SOURCE": null,
+              "FACILITYID": null,
+              "INSTALLDATE": null,
+              "ROTATION": null,
+              "MANUFACTURER": null,
+              "OPERABLE": 1,
+              "LASTSERVICE": null,
+              "ENABLED": 1,
+              "ACTIVEFLAG": 1,
+              "OWNEDBY": 1,
+              "MAINTBY": 1,
+              "LASTUPDATE": null,
+              "LASTEDITOR": null,
+              "FLOW": null,
+              "ID": null,
+              "SHUTOFF_VA": null,
+              "LARGEST_SI": null,
+              "FLOW_RATE": null,
+              "YEAR_HYDRA": null,
+              "HYDRANT_CO": "White",
+              "SHUTOFF_DI": null,
+              "OWNERSHIP": null,
+              "MARKER": null,
+              "COMMENT_": null,
+              "LATITUDE": null,
+              "LONGITUDE": null,
+              "STATION": null,
+              "DISTRICT": null,
+              "MODEL": null,
+              "BARREL_SIZE": null,
+              "MAIN_SIZE": null,
+              "BARR_LENGTH": null,
+              "MAIN_TYPE": null,
+              "VALVE_LOC": null,
+              "STEAMER_SIZE": null,
+              "EDIT_DATE": null,
+              "EDITOR_NAME": null,
+              "LOCATION": null,
+              "LIFECYCE": null,
+              "CONDITION": null,
+              "CONDITIONDATE": null,
+              "WARRANTYDATE": null,
+              "CRITICALASSET": null,
+              "INSTALLVALUE": null,
+              "DEPRECIATEDVALUE": null,
+              "USEFULLIFE": null,
+              "LEGACYID": null,
+              "ADDR": null,
+              "X_STREET": null,
+              "EASTING": null,
+              "RESIDUAL": null,
+              "STATIC": null,
+              "WorkOrder": null,
+              "GPSDATE": null,
+              "GPS": null
+            }
+          },
+          "drawingTool": "esriFeatureEditToolPoint"
+        }
+      ]
+    }
+  ],
+  "templates": [],
+  "maxRecordCount": 2000,
+  "supportedQueryFormats": "JSON, geoJSON, PBF",
+  "supportedExportFormats": "sqlite,filegdb,shapefile,csv,geojson",
+  "capabilities": "Query,Create,Update,Delete,Uploads,Editing,Sync",
+  "useStandardizedQueries": true,
+  "bigIntegerRestrictedTo53Bits": true,
+  "supportedSpatialRelationships": [
+    "esriSpatialRelIntersects",
+    "esriSpatialRelContains",
+    "esriSpatialRelCrosses",
+    "esriSpatialRelEnvelopeIntersects",
+    "esriSpatialRelIndexIntersects",
+    "esriSpatialRelOverlaps",
+    "esriSpatialRelTouches",
+    "esriSpatialRelWithin",
+    "esriSpatialRelRelation"
+  ],
+  "standardMaxRecordCount": 32000,
+  "tileMaxRecordCount": 8000,
+  "standardMaxRecordCountNoGeometry": 32000,
+  "maxRecordCountFactor": 1,
+  "serviceItemId": "f5aad08d6ec84ea7be3175fbb799977a"
+}
