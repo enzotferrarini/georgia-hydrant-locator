@@ -9,7 +9,7 @@
     "scope": "Primarily Barrow County-owned utility hydrants; municipal systems are not comprehensively represented.",
     "evidence_url": "https://www.barrowga.org/526/GIS",
     "date_field": "last_edited_date",
-    "verified_at": "2026-10-16T17:47:15.921968+00:00",
+    "verified_at": "2026-10-20T19:57:38.522744+00:00",
     "verified_record_count": 1639,
     "notes": "Full audit: 1,639 records, 1,637 marked BARROW ownership and 2 null ownership; all Active. No missing geometry. Two coincident coordinate pairs retained because separate records are not proof of duplicate assets.",
     "ownership_chain": [
@@ -31,8 +31,8 @@
     "scope": "Cherokee County published hydrants; completeness not certified",
     "evidence_url": "https://gis.cherokeecountyga.gov/arcgis/rest/services/Hydrants2026/FeatureServer",
     "date_field": "last_edited_date",
-    "verified_at": "2026-10-15T18:37:07.113350+00:00",
-    "verified_record_count": 12073,
+    "verified_at": "2026-10-20T19:57:39.322657+00:00",
+    "verified_record_count": 12086,
     "notes": "Anonymous metadata, full ID list and WGS84 feature query verified. Map presence does not establish operation or public access."
   },
   {
@@ -45,7 +45,7 @@
     "scope": "Glynn County published hydrants; completeness not certified",
     "evidence_url": "https://gis-web.glynncounty-ga.gov/gis-server/rest/services/Fire_Hydrants/FeatureServer",
     "date_field": "LASTUPDATE",
-    "verified_at": "2026-10-15T18:37:07.113350+00:00",
+    "verified_at": "2026-10-20T19:57:39.079148+00:00",
     "verified_record_count": 5126,
     "notes": "Anonymous metadata, full ID list and WGS84 feature query verified. Map presence does not establish operation or public access."
   },
@@ -59,7 +59,7 @@
     "scope": "Roswell only; partial Fulton County coverage",
     "evidence_url": "https://gisweb.ci.roswell.ga.us/arcgis/rest/services/PublicViewer/FirePublic/MapServer/1",
     "date_field": null,
-    "verified_at": "2026-10-15T18:37:07.113350+00:00",
+    "verified_at": "2026-10-20T19:57:38.447012+00:00",
     "verified_record_count": 5175,
     "notes": "Anonymous metadata, full ID list and WGS84 feature query verified. Map presence does not establish operation or public access."
   },
@@ -73,7 +73,7 @@
     "scope": "Gwinnett County published utility mapping; partial inventory, completeness not certified",
     "evidence_url": "https://dwrarcgis.gwinnettcounty.com/server/rest/services/Hosted/Water_Hydrant/FeatureServer",
     "date_field": "datemodified",
-    "verified_at": "2026-10-15T18:50:19.910968+00:00",
+    "verified_at": "2026-10-20T19:57:39.178697+00:00",
     "verified_record_count": 46889,
     "notes": "Published by Gwinnett County Department of Water Resources. Anonymous metadata, ID and WGS84 spatial queries verified."
   },
@@ -87,7 +87,7 @@
     "scope": "Athens\u2013Clarke County published utility mapping; partial inventory, completeness not certified",
     "evidence_url": "https://accgov.com/7342/Water-Maps-GIS",
     "date_field": "last_edited_date",
-    "verified_at": "2026-10-15T18:51:05.088534+00:00",
+    "verified_at": "2026-10-20T19:57:42.181729+00:00",
     "verified_record_count": 6251,
     "notes": "Athens\u2013Clarke Public Utilities government-hosted layer. Utility locations are approximate and should be field verified."
   },
@@ -101,7 +101,7 @@
     "scope": "Monroe County regional-commission mapping; partial inventory, completeness not certified",
     "evidence_url": "https://www.arcgis.com/home/item.html?id=9a13c7491b124c988573206dc61af984",
     "date_field": null,
-    "verified_at": "2026-10-15T18:52:09.226486+00:00",
+    "verified_at": "2026-10-20T19:57:39.908367+00:00",
     "verified_record_count": 1307,
     "notes": "Published by MGRC GIS analyst Nicole Williams (nwilliams_MGRC). Sample geometry corresponds to coordinates rounded to 0.001 degrees (roughly 300\u2013360 ft per degree-thousandth); position accuracy is unverified. No field observation date is exposed. Dataset extent includes points outside Monroe County. The old mgrcmaps.org EMS service was unresponsive; this is the separately published hosted layer.",
     "ownership_chain": [
@@ -122,7 +122,7 @@
     "scope": "Jackson County \u2014 Hydrants; partial published inventory, completeness not certified",
     "evidence_url": "https://www.jacksoncountygov.com/directory.aspx?did=18",
     "date_field": null,
-    "verified_at": "2026-10-16T14:56:37.651759+00:00",
+    "verified_at": "2026-10-20T19:57:40.509467+00:00",
     "verified_record_count": 8062,
     "notes": "Published by joellogan; county directory identifies Joel Logan as GIS Manager. GPS_Date is not treated as a record edit date.",
     "ownership_chain": [
@@ -141,7 +141,7 @@
     "scope": "Oconee County \u2014 Public Water Hydrants; partial published inventory, completeness not certified",
     "evidence_url": "https://www.oconeecountyga.gov/1176/Geographic-Information-System",
     "date_field": "last_edited_date",
-    "verified_at": "2026-10-16T14:56:55.562739+00:00",
+    "verified_at": "2026-10-20T19:57:40.643585+00:00",
     "verified_record_count": 2882,
     "notes": "Public county water layer, published by MattDBealGIS; official GIS page identifies Matt Beal. Publisher says locations may be generalized for public distribution.",
     "result_caution": "Oconee County says these public locations may be generalized. Distances are approximate; verify the hydrant position with the county.",
@@ -161,8 +161,105 @@
     "scope": "DeKalb County \u2014 Hydrants All; partial published inventory, completeness not certified",
     "evidence_url": "https://dcgis.dekalbcountyga.gov/mapping/rest/services/Hydrants/MapServer",
     "date_field": "last_edited_date",
-    "verified_at": "2026-10-16T14:56:13.823088+00:00",
-    "verified_record_count": 27230,
+    "verified_at": "2026-10-20T19:57:42.046824+00:00",
+    "verified_record_count": 27261,
     "notes": "Government-hosted Hydrants - All layer. Records may include inactive equipment; operational status is not certified."
+  },
+  {
+    "id": "fulton_water",
+    "name": "Fulton County \u2014 North Fulton Water Hydrants",
+    "url": "https://gismaps.fultoncountyga.gov/arcgispub/rest/services/WaterResources/WR_Public_Map_Viewer/MapServer/9",
+    "county_fips": [
+      "13121"
+    ],
+    "scope": "North Fulton county water-system inventory; complements Roswell and Atlanta. Not complete Fulton County coverage.",
+    "evidence_url": "https://www.fultoncountyga.gov/publicworks",
+    "date_field": "LastEdit",
+    "verified_record_count": 14211,
+    "status_filter": {
+      "field": "GISStatus",
+      "exclude": [
+        "A",
+        "DN",
+        "M"
+      ]
+    },
+    "notes": "Official public map layer. Same ID list and extent as WaterResourcesSewer/15; integrate only one copy. Excludes explicit Abandoned, Does Not Exist and Model codes. Unknown statuses may remain; enabled network membership is not interpreted as hydrant operation.",
+    "result_caution": "Fulton county water-system mapping primarily serves North Fulton. Municipal completeness and hydrant operation are not certified.",
+    "verified_at": "2026-10-20T19:57:41.365841+00:00",
+    "adaptive_radius": true,
+    "status_filter_label": "Explicit Abandoned, Does Not Exist and Model records excluded; other published statuses retained.",
+    "eligible_record_count": 14208
+  },
+  {
+    "id": "atlanta",
+    "name": "City of Atlanta \u2014 In-service Water Hydrants",
+    "url": "https://egis.atlantaga.gov/ags/rest/services/OpMap/assets/MapServer/0",
+    "county_fips": [
+      "13121"
+    ],
+    "scope": "Atlanta water-system published hydrants labeled IN SERVICE, including portions outside city limits; partial inventory.",
+    "evidence_url": "https://egis.atlantaga.gov/ags/rest/services/OpMap/assets/MapServer",
+    "date_field": null,
+    "verified_record_count": 24687,
+    "status_filter": {
+      "field": "SERVSTAT",
+      "include": [
+        "INSRV"
+      ]
+    },
+    "notes": "Government-domain current OpMap/assets layer replaces an unavailable historical WaterDistributionTst service. Excludes OUT OF SERVICE, null and other status codes. Source inventory has no exposed field-survey currency.",
+    "result_caution": "Atlanta source status is a published label, not a current field inspection. Some municipal/private systems may be missing.",
+    "verified_at": "2026-10-20T19:57:41.824797+00:00",
+    "adaptive_radius": true,
+    "status_filter_label": "Published In Service records only. Out-of-service and unknown status records excluded.",
+    "eligible_record_count": 23682
+  },
+  {
+    "id": "forsyth",
+    "name": "Forsyth County \u2014 Existing Water Hydrants",
+    "url": "https://geo.forsythco.com/gis2/rest/services/Public/Water_Hydrants_Public/FeatureServer/0",
+    "county_fips": [
+      "13117"
+    ],
+    "scope": "Official public water hydrants labeled Existing (Active); partial inventory, not certified countywide completeness.",
+    "evidence_url": "https://geo.forsythco.com/gis2/rest/services/Public/Water_Hydrants_Public/FeatureServer",
+    "date_field": null,
+    "verified_record_count": 13711,
+    "status_filter": {
+      "field": "LIFECYCLESTATUS",
+      "include": [
+        "Active"
+      ]
+    },
+    "notes": "Government GIS/Water Department publisher. Explicitly excludes removed, inactive, abandoned, construction and other lifecycle codes. Public schema does not expose a per-record update timestamp.",
+    "result_caution": "Only published Existing/Active records are searched; that label does not certify operational status or access.",
+    "verified_at": "2026-10-20T19:57:43.217306+00:00",
+    "adaptive_radius": true,
+    "status_filter_label": "Published Existing/Active hydrants only. Removed, inactive, abandoned and construction records excluded.",
+    "eligible_record_count": 13302
+  },
+  {
+    "id": "smyrna",
+    "name": "City of Smyrna \u2014 Fire Hydrants",
+    "url": "https://services2.arcgis.com/hE9igMm8RoNeQRbh/arcgis/rest/services/Water_Database/FeatureServer/1",
+    "county_fips": [
+      "13067"
+    ],
+    "scope": "Smyrna municipal water mapping only; partial Cobb coverage. Countywide and other municipal inventories are not integrated.",
+    "evidence_url": "https://www.smyrnaga.gov/Home/Components/News/News/2007/149?arch=1&npage=3",
+    "date_field": "last_edited_date",
+    "verified_record_count": 2723,
+    "notes": "Official city article links staff-created SMYGIS app 33d02249b29c48c7b2db0242b7aa3465. Its ArcGIS owner Smyrna_GA also owns Water Database item 76a9393d49fd4eae920eb1c759e5366f. Public hydrant point layer is in Smyrna, Georgia. No status definition is assumed from free-text fields.",
+    "ownership_chain": [
+      "https://www.smyrnaga.gov/Home/Components/News/News/2007/149?arch=1&npage=3",
+      "https://www.arcgis.com/sharing/rest/content/items/33d02249b29c48c7b2db0242b7aa3465?f=json",
+      "https://www.arcgis.com/sharing/rest/content/items/76a9393d49fd4eae920eb1c759e5366f?f=json",
+      "https://services2.arcgis.com/hE9igMm8RoNeQRbh/arcgis/rest/services/Water_Database/FeatureServer/1"
+    ],
+    "result_caution": "Cobb coverage includes Smyrna only. Other Cobb municipal and county utility inventories may contain closer hydrants. Source records are not proof of operation.",
+    "verified_at": "2026-10-20T19:57:42.963090+00:00",
+    "adaptive_radius": true,
+    "eligible_record_count": 2723
   }
 ]

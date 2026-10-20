@@ -120,6 +120,33 @@ def timestamp(value):
     except (TypeError, ValueError, OverflowError, OSError):
         return None
 
+
+def source_where(source):
+    """Build a fixed registry status filter; user input never enters this SQL."""
+    rule = source.get('status_filter')
+    if not rule:
+        return '1=1'
+    field = rule['field']
+    if not re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', field):
+        raise LookupError('Invalid configured status field.')
+    mode = 'include' if 'include' in rule else 'exclude'
+    values = rule.get(mode)
+    if not isinstance(values,list) or not values or any(not isinstance(v,str) for v in values):
+        raise LookupError('Invalid configured status values.')
+    literals = ','.join("'"+v.replace("'","''")+"'" for v in values)
+    return (f'{field} IN ({literals})' if mode=='include' else
+            f'({field} NOT IN ({literals}) OR {field} IS NULL)')
+
+
+def accepted_status(source,attributes):
+    rule = source.get('status_filter')
+    if not rule:
+        return True
+    if rule['field'] not in attributes:
+        return False
+    value = attributes[rule['field']]
+    return value in rule['include'] if 'include' in rule else value not in rule['exclude']
+
 def query_source(source, lon, lat, radius_ft, fetch=get_json):
     url = source['url']
     meta = fetch(url)
@@ -128,7 +155,11 @@ def query_source(source, lon, lat, radius_ft, fetch=get_json):
     oid = meta.get('objectIdField') or next((f['name'] for f in meta.get('fields', []) if f['type'] == 'esriFieldTypeOID'), None)
     if not oid:
         raise LookupError('Layer has no object ID field; completeness cannot be verified.')
-    spatial = {'where': '1=1', 'geometry': json.dumps(search_envelope(lon, lat, radius_ft)),
+    rule = source.get('status_filter')
+    available = {f['name'] for f in meta.get('fields', [])}
+    if rule and rule['field'] not in available:
+        raise LookupError('Source status schema changed; this inventory cannot be verified.')
+    spatial = {'where': source_where(source), 'geometry': json.dumps(search_envelope(lon, lat, radius_ft)),
                                   'geometryType': 'esriGeometryEnvelope', 'inSR': 4326,
                                   'spatialRel': 'esriSpatialRelIntersects'}
     found = fetch(url + '/query', {**spatial, 'returnIdsOnly': 'true'})
@@ -142,11 +173,22 @@ def query_source(source, lon, lat, radius_ft, fetch=get_json):
         raise LookupError('Incomplete ID response; nearest result cannot be determined.')
     ids = sorted(set(ids))
     if len(ids) > MAX_RECORDS:
+        depth = source.get('_adaptive_depth', 0)
+        if source.get('adaptive_radius') and depth < 5:
+            inner = query_source({**source, '_adaptive_depth':depth+1}, lon, lat, radius_ft/2, fetch)
+            # An inner-circle candidate is necessarily nearer than every omitted
+            # outer-circle point. An empty inner circle cannot prove the outer empty.
+            if inner['candidates']:
+                inner['requested_radius_ft'] = radius_ft
+                inner.setdefault('searched_radius_ft', radius_ft/2)
+                inner['nearby_inventory_limited'] = True
+                return inner
         raise LookupError('Too many records in this area. Reduce the search radius.')
     candidates, invalid = [], 0
     deadline = time.monotonic() + 60
-    available = {f['name'] for f in meta.get('fields', [])}
     fields = [oid] + [f for f in (source.get('date_field'), source.get('identity_field')) if f and f in available]
+    if rule:
+        fields.append(rule['field'])
     batch_size = max(1, min(200, int(meta.get('maxRecordCount') or 200)))
     for start in range(0, len(ids), batch_size):
         if time.monotonic() > deadline:
@@ -162,6 +204,8 @@ def query_source(source, lon, lat, radius_ft, fetch=get_json):
         if response.get('exceededTransferLimit') or returned != set(batch) or len(features) != len(batch):
             raise LookupError('Incomplete feature batch or changing dataset. Retry; no nearest claim is available.')
         for feature in features:
+            if not accepted_status(source,feature.get('attributes',{})):
+                raise LookupError('Service returned an excluded or unknown status; nearest result cannot be verified.')
             geometry = feature.get('geometry') or {}
             x, y = geometry.get('x'), geometry.get('y')
             if not valid_point(x, y):
@@ -177,7 +221,9 @@ def query_source(source, lon, lat, radius_ft, fetch=get_json):
         raise LookupError(f'{invalid} records have missing or invalid geometry; nearest result cannot be verified.')
     return {'source_id': source['id'], 'name': source['name'], 'url': url, 'retrieved_at': now(),
             'source_data_updated_at': timestamp((meta.get('editingInfo') or {}).get('dataLastEditDate') or (meta.get('editingInfo') or {}).get('lastEditDate')),
-            'ids_checked': len(ids), 'candidates': sorted(candidates, key=lambda x: x['distance_ft']), 'error': None}
+            'ids_checked': len(ids), 'candidates': sorted(candidates, key=lambda x: x['distance_ft']),
+            'inventory_filter': source_where(source),
+            'inventory_filter_label': source.get('status_filter_label'), 'error': None}
 
 def _locate(match, radius_ft=26400, sources=None, query=query_source):
     search_envelope(match['lon'], match['lat'], radius_ft)

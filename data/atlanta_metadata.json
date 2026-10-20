@@ -1,0 +1,88 @@
+{
+  "id": 0,
+  "name": "Water Hydrant",
+  "description": "",
+  "geometryType": "esriGeometryPoint",
+  "copyrightText": "",
+  "extent": {
+    "xmin": 2122378.185176842,
+    "ymin": 1278060.4783581942,
+    "xmax": 2263327.1795250103,
+    "ymax": 1458763.4535656944,
+    "spatialReference": {
+      "wkid": 102667,
+      "latestWkid": 2240
+    }
+  },
+  "capabilities": "Map,Query,Data",
+  "maxRecordCount": 1000,
+  "supportedQueryFormats": "JSON, geoJSON",
+  "snapshot_kind": "Selected public layer metadata; only calculation/filter/update fields retained.",
+  "fields": [
+    {
+      "name": "OBJECTID",
+      "type": "esriFieldTypeOID",
+      "alias": "OBJECTID",
+      "domain": null
+    },
+    {
+      "name": "SERVSTAT",
+      "type": "esriFieldTypeString",
+      "alias": "Service Status",
+      "length": 20,
+      "domain": {
+        "type": "codedValue",
+        "name": "wServStat",
+        "description": "Water Service Status",
+        "codedValues": [
+          {
+            "name": "IN SERVICE",
+            "code": "INSRV"
+          },
+          {
+            "name": "OUT OF SERVICE",
+            "code": "OUTSRV"
+          },
+          {
+            "name": "10 - YEAR",
+            "code": "2"
+          },
+          {
+            "name": "5 - YEAR",
+            "code": "3"
+          },
+          {
+            "name": "3 - YEAR",
+            "code": "4"
+          },
+          {
+            "name": "IMMEDIATE",
+            "code": "5"
+          },
+          {
+            "name": "ALL STATUS",
+            "code": "ALL"
+          },
+          {
+            "name": "MAINTENANCE",
+            "code": "MAINT"
+          },
+          {
+            "name": "WATER OFF",
+            "code": "WTR OFF"
+          },
+          {
+            "name": "WATER ON",
+            "code": "WTR ON"
+          },
+          {
+            "name": "NO REHAB REQUIRED",
+            "code": "1"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      }
+    }
+  ]
+}

@@ -4,69 +4,97 @@
     "records": 1639,
     "spatial_records": 112,
     "nearest_feet": 0.0,
-    "checked_at": "2026-10-15T18:43:07.666207+00:00"
+    "checked_at": "2026-10-20T19:57:38.522744+00:00"
   },
   {
     "source": "cherokee",
-    "records": 12073,
+    "records": 12086,
     "spatial_records": 390,
     "nearest_feet": 0.0,
-    "checked_at": "2026-10-15T18:43:07.620018+00:00"
+    "checked_at": "2026-10-20T19:57:39.322657+00:00"
   },
   {
     "source": "glynn",
     "records": 5126,
-    "spatial_records": 121,
+    "spatial_records": 90,
     "nearest_feet": 0.0,
-    "checked_at": "2026-10-15T18:43:14.538638+00:00"
+    "checked_at": "2026-10-20T19:57:39.079148+00:00"
   },
   {
     "source": "roswell",
     "records": 5175,
     "spatial_records": 492,
     "nearest_feet": 0.0,
-    "checked_at": "2026-10-15T18:43:07.476036+00:00"
+    "checked_at": "2026-10-20T19:57:38.447012+00:00"
   },
   {
     "source": "gwinnett",
     "records": 46889,
     "spatial_records": 126,
     "nearest_feet": 0.0,
-    "checked_at": "2026-10-15T18:50:19.910968+00:00"
+    "checked_at": "2026-10-20T19:57:39.178697+00:00"
   },
   {
     "source": "clarke",
     "records": 6251,
     "spatial_records": 210,
     "nearest_feet": 0.0,
-    "checked_at": "2026-10-15T18:51:05.088534+00:00"
+    "checked_at": "2026-10-20T19:57:42.181729+00:00"
   },
   {
     "source": "monroe",
     "records": 1307,
     "spatial_records": 33,
     "nearest_feet": 0.0,
-    "checked_at": "2026-10-15T18:52:09.226486+00:00"
+    "checked_at": "2026-10-20T19:57:39.908367+00:00"
   },
   {
     "source": "jackson",
     "records": 8062,
-    "spatial_records": 262,
+    "spatial_records": 296,
     "nearest_feet": 0.0,
-    "checked_at": "2026-10-16T14:56:37.651759+00:00"
+    "checked_at": "2026-10-20T19:57:40.509467+00:00"
   },
   {
     "source": "oconee",
     "records": 2882,
     "spatial_records": 130,
     "nearest_feet": 0.0,
-    "checked_at": "2026-10-16T14:56:55.562739+00:00"
+    "checked_at": "2026-10-20T19:57:40.643585+00:00"
   },
   {
     "source": "dekalb",
-    "records": 27230,
-    "spatial_records": 430,
+    "records": 27261,
+    "spatial_records": 484,
     "nearest_feet": 0.0,
-    "checked_at": "2026-10-16T14:56:13.823088+00:00"
+    "checked_at": "2026-10-20T19:57:42.046824+00:00"
+  },
+  {
+    "source": "fulton_water",
+    "records": 14208,
+    "spatial_records": 615,
+    "nearest_feet": 0.0,
+    "checked_at": "2026-10-20T19:57:41.365841+00:00"
+  },
+  {
+    "source": "atlanta",
+    "records": 23682,
+    "spatial_records": 342,
+    "nearest_feet": 0.0,
+    "checked_at": "2026-10-20T19:57:41.824797+00:00"
+  },
+  {
+    "source": "forsyth",
+    "records": 13302,
+    "spatial_records": 337,
+    "nearest_feet": 0.0,
+    "checked_at": "2026-10-20T19:57:43.217306+00:00"
+  },
+  {
+    "source": "smyrna",
+    "records": 2723,
+    "spatial_records": 255,
+    "nearest_feet": 0.0,
+    "checked_at": "2026-10-20T19:57:42.963090+00:00"
   }
 ]

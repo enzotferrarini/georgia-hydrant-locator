@@ -1,0 +1,54 @@
+{
+  "id": 1,
+  "name": "FIRE HYDRANT",
+  "serviceItemId": "76a9393d49fd4eae920eb1c759e5366f",
+  "description": "",
+  "copyrightText": "",
+  "editingInfo": {
+    "lastEditDate": 1788206864738,
+    "schemaLastEditDate": 1788206864738,
+    "dataLastEditDate": 1788206864738
+  },
+  "geometryType": "esriGeometryPoint",
+  "extent": {
+    "xmin": 2177295.6210540794,
+    "ymin": 1381454.4269535649,
+    "xmax": 2204381.986500662,
+    "ymax": 1420375.969915323,
+    "spatialReference": {
+      "wkid": 102667,
+      "latestWkid": 2240
+    }
+  },
+  "hasM": false,
+  "hasZ": false,
+  "objectIdField": "OBJECTID",
+  "supportedQueryFormats": "JSON, geoJSON, PBF",
+  "maxRecordCount": 1000,
+  "capabilities": "Query,ChangeTracking",
+  "snapshot_kind": "Selected public layer metadata; only calculation/filter/update fields retained.",
+  "fields": [
+    {
+      "name": "OBJECTID",
+      "type": "esriFieldTypeOID",
+      "alias": "OBJECTID",
+      "sqlType": "sqlTypeOther",
+      "nullable": false,
+      "editable": false,
+      "domain": null,
+      "defaultValue": null
+    },
+    {
+      "name": "last_edited_date",
+      "type": "esriFieldTypeDate",
+      "alias": "last_edited_date",
+      "sqlType": "sqlTypeOther",
+      "length": 8,
+      "nullable": true,
+      "editable": false,
+      "domain": null,
+      "defaultValue": null,
+      "precision": 1
+    }
+  ]
+}
