@@ -1,6 +1,6 @@
 # Georgia Fire Hydrant Locator
 
-A local Python + Streamlit app that locates a Georgia street address and calculates the nearest mapped hydrant in **ten verified public government ArcGIS layers**, within a selectable 1, 2, 5 or 10 mile radius. Includes an interactive map, source health, UTC timestamps, downloadable results, and an explicit register of all 159 counties.
+A public Python + Streamlit app that locates a Georgia street address and calculates the nearest mapped hydrant in **ten verified public government ArcGIS layers**, within a selectable 1, 2, 5 or 10 mile radius. Includes an interactive map, source health, UTC timestamps, downloadable results, and an explicit register of all 159 counties.
 
 ## Start
 
@@ -20,18 +20,18 @@ python3 -m venv .venv
 .venv/bin/python -m streamlit run app.py
 ```
 
-Open the local URL printed in the terminal (normally http://localhost:8501). No API key is needed. Internet access is required. Stop the app with Ctrl+C. The included `start.ps1` automates Windows setup and launch. Do not change your PowerShell execution policy just to run it; the commands above also work directly.
+Open the local URL printed in the terminal (normally http://localhost:8501). No API key is needed. Internet access is required. Stop the app with Ctrl+C. The cloud deployment runs independently of your computer or terminal.
 
 1. Enter a complete Georgia street address and choose **Locate address**.
 2. Verify the normalized address, county and blue map pin. If multiple matches appear, choose the correct one. A single match is not a guarantee that the intended building was identified.
 3. Choose a radius and **Search near this address**.
-4. Review the orange hydrant, distance, GIS record, source timestamps and any source failures. Download the JSON to keep the calculation's provenance.
+4. Review the red hydrant, distance, GIS record, source timestamps and any source failures. Download the JSON to keep the calculation's provenance.
 
 ## What the number means
 
-**Map straight-line distance, not underwriting-approved hydrant distance.** Distance is measured from the Census geocoded street position to the published hydrant geometry. Census interpolates along an address range; it does not establish the building, driveway or entrance position. Geocoder error may materially change short distances. The result is not a hose-route, road, parcel-edge, three-dimensional or fire-response distance. Verify the origin, route, equipment condition and required measurement with the appropriate authority and insurer.
+**Map straight-line distance, not underwriting-approved hydrant distance.** Distance is measured from the selected property point to the published hydrant geometry. Exact-match Barrow County address points are offered before the Census fallback, with their STRUCTURE, PARCEL, SITE or other published placement label. None is certified as a surveyed rooftop. You can enable **Adjust property point on the map**, click the building or starting point, apply the correction, then search again. Corrections are checked to be in Georgia and within two miles of the original match; the old distance is cleared. Census interpolates along an address range; it does not establish the building, driveway or entrance position. Geocoder error may materially change short distances. The result is not a hose-route, road, parcel-edge, three-dimensional or fire-response distance. Verify the origin, route, equipment condition and required measurement with the appropriate authority and insurer.
 
-**No result never establishes that no hydrant exists.** Public layers can omit municipal, private, recently installed or otherwise unpublished hydrants. The app reports mapped records regardless of operational status and exposes the source's raw attributes; a mapped point is not proof of active equipment or access. No statewide completeness is claimed.
+**No result never establishes that no hydrant exists.** Public layers can omit municipal, private, recently installed or otherwise unpublished hydrants. The app reports mapped records regardless of operational status and returns only selected provenance fields; a mapped point is not proof of active equipment or access. No statewide completeness is claimed.
 
 ## Verified coverage
 
@@ -39,7 +39,7 @@ Verified on 2026-10-15–16 using anonymous metadata, full record-ID queries and
 
 | Source | County register | Published records observed | Scope |
 |---|---|---:|---|
-| [Barrow County utility hydrants](https://services5.arcgis.com/OVFGXfRTCVcPwl55/ArcGIS/rest/services/BCGIS_Utility_Layers/FeatureServer/17) | Barrow | 1,639 | Public utility mapping; completeness not certified |
+| [Barrow County utility hydrants](https://services5.arcgis.com/OVFGXfRTCVcPwl55/ArcGIS/rest/services/BCGIS_Utility_Layers/FeatureServer/17) | Barrow | 1,639 | Primarily county-owned utility hydrants; municipal completeness not certified |
 | [Cherokee County Hydrants2026](https://gis.cherokeecountyga.gov/arcgis/rest/services/Hydrants2026/FeatureServer/0) | Cherokee | 12,073 | Published county layer; completeness not certified |
 | [Glynn County Fire Hydrants](https://gis-web.glynncounty-ga.gov/gis-server/rest/services/Fire_Hydrants/FeatureServer/0) | Glynn | 5,126 | Published county layer; completeness not certified |
 | [City of Roswell Fire Hydrants](https://gisweb.ci.roswell.ga.us/arcgis/rest/services/PublicViewer/FirePublic/MapServer/1) | Fulton | 5,175 | Roswell only; other Fulton jurisdictions not integrated |
@@ -68,18 +68,19 @@ Monroe uses a [public hosted layer](https://www.arcgis.com/home/item.html?id=9a1
 - Every integrated source is searched, regardless of the origin county, so a county boundary cannot exclude a closer point in an integrated neighboring source.
 - A conservative geographic envelope contains the entire radius for Georgia. The app asks for all IDs inside it, retrieves bounded batches of at most 200, and compares every returned ID set. It rejects transfer-limit flags, missing records, invalid geometry and unexpected coordinate systems. ArcGIS's null empty-ID response is accepted only after a separate count query confirms zero.
 - ArcGIS projects geometry to WGS84 (`outSR=4326`). `pyproj.Geod(ellps='WGS84')` computes the shortest ellipsoidal surface distance. Metres are converted using exactly **0.3048 metres per international foot**. The app does not treat Web Mercator coordinates as ground distances or use potentially stale latitude/longitude attribute columns.
-- Points outside the exact radius are discarded and all remaining candidates are ranked. Up to 20 are retained in the JSON, with up to 10 shown on the map. Complete means all **configured queries** succeeded, not that the underlying inventory is complete.
+- Points outside the exact radius are discarded and all remaining candidates are ranked. Up to 250 nearest candidates are retained in JSON and shown using marker clusters; the total matching count is displayed. The nearest calculation uses all retrieved candidates before this display cap. Duplicate records merge only when an identical point shares a source record ID or explicitly configured authoritative asset identity; nearby or coincident points alone are not merged. Complete means all **configured queries** succeeded, not that the underlying inventory is complete.
 - A failed or incomplete source makes the overall result `partial`. A successful source may still provide a candidate, explicitly labeled as unverified across the complete configured source set. Empty and unavailable results are kept distinct.
 - Read requests have timeouts and bounded retries for temporary HTTP/network failures. GIS records can change during queries; missing IDs fail closed. New records inserted after the initial ID query are not detectable without a transactional snapshot. No persistent hydrant cache is used.
 
 ## Tests and live checks
 
 ```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements-dev.txt
 .\.venv\Scripts\python.exe -m pytest -q
 .\.venv\Scripts\python.exe verify_live.py
 ```
 
-The offline suite covers distance correctness, coordinate validation, full-radius envelopes, all 159 unique county codes, Georgia geocoding checks, batch completeness, missing geometry, wrong projections, empty responses, partial source failures and Streamlit interaction flows. The live check explicitly contacts the government services and updates `data/example_result.json`; it exits unsuccessfully if the configured search is partial or returns no candidate.
+The offline suite covers distance correctness, coordinate validation, full-radius envelopes, all 159 unique county codes, Georgia geocoding checks, batch completeness, missing geometry, wrong projections, empty responses, partial source failures and Streamlit interaction flows. The live check contacts government services using a published hydrant as its origin, verifies zero-distance recovery, prints only source counts/status and timestamps, and writes no files or addresses. Use `--source barrow` to check one layer. Example fixtures are synthetic and must never be submitted to live geocoders.
 
 ## Add a source
 
@@ -91,7 +92,7 @@ The offline suite covers distance correctness, coordinate validation, full-radiu
 
 ## Privacy and operation
 
-Addresses are transmitted to the US Census Geocoder; search envelopes go to the configured GIS providers. OpenStreetMap receives tile requests when the map is displayed. The app holds results in the current Streamlit session and writes no user address log. Downloaded JSON includes the address and coordinates. Government providers may keep their own request logs. Streamlit usage telemetry is disabled in the included configuration. Keep the server local unless you deliberately configure access controls for a deployment.
+Addresses are transmitted to the US Census Geocoder; Barrow house numbers are also queried against the county address layer; search envelopes go to the configured GIS providers. OpenStreetMap receives tile requests when the map is displayed. The app holds results in the current Streamlit session and writes no user address log. Downloaded JSON includes the address and coordinates. Government providers may keep their own request logs. Streamlit usage telemetry is disabled in the included configuration. The deployed site is public. Do not enter confidential customer data unless your organization permits sharing it with these providers. The app does not add request-address logs or persistent address caches; provider/hosting logs are outside its control.
 
 Sources remain owned by their publishers. Public query access does not establish a redistribution license; check publisher terms before bulk redistribution or commercial deployment.
 
@@ -99,15 +100,14 @@ Technical references: [Census Geocoding API](https://geocoding.geo.census.gov/ge
 
 ## Shared website deployment
 
-This folder is the portable cloud version. It excludes the Windows background launcher and local runtime logs.
+The public app is https://georgia-hydrant-locator.streamlit.app/ and the public repository is https://github.com/enzotferrarini/georgia-hydrant-locator.
 
-1. Upload the contents of this folder to a private GitHub repository.
-2. Sign into Streamlit Community Cloud and authorize access to that repository.
-3. Create an app using branch `main` and entrypoint `app.py`.
-4. Select Python 3.14 in Advanced settings. No secrets or API keys are required.
-5. Keep sharing restricted to specific people, and add your coworker as a viewer.
-6. Test a real address on the deployed website before sharing the final URL.
+Streamlit Community Cloud should deploy branch `main`, entrypoint `app.py`, Python 3.14, using `requirements.txt`. No secrets or paid API keys are required. Commit reviewed changes to main to trigger redeployment. Share the website URL with coworkers; their computers do not need Python and your terminal does not need to remain open. Free hosting may sleep after inactivity and government services can be unavailable.
 
-Hosting is not yet verified until the deployed app has passed its live check. Free Community Cloud apps can sleep after inactivity; viewers can wake them from the website. Government GIS availability remains outside this app's control.
+Install `requirements-dev.txt` for pytest. Tests use synthetic fixtures and mocked services; `verify_live.py` is the separate opt-in network check. Production packages are pinned. Deployment verification must check the actual running UI after each release; local tests alone do not establish a successful cloud deployment.
 
-Versions are pinned to the locally tested environment. All 25 offline tests passed locally before cloud deployment; Linux cloud installation still needs verification.
+## October 2026 review
+
+See [Barrow investigation and before/after evidence](BARROW_RESEARCH.md) and [privacy and security review](SECURITY_REVIEW.md). Barrow remains **1,639 published records before and after**: no additional authoritative public hydrant layer was verified. The new county address-point integration improves the choice of starting point, not hydrant inventory completeness. Map display increased from 10 to 250 records without changing the ranking-before-display rule.
+
+Requests are limited to 10-mile radii, 10,000 records per source, 200-record batches, 8 MB responses, 15-second network timeouts and bounded retries. A 60-second batch deadline is checked between requests (not a hard wall-clock deadline). There are two simultaneous searches and eight simultaneous HTTP requests per process, plus a ten-second session cooldown. These are resource safeguards, not a distributed abuse-prevention system.

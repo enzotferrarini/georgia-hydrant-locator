@@ -8,3 +8,9 @@ font = "sans serif"
 gatherUsageStats = false
 [server]
 fileWatcherType = "none"
+enableCORS = true
+enableXsrfProtection = true
+maxUploadSize = 1
+
+[client]
+showErrorDetails = "none"
