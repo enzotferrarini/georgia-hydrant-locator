@@ -24,9 +24,9 @@ def test_envelope_contains_entire_ten_mile_circle(lat):
 def test_county_registry():
     counties = load_coverage()
     assert len(counties) == len({c['fips'] for c in counties}) == 159
-    assert sum(c['status']=='supported_partial' for c in counties) == 10
+    assert sum(c['status']=='supported_partial' for c in counties) == 12
     assert all(c['fips'].startswith('13') for c in counties)
-    assert len(load_sources()) == 10
+    assert len(load_sources()) == 14
     by_fips = {c['fips']:c for c in counties}
     for fips, sid in [('13135','gwinnett'),('13059','clarke'),('13207','monroe'),('13157','jackson'),('13219','oconee'),('13089','dekalb')]:
         assert by_fips[fips]['source_ids'] == sid

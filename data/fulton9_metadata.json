@@ -1,0 +1,118 @@
+{
+  "id": 9,
+  "name": "Water Hydrant",
+  "description": "<DIV STYLE=\"text-align:Left;\"><DIV><DIV><P><SPAN>The WaterHydrant point feature class stores fire hydrants including dimension, condition, location, and subdivision of hydrants owned by Fulton County Water Resources, Water Resources GIS maintains the data related to the Fulton County water distribution system. The data are maintained from various sources such as engineering drawings, staff knowledge, current projects, and field discovery. The Point locations are GPS inventoried using RTK and RTD accuracies.</SPAN></P><P><SPAN /></P></DIV></DIV></DIV>",
+  "geometryType": "esriGeometryPoint",
+  "copyrightText": "Fulton County Department of Water Resources",
+  "extent": {
+    "xmin": 2218087.075232163,
+    "ymin": 1446209.1360966563,
+    "xmax": 2315387.9698688276,
+    "ymax": 1522774.047927156,
+    "spatialReference": {
+      "wkid": 102667,
+      "latestWkid": 2240,
+      "xyTolerance": 1.4571388540218782e-08,
+      "zTolerance": 2,
+      "mTolerance": 0.001,
+      "falseX": -16150100,
+      "falseY": -43703500,
+      "xyUnits": 137255279.03396165,
+      "falseZ": 0,
+      "zUnits": 1,
+      "falseM": -100000,
+      "mUnits": 10000
+    }
+  },
+  "capabilities": "Query,Map,Data",
+  "maxRecordCount": 2000,
+  "supportedQueryFormats": "JSON, geoJSON, PBF",
+  "serviceItemId": "260ecc155fa7499f9debb44513e1fd32",
+  "snapshot_kind": "Selected public layer metadata; only calculation/filter/update fields retained.",
+  "fields": [
+    {
+      "name": "OBJECTID",
+      "type": "esriFieldTypeOID",
+      "alias": "OBJECTID",
+      "domain": null
+    },
+    {
+      "name": "GISStatus",
+      "type": "esriFieldTypeString",
+      "alias": "GISStatus",
+      "length": 15,
+      "domain": {
+        "type": "codedValue",
+        "name": "WS2_Status",
+        "description": "Status ",
+        "codedValues": [
+          {
+            "name": "DNE",
+            "code": "DN"
+          },
+          {
+            "name": "New",
+            "code": "NEW"
+          },
+          {
+            "name": "Model",
+            "code": "M"
+          },
+          {
+            "name": "Update",
+            "code": "U"
+          },
+          {
+            "name": "Incomplete Attributes",
+            "code": "IA"
+          },
+          {
+            "name": "Complete",
+            "code": "C"
+          },
+          {
+            "name": "Abandoned",
+            "code": "A"
+          },
+          {
+            "name": "NeedsTV",
+            "code": "NTV"
+          },
+          {
+            "name": "NeedsRaise",
+            "code": "NR"
+          },
+          {
+            "name": "NeedsSurvey",
+            "code": "NSV"
+          },
+          {
+            "name": "Current",
+            "code": "CUR"
+          },
+          {
+            "name": "Contractor",
+            "code": "CON"
+          },
+          {
+            "name": "Remote System",
+            "code": "RS"
+          },
+          {
+            "name": "Active",
+            "code": "ACT"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      }
+    },
+    {
+      "name": "LastEdit",
+      "type": "esriFieldTypeDate",
+      "alias": "LastEdit",
+      "length": 8,
+      "domain": null
+    }
+  ]
+}

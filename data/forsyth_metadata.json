@@ -1,0 +1,106 @@
+{
+  "id": 0,
+  "name": "Water Hydrant",
+  "geometryType": "esriGeometryPoint",
+  "description": "<DIV STYLE=\"text-align:Left;\"><DIV><DIV><P><SPAN>Water Hydrants are upright pipes with a spout, nozzle, or other outlet, usually in the street, for drawing water from a main or service pipe, especially for fighting fires.</SPAN></P></DIV></DIV></DIV>",
+  "copyrightText": "GIS Department, Forsyth County Georgia\nWater Department, Forsyth County Georgia",
+  "extent": {
+    "xmin": 2237216.884250002,
+    "ymin": 1473583.7650278257,
+    "xmax": 2364233.720284672,
+    "ymax": 1580050.4027495012,
+    "spatialReference": {
+      "wkid": 102667,
+      "latestWkid": 2240,
+      "xyTolerance": 0.002,
+      "zTolerance": 2e-05,
+      "mTolerance": 2e-05,
+      "falseX": -16150100,
+      "falseY": -43703500,
+      "xyUnits": 3048.0060960121928,
+      "falseZ": -100000,
+      "zUnits": 10000,
+      "falseM": -100000,
+      "mUnits": 10000
+    }
+  },
+  "hasM": false,
+  "hasZ": false,
+  "objectIdField": "OBJECTID",
+  "maxRecordCount": 2000,
+  "supportedQueryFormats": "JSON, geoJSON, PBF",
+  "capabilities": "Query",
+  "serviceItemId": "2c321b32aea64ecd9fd2c34b3def4c39",
+  "snapshot_kind": "Selected public layer metadata; only calculation/filter/update fields retained.",
+  "fields": [
+    {
+      "name": "OBJECTID",
+      "type": "esriFieldTypeOID",
+      "alias": "OBJECTID",
+      "domain": null,
+      "editable": false,
+      "nullable": false,
+      "defaultValue": null,
+      "modelName": "System-maintained ObjectID"
+    },
+    {
+      "name": "LIFECYCLESTATUS",
+      "type": "esriFieldTypeString",
+      "alias": "Life Cycle Status",
+      "domain": {
+        "type": "codedValue",
+        "name": "LifeCycleStatus",
+        "description": "Status of the feature",
+        "codedValues": [
+          {
+            "name": "Proposed",
+            "code": "Proposed"
+          },
+          {
+            "name": "Design/Bid",
+            "code": "Design"
+          },
+          {
+            "name": "Under Construction",
+            "code": "Construction"
+          },
+          {
+            "name": "Existing",
+            "code": "Active"
+          },
+          {
+            "name": "Abandoned or Removed",
+            "code": "Inactive"
+          },
+          {
+            "name": "Unknown",
+            "code": "Unknown"
+          },
+          {
+            "name": "Other",
+            "code": "Other"
+          },
+          {
+            "name": "Abandoned In Place",
+            "code": "Abandoned In Place"
+          },
+          {
+            "name": "Removed",
+            "code": "Removed"
+          },
+          {
+            "name": "Pending",
+            "code": "Pending"
+          }
+        ],
+        "mergePolicy": "esriMPTDefaultValue",
+        "splitPolicy": "esriSPTDefaultValue"
+      },
+      "editable": true,
+      "nullable": true,
+      "length": 20,
+      "defaultValue": null,
+      "modelName": "LIFECYCLESTATUS"
+    }
+  ]
+}

@@ -29,7 +29,7 @@ def test_initial_ui_blank():
     assert not app.exception
     assert app.text_input(key='address_input').value==''
     assert app.text_input(key='address_input').placeholder=='Enter a Georgia street address'
-    assert app.metric[0].value=='10 / 159'
+    assert app.metric[0].value=='12 / 159'
 
 
 def test_blank_submit_rejected_without_network(monkeypatch):
@@ -112,3 +112,16 @@ def test_new_failed_search_clears_old_result(setup,monkeypatch):
     click(app,'Locate address')
     assert 'result' not in app.session_state
     assert any('No Georgia match' in x.value for x in app.error)
+
+
+@pytest.mark.parametrize('fips,county,phrase',[
+    ('13121','Fulton County','North Fulton'),
+    ('13067','Cobb County','Smyrna'),
+    ('13117','Forsyth County','Existing/Active')])
+def test_new_county_scope_messages(setup,monkeypatch,fips,county,phrase):
+    app,result=setup
+    match={**result['address'],'county_fips':fips,'county':county}
+    monkeypatch.setattr(locator,'geocode',lambda _:[match])
+    app.session_state['last_request']=-100
+    click(app,'Locate address')
+    assert any(phrase in w.value for w in list(app.warning)+list(app.caption))

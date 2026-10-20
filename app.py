@@ -30,7 +30,7 @@ with st.sidebar:
     st.header('Coverage at a glance')
     supported = [c for c in coverage if c['status'] == 'supported_partial']
     st.metric('Counties with an integrated source', f'{len(supported)} / {len(coverage)}')
-    st.write(' · '.join('Fulton (Roswell only)' if c['fips']=='13121' else c['county'].removesuffix(' County') for c in supported))
+    st.write(' · '.join('Cobb (Smyrna only)' if c['fips']=='13067' else c['county'].removesuffix(' County') for c in supported))
     st.caption('Partial published inventories. A successful search cannot establish the nearest actual hydrant.')
     st.caption('Addresses go to Census and, for Barrow matches, county GIS. Search coordinates go to GIS providers. OpenStreetMap receives map-tile requests. Inputs stay in this session; downloads contain your address and coordinates.')
     if st.button('Clear this session'):
@@ -82,7 +82,11 @@ with search_tab:
         if match['county_fips']=='13013':
             st.warning('Barrow coverage primarily represents county-owned utility hydrants, not every municipal system. Winder, Auburn, Statham, Bethlehem and Braselton may have additional unmapped hydrants. Confirm with the serving water utility.')
         elif match['county_fips']=='13121':
-            st.warning('Fulton coverage is limited to Roswell’s published layer.')
+            st.warning('Fulton combines Roswell, North Fulton county-water and Atlanta water-system inventories. Separate municipal/private systems may be missing; countywide completeness is not certified.')
+        elif match['county_fips']=='13067':
+            st.warning('Cobb coverage currently includes Smyrna’s public inventory only. County-owned and other municipal systems are not comprehensively represented.')
+        elif match['county_fips']=='13117':
+            st.caption('Forsyth searches published Existing/Active records; construction, removed and inactive records are excluded. Operation and countywide completeness are not certified.')
         radius = st.select_slider('Search radius (miles)', options=[1,2,5,10],value=5)
         result = st.session_state.get('result')
         if result and (result['address'] != match or result['radius_ft'] != radius*5280):
@@ -117,6 +121,10 @@ with search_tab:
                     st.markdown(f"**[{report['name']}]({report['url']})**")
                     if report['error']: st.warning(report['error'])
                     else:
+                        if report.get('nearby_inventory_limited'):
+                            st.caption(f"Dense inventory: nearest verified using a {report['searched_radius_ft']/5280:g}-mile inner search. Outer records within the selected maximum radius were not loaded for map display.")
+                        if report.get('inventory_filter') and report['inventory_filter'] != '1=1':
+                            st.caption(report.get('inventory_filter_label') or 'Published status exclusions applied; see source notes.')
                         if report.get('is_snapshot'):
                             st.warning(f"Using saved {report['name']} backup downloaded {report['snapshot_downloaded_at']} ({report['snapshot_age_days']} days old). Live query failed: {report['live_error']} Locations may have changed since download.")
                         st.caption(f"Records checked: {report['ids_checked']} · Publisher edit: {report['source_data_updated_at'] or 'Not supplied'} · Retrieved UTC: {report['retrieved_at']}")
@@ -135,7 +143,7 @@ with search_tab:
                 folium.Marker([point['lat'],point['lon']],tooltip=label,popup=label,icon=folium.Icon(color='green',icon='tint')).add_to(cluster)
             folium.PolyLine([[match['lat'],match['lon']],[n['lat'],n['lon']]],color='#c52f22',dash_array='6,6',tooltip='Straight-line connection; not a route').add_to(m)
             if not edit: m.fit_bounds([[match['lat'],match['lon']],[n['lat'],n['lon']]],padding=(60,60),max_zoom=18)
-            st.caption(f"Showing {len(result['candidates'])} of {result.get('candidate_count',len(result['candidates']))} matching records (nearest 250 maximum). Click clusters to inspect nearby hydrants.")
+            st.caption(f"Showing {len(result['candidates'])} of {result.get('candidate_count',len(result['candidates']))} retrieved matching records (nearest 250 maximum). Dense-source searches may load a smaller inner area; see source status. Click clusters to inspect nearby hydrants.")
         map_data = st_folium(m,height=480,use_container_width=True,returned_objects=['last_clicked'] if edit else [],key=f"map_{identity}_{match['lon']}_{match['lat']}_{edit}_{bool(result)}")
         st.caption('Blue house: property point · Red flame: nearest mapped hydrant · Green markers/clusters: nearby records · Dashed red line: straight-line distance. Map © OpenStreetMap contributors; hydrants from listed government sources.')
         if edit:

@@ -1,0 +1,30 @@
+[
+  {
+    "source": "fulton_water",
+    "records": 14208,
+    "spatial_records": 615,
+    "nearest_feet": 0.0,
+    "checked_at": "2026-10-20T19:57:41.365841+00:00"
+  },
+  {
+    "source": "atlanta",
+    "records": 23682,
+    "spatial_records": 342,
+    "nearest_feet": 0.0,
+    "checked_at": "2026-10-20T19:57:41.824797+00:00"
+  },
+  {
+    "source": "forsyth",
+    "records": 13302,
+    "spatial_records": 337,
+    "nearest_feet": 0.0,
+    "checked_at": "2026-10-20T19:57:43.217306+00:00"
+  },
+  {
+    "source": "smyrna",
+    "records": 2723,
+    "spatial_records": 255,
+    "nearest_feet": 0.0,
+    "checked_at": "2026-10-20T19:57:42.963090+00:00"
+  }
+]

@@ -258,10 +258,10 @@
   {
     "county": "Cobb County",
     "fips": "13067",
-    "status": "not_researched",
-    "source_ids": "",
-    "scope": "No integrated source; not evidence of missing hydrants.",
-    "last_verified": null
+    "status": "supported_partial",
+    "source_ids": "smyrna",
+    "scope": "Smyrna municipal water mapping only; partial Cobb coverage. Countywide and other municipal inventories are not integrated.",
+    "last_verified": "2026-10-20T19:53:46.798258+00:00"
   },
   {
     "county": "Coffee County",
@@ -458,10 +458,10 @@
   {
     "county": "Forsyth County",
     "fips": "13117",
-    "status": "not_researched",
-    "source_ids": "",
-    "scope": "No integrated source; not evidence of missing hydrants.",
-    "last_verified": null
+    "status": "supported_partial",
+    "source_ids": "forsyth",
+    "scope": "Official public water hydrants labeled Existing (Active); partial inventory, not certified countywide completeness.",
+    "last_verified": "2026-10-20T19:53:46.798269+00:00"
   },
   {
     "county": "Franklin County",
@@ -475,9 +475,9 @@
     "county": "Fulton County",
     "fips": "13121",
     "status": "supported_partial",
-    "source_ids": "roswell",
-    "scope": "Roswell only; partial Fulton County coverage",
-    "last_verified": "2026-10-15T18:37:07.113350+00:00"
+    "source_ids": "roswell, fulton_water, atlanta",
+    "scope": "Roswell only; partial Fulton County coverage | North Fulton county water-system inventory; complements Roswell and Atlanta. Not complete Fulton County coverage. | Atlanta water-system published hydrants labeled IN SERVICE, including portions outside city limits; partial inventory.",
+    "last_verified": "2026-10-20T19:53:46.798274+00:00"
   },
   {
     "county": "Gilmer County",

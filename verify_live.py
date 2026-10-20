@@ -1,13 +1,13 @@
 """Live GIS health check using a published hydrant as origin; no address storage."""
 import argparse
 import json
-from locator import get_json, load_sources, query_source, LookupError
+from locator import get_json, load_sources, query_source, source_where, LookupError
 
 
 def check(source):
     meta=get_json(source['url'])
     oid=meta.get('objectIdField') or next(f['name'] for f in meta['fields'] if f['type']=='esriFieldTypeOID')
-    response=get_json(source['url']+'/query',{'where':'1=1','returnIdsOnly':'true'})
+    response=get_json(source['url']+'/query',{'where':source_where(source),'returnIdsOnly':'true'})
     ids=response.get('objectIds')
     if not isinstance(ids,list) or not ids or response.get('exceededTransferLimit'):
         raise LookupError('No complete nonempty source ID list.')
