@@ -58,6 +58,20 @@ def test_no_result_is_not_absence(setup,monkeypatch):
     assert any('not proof' in x.value for x in app.warning)
 
 
+def test_backup_date_and_partial_warning_visible(setup,monkeypatch):
+    app,result=setup
+    result.update(complete=False,status='partial')
+    report={'name':'Synthetic source','url':'https://example.invalid','error':None,
+            'ids_checked':2,'source_data_updated_at':None,'retrieved_at':'2026-10-20'}
+    result['sources']=[report]
+    report.update(is_snapshot=True,snapshot_downloaded_at='2026-10-20T00:00:00+00:00',
+                  snapshot_age_days=1,live_error='Service unavailable')
+    monkeypatch.setattr(locator,'locate',lambda *args:result)
+    click(app,'Search near this address')
+    assert any('dated backup' in w.value for w in app.warning)
+    assert any('2026-10-20' in w.value and 'backup downloaded' in w.value for w in app.warning)
+
+
 def test_manual_map_correction_clears_result(setup,monkeypatch):
     import streamlit_folium
     app,result=setup

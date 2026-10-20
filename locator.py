@@ -186,6 +186,14 @@ def _locate(match, radius_ft=26400, sources=None, query=query_source):
         try:
             return query(source, match['lon'], match['lat'], radius_ft)
         except LookupError as exc:
+            if source['id'] == 'gwinnett':
+                try:
+                    from snapshots import query_snapshot
+                    backup = query_snapshot(source, match['lon'], match['lat'], radius_ft)
+                    backup['live_error'] = str(exc)
+                    return backup
+                except LookupError as fallback_error:
+                    exc = LookupError(str(exc) + ' Backup: ' + str(fallback_error))
             return {'source_id': source['id'], 'name': source['name'], 'url': source['url'],
                     'retrieved_at': now(), 'error': str(exc), 'candidates': []}
     # Search every integrated layer: county boundaries must not truncate the search.
@@ -194,8 +202,9 @@ def _locate(match, radius_ft=26400, sources=None, query=query_source):
     candidates = sorted([c for r in reports for c in r['candidates']], key=lambda x: x['distance_ft'])
     candidates = deduplicate(candidates)
     errors = [r for r in reports if r['error']]
-    return {'address': match, 'radius_ft': radius_ft, 'queried_at': now(), 'complete': not errors,
-            'status': 'partial' if errors else ('found' if candidates else 'no_mapped_result'),
+    backups = [r for r in reports if r.get('is_snapshot')]
+    return {'address': match, 'radius_ft': radius_ft, 'queried_at': now(), 'complete': not errors and not backups,
+            'status': 'partial' if errors or backups else ('found' if candidates else 'no_mapped_result'),
             'nearest': candidates[0] if candidates else None, 'candidates': candidates[:250], 'candidate_count': len(candidates), 'display_limit': 250,
             'sources': [{k: v for k, v in r.items() if k != 'candidates'} for r in reports],
             'disclaimer': DISCLAIMER, 'scope': 'Nearest among integrated public government layers within the selected radius; not all actual hydrants.'}
