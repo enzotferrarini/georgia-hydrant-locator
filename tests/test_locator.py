@@ -36,7 +36,7 @@ def test_example_geocode():
     data = json.loads((DATA/'geocode.json').read_text())
     match = parse_matches(data)[0]
     assert match['county_fips'] == '13013'
-    assert '558' in match['address']
+    assert 'SYNTHETIC' in match['address']
     assert -84 < match['lon'] < -83
     data['result']['addressMatches'][0]['addressComponents']['state'] = 'AL'
     with pytest.raises(LookupError): parse_matches(data)

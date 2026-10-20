@@ -52,8 +52,8 @@
     "fips": "13013",
     "status": "supported_partial",
     "source_ids": "barrow",
-    "scope": "Barrow County utility mapping; completeness not certified",
-    "last_verified": "2026-10-15T18:37:07.113350+00:00"
+    "scope": "Primarily Barrow County-owned utility hydrants; municipal systems are not comprehensively represented.",
+    "last_verified": "2026-10-16T17:47:15.921968+00:00"
   },
   {
     "county": "Bartow County",

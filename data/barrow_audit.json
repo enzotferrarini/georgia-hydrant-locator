@@ -1,0 +1,20 @@
+{
+  "checked_at": "2026-10-16T17:43:30.989807+00:00",
+  "count": 1639,
+  "null_geometry": 0,
+  "duplicate_coordinates": 2,
+  "ownership": {
+    "BARROW": 1637,
+    "null": 2
+  },
+  "status": {
+    "Active": 1639
+  },
+  "maxRecordCount": 2000,
+  "definitionExpression": null,
+  "data_edit": {
+    "lastEditDate": 1790775982811,
+    "schemaLastEditDate": 1790775982811,
+    "dataLastEditDate": 1790775982811
+  }
+}
