@@ -32,7 +32,8 @@ def throttle(action):
 
 
 def reset_search():
-    for key in ('matches','result','origin','origin_key','pending_point','last_map_click'):
+    for key in ('matches','result','origin','origin_key','pending_point','last_map_click',
+                'edit_origin','finish_origin_edit'):
         st.session_state.pop(key, None)
 
 
@@ -80,9 +81,15 @@ with search_tab:
             st.session_state.origin = original.copy()
             st.session_state.pop('result',None)
             st.session_state.pop('pending_point',None)
+            st.session_state.pop('last_map_click',None)
+            st.session_state.edit_origin = False
         match = st.session_state.origin
         st.write(f"**{match['county']}** · Property point: {match['lat']:.7f}, {match['lon']:.7f}")
         st.caption(f"{match['provider']} — {match['precision']}")
+        if match['provider'] == 'US Census Geocoder':
+            st.warning('The address pin is estimated along the street, not placed on the building. Check the blue pin; move it to the building before relying on the distance.')
+        elif match['provider'] == 'User-selected map point':
+            st.success('Distances are measured from your selected starting point.')
         st.markdown(f"[Location source]({match['source_url']})")
         if 'geocoder_offset_ft' in match:
             st.caption(f"County point is {match['geocoder_offset_ft']:,.0f} ft from the Census street position. This is a difference between sources, not a measured error bound.")
@@ -112,7 +119,38 @@ with search_tab:
                 st.session_state.result = result
             except LookupError as exc:
                 st.error(str(exc))
-        if result:
+        if st.session_state.pop('finish_origin_edit',False):
+            st.session_state.edit_origin = False
+        edit = st.checkbox('Move starting point to the building',key='edit_origin')
+        if not edit:
+            st.session_state.pop('pending_point',None)
+            st.session_state.pop('last_map_click',None)
+        pending = st.session_state.get('pending_point')
+        if edit:
+            st.info('Click directly on the building or measurement start point. An orange pin will preview your choice. Then select Use this point and recalculate. Points must be within two miles of the matched address and verified inside Georgia; they are not surveyed positions.')
+            if pending:
+                st.warning('New starting point selected. The previous distance is hidden until you recalculate.')
+            apply_col,cancel_col = st.columns([2,1])
+            apply = apply_col.button('Use this point and recalculate',type='primary',disabled=not pending)
+            cancel = cancel_col.button('Cancel selected point',disabled=not pending)
+            if cancel:
+                st.session_state.pop('pending_point',None)
+                st.rerun()
+            if apply:
+                try:
+                    throttle('correction')
+                    with st.spinner('Checking your point and recalculating nearby hydrants…'):
+                        new_origin = corrected_origin(original,pending['lng'],pending['lat'])
+                        new_result = locate(new_origin,radius*5280)
+                    st.session_state.origin = new_origin
+                    st.session_state.result = new_result
+                    st.session_state.pop('pending_point',None)
+                    st.session_state.pop('last_map_click',None)
+                    st.session_state.finish_origin_edit = True
+                    st.rerun()
+                except LookupError as exc:
+                    st.error(str(exc))
+        if result and not pending:
             if not result['complete']:
                 st.warning('Some live sources could not be fully checked. This candidate may use a dated backup; review source status below.')
             nearest = result['nearest']
@@ -139,42 +177,34 @@ with search_tab:
                             st.warning(f"Using saved {report['name']} backup downloaded {report['snapshot_downloaded_at']} ({report['snapshot_age_days']} days old). Live query failed: {report['live_error']} Locations may have changed since download.")
                         st.caption(f"Records checked: {report['ids_checked']} · Publisher edit: {report['source_data_updated_at'] or 'Not supplied'} · Retrieved UTC: {report['retrieved_at']}")
             st.download_button('Download this result (contains address)',json.dumps(result,indent=2),'hydrant-result.json','application/json')
-        edit = st.checkbox('Adjust property point on the map')
-        if edit:
-            st.info('Click the map at the building or measurement start point, then apply the correction below. Corrections are limited to two miles and checked to be in Georgia. They are not surveyed positions.')
         m = folium.Map(location=[match['lat'],match['lon']],zoom_start=16,tiles='OpenStreetMap')
-        folium.Marker([match['lat'],match['lon']],tooltip='Property starting point',icon=folium.Icon(color='blue',icon='home')).add_to(m)
+        folium.Marker([match['lat'],match['lon']],tooltip='Current measurement starting point',icon=folium.Icon(color='blue',icon='home')).add_to(m)
         if result and result['nearest']:
             n=result['nearest']
-            folium.Marker([n['lat'],n['lon']],tooltip=f"Nearest mapped hydrant: {n['distance_ft']:,.0f} ft",icon=folium.Icon(color='red',icon='fire')).add_to(m)
+            if not edit:
+                folium.Marker([n['lat'],n['lon']],tooltip=f"Nearest mapped hydrant: {n['distance_ft']:,.0f} ft",icon=folium.Icon(color='red',icon='fire')).add_to(m)
             cluster=MarkerCluster(name='Other nearby hydrants',options={'chunkedLoading':True}).add_to(m)
-            for point in result['candidates'][1:]:
-                label=html.escape(f"{point['distance_ft']:,.0f} ft · {point['source_name']} · record {point['object_id']}")
+            for point in result['candidates'] if edit else result['candidates'][1:]:
+                label=html.escape(f"{point['source_name']} · record {point['object_id']}" if edit else f"{point['distance_ft']:,.0f} ft · {point['source_name']} · record {point['object_id']}")
                 folium.Marker([point['lat'],point['lon']],tooltip=label,popup=label,icon=folium.Icon(color='green',icon='tint')).add_to(cluster)
-            folium.PolyLine([[match['lat'],match['lon']],[n['lat'],n['lon']]],color='#c52f22',dash_array='6,6',tooltip='Straight-line connection; not a route').add_to(m)
-            if not edit: m.fit_bounds([[match['lat'],match['lon']],[n['lat'],n['lon']]],padding=(60,60),max_zoom=18)
+            if not edit:
+                folium.PolyLine([[match['lat'],match['lon']],[n['lat'],n['lon']]],color='#c52f22',dash_array='6,6',tooltip='Straight-line connection; not a route').add_to(m)
+                m.fit_bounds([[match['lat'],match['lon']],[n['lat'],n['lon']]],padding=(60,60),max_zoom=18)
             st.caption(f"Showing {len(result['candidates'])} of {result.get('candidate_count',len(result['candidates']))} retrieved matching records (nearest 250 maximum). Dense-source searches may load a smaller inner area; see source status. Click clusters to inspect nearby hydrants.")
-        map_data = st_folium(m,height=480,use_container_width=True,returned_objects=['last_clicked'] if edit else [],key=f"map_{identity}_{match['lon']}_{match['lat']}_{edit}_{bool(result)}")
-        st.caption('Blue house: property point · Red flame: nearest mapped hydrant · Green markers/clusters: nearby records · Dashed red line: straight-line distance. Map © OpenStreetMap contributors; hydrants from listed government sources.')
+        preview = folium.FeatureGroup(name='Selected starting point')
+        if edit and pending:
+            folium.Marker([pending['lat'],pending['lng']],tooltip='Selected starting point — not applied yet',icon=folium.Icon(color='orange',icon='home')).add_to(preview)
+        map_data = st_folium(m,height=480,use_container_width=True,returned_objects=['last_clicked'] if edit else [],feature_group_to_add=preview,key=f"map_{identity}_{match['lon']}_{match['lat']}_{edit}_{bool(result)}")
+        if edit:
+            st.caption('Blue house: current starting point · Orange house: your selected point, not applied yet · Green markers/clusters: mapped hydrants. Select Use this point and recalculate above the map to update the nearest hydrant. Map © OpenStreetMap contributors; hydrants from listed government sources.')
+        else:
+            st.caption('Blue house: property point · Red flame: nearest mapped hydrant · Green markers/clusters: nearby records · Dashed red line: straight-line distance. Map © OpenStreetMap contributors; hydrants from listed government sources.')
         if edit:
             click=(map_data or {}).get('last_clicked')
             if click and click != st.session_state.get('last_map_click'):
                 st.session_state.last_map_click=click
                 st.session_state.pending_point=click
-            pending=st.session_state.get('pending_point',{'lat':match['lat'],'lng':match['lon']})
-            with st.form('correction'):
-                lat=st.number_input('Corrected latitude',value=float(pending['lat']),format='%.7f',key=f"lat_{pending['lat']}")
-                lon=st.number_input('Corrected longitude',value=float(pending['lng']),format='%.7f',key=f"lon_{pending['lng']}")
-                apply=st.form_submit_button('Apply corrected point')
-            if apply:
-                try:
-                    throttle('correction')
-                    st.session_state.origin=corrected_origin(original,lon,lat)
-                    st.session_state.pop('result',None)
-                    st.session_state.pop('pending_point',None)
-                    st.rerun()
-                except LookupError as exc: st.error(str(exc))
-            st.caption('Applying clears the old distance. Search again to calculate from the corrected point.')
+                st.rerun()
 
 with coverage_tab:
     st.subheader('All 159 Georgia counties')
