@@ -115,7 +115,7 @@ Install `requirements-dev.txt` for pytest. Tests use synthetic fixtures and mock
 
 See [Barrow investigation and before/after evidence](BARROW_RESEARCH.md) and [privacy and security review](SECURITY_REVIEW.md). Barrow remains **1,639 published records before and after**: no additional authoritative public hydrant layer was verified. The new county address-point integration improves the choice of starting point, not hydrant inventory completeness. Map display increased from 10 to 250 records without changing the ranking-before-display rule.
 
-Requests are limited to 10-mile radii, 10,000 records per source, 200-record batches, 8 MB responses, 15-second network timeouts and bounded retries. A 60-second batch deadline is checked between requests (not a hard wall-clock deadline). There are two simultaneous searches and eight simultaneous HTTP requests per process, plus a ten-second session cooldown. These are resource safeguards, not a distributed abuse-prevention system.
+Requests are limited to 10-mile radii, 10,000 records per source, 200-record batches, 8 MB responses, 15-second network timeouts and bounded retries. A 60-second batch deadline is checked between requests (not a hard wall-clock deadline). There are two simultaneous searches and eight simultaneous HTTP requests per process, plus separate five-second session cooldowns for repeated address lookups, hydrant searches and map corrections. Moving from address lookup to hydrant search does not require waiting. Blocked repeat clicks preserve the current match and result. These are resource safeguards, not a distributed abuse-prevention system.
 
 ## Gwinnett outage backup
 
