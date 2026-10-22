@@ -164,19 +164,6 @@ with search_tab:
                 st.caption('Mapped equipment is not proof of active, accessible fire protection. Confirm operational status with the utility.')
             else:
                 st.warning(f'No mapped result within {radius} miles. This is not proof that no hydrant exists.')
-            with st.expander('Source timestamps and query status', expanded=not result['complete']):
-                for report in result['sources']:
-                    st.markdown(f"**[{report['name']}]({report['url']})**")
-                    if report['error']: st.warning(report['error'])
-                    else:
-                        if report.get('nearby_inventory_limited'):
-                            st.caption(f"Dense inventory: nearest verified using a {report['searched_radius_ft']/5280:g}-mile inner search. Outer records within the selected maximum radius were not loaded for map display.")
-                        if report.get('inventory_filter') and report['inventory_filter'] != '1=1':
-                            st.caption(report.get('inventory_filter_label') or 'Published status exclusions applied; see source notes.')
-                        if report.get('is_snapshot'):
-                            st.warning(f"Using saved {report['name']} backup downloaded {report['snapshot_downloaded_at']} ({report['snapshot_age_days']} days old). Live query failed: {report['live_error']} Locations may have changed since download.")
-                        st.caption(f"Records checked: {report['ids_checked']} · Publisher edit: {report['source_data_updated_at'] or 'Not supplied'} · Retrieved UTC: {report['retrieved_at']}")
-            st.download_button('Download this result (contains address)',json.dumps(result,indent=2),'hydrant-result.json','application/json')
         m = folium.Map(location=[match['lat'],match['lon']],zoom_start=16,tiles='OpenStreetMap')
         folium.Marker([match['lat'],match['lon']],tooltip='Current measurement starting point',icon=folium.Icon(color='blue',icon='home')).add_to(m)
         if result and result['nearest']:
@@ -205,6 +192,21 @@ with search_tab:
                 st.session_state.last_map_click=click
                 st.session_state.pending_point=click
                 st.rerun()
+
+        if result and not pending:
+            with st.expander('Source timestamps and query status', expanded=not result['complete']):
+                for report in result['sources']:
+                    st.markdown(f"**[{report['name']}]({report['url']})**")
+                    if report['error']: st.warning(report['error'])
+                    else:
+                        if report.get('nearby_inventory_limited'):
+                            st.caption(f"Dense inventory: nearest verified using a {report['searched_radius_ft']/5280:g}-mile inner search. Outer records within the selected maximum radius were not loaded for map display.")
+                        if report.get('inventory_filter') and report['inventory_filter'] != '1=1':
+                            st.caption(report.get('inventory_filter_label') or 'Published status exclusions applied; see source notes.')
+                        if report.get('is_snapshot'):
+                            st.warning(f"Using saved {report['name']} backup downloaded {report['snapshot_downloaded_at']} ({report['snapshot_age_days']} days old). Live query failed: {report['live_error']} Locations may have changed since download.")
+                        st.caption(f"Records checked: {report['ids_checked']} · Publisher edit: {report['source_data_updated_at'] or 'Not supplied'} · Retrieved UTC: {report['retrieved_at']}")
+            st.download_button('Download this result (contains address)',json.dumps(result,indent=2),'hydrant-result.json','application/json')
 
 with coverage_tab:
     st.subheader('All 159 Georgia counties')
