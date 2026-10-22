@@ -17,7 +17,7 @@ def setup(monkeypatch):
     result=json.loads((locator.DATA/'example_result.json').read_text())
     monkeypatch.setattr(locator,'geocode',lambda _:[copy.deepcopy(result['address'])])
     monkeypatch.setattr(locator,'barrow_address_options',lambda _:[])
-    monkeypatch.setattr(locator,'locate',lambda *args:copy.deepcopy(result))
+    monkeypatch.setattr(locator,'locate',lambda match,radius:{**copy.deepcopy(result),'address':copy.deepcopy(match),'radius_ft':radius})
     app=AppTest.from_file(APP).run(timeout=30)
     app.text_input(key='address_input').set_value('100 SYNTHETIC TEST RD, TESTVILLE, GA, 00000')
     click(app,'Locate address')
@@ -73,26 +73,109 @@ def test_backup_date_and_partial_warning_visible(setup,monkeypatch):
     assert any('2026-10-20' in w.value and 'backup downloaded' in w.value for w in app.warning)
 
 
-def test_manual_map_correction_clears_result(setup,monkeypatch):
+def test_manual_map_correction_previews_and_recalculates(setup,monkeypatch):
     import streamlit_folium
     app,result=setup
     click(app,'Search near this address')
-    monkeypatch.setattr(streamlit_folium,'st_folium',lambda *a,**k:{'last_clicked':{'lat':33.5001,'lng':-83.5}})
+    maps=[]
+    def map_click(*a,**kwargs):
+        maps.append(kwargs)
+        return {'last_clicked':{'lat':33.5001,'lng':-83.5}}
+    monkeypatch.setattr(streamlit_folium,'st_folium',map_click)
     seen=[]
     def correction(original,lon,lat):
         seen.append((lon,lat)); return {**original,'lon':lon,'lat':lat,'provider':'User-selected map point'}
     monkeypatch.setattr(locator,'corrected_origin',correction)
     app.checkbox[0].check().run(timeout=30)
-    click(app,'Apply corrected point')
+    assert any('previous distance is hidden' in w.value for w in app.warning)
+    assert not any(m.value=='100 ft' for m in app.metric)
+    assert maps[-1]['key']==maps[-2]['key']
+    marker=next(iter(maps[-1]['feature_group_to_add']._children.values()))
+    assert marker.location==[33.5001,-83.5]
+    queried=[]
+    monkeypatch.setattr(locator,'locate',lambda match,radius:queried.append((match,radius)) or {**result,'address':match})
+    click(app,'Use this point and recalculate')
     assert seen==[(-83.5,33.5001)]
     assert app.session_state['origin']['lat']==33.5001
-    assert 'result' not in app.session_state
-    assert not any(m.value=='100 ft' for m in app.metric)
-    queried=[]
-    monkeypatch.setattr(locator,'locate',lambda match,*a:queried.append(match) or {**result,'address':match})
-    app.session_state['last_request_hydrants']=-100
+    assert queried[0][0]['lat']==33.5001
+    assert queried[0][1]==5280
+    assert app.session_state['result']['address']==app.session_state['origin']
+    assert 'pending_point' not in app.session_state
+    assert not app.checkbox[0].value
+    assert any(m.value=='100 ft' for m in app.metric)
+    assert any('your selected starting point' in s.value for s in app.success)
+
+
+def test_move_button_requires_map_selection(setup):
+    app,_=setup
+    app.checkbox[0].check().run(timeout=30)
+    button=next(b for b in app.button if b.label=='Use this point and recalculate')
+    assert button.disabled
+
+
+def test_cancel_point_restores_current_distance(setup,monkeypatch):
+    import streamlit_folium
+    app,result=setup
     click(app,'Search near this address')
-    assert queried[0]['lat']==33.5001
+    monkeypatch.setattr(streamlit_folium,'st_folium',lambda *a,**k:{'last_clicked':{'lat':33.5001,'lng':-83.5}})
+    app.checkbox[0].check().run(timeout=30)
+    assert not any(m.value=='100 ft' for m in app.metric)
+    monkeypatch.setattr(locator,'locate',lambda *a:pytest.fail('Cancel must not query'))
+    click(app,'Cancel selected point')
+    assert app.session_state['result']==result
+    assert 'pending_point' not in app.session_state
+    assert any(m.value=='100 ft' for m in app.metric)
+
+
+@pytest.mark.parametrize('failure',['validation','search'])
+def test_failed_point_recalculation_keeps_original_state(setup,monkeypatch,failure):
+    import streamlit_folium
+    app,result=setup
+    click(app,'Search near this address')
+    original=copy.deepcopy(app.session_state['origin'])
+    monkeypatch.setattr(streamlit_folium,'st_folium',lambda *a,**k:{'last_clicked':{'lat':33.5001,'lng':-83.5}})
+    app.checkbox[0].check().run(timeout=30)
+    def reject(*a): raise locator.LookupError('Synthetic point check failed')
+    if failure=='validation':
+        monkeypatch.setattr(locator,'corrected_origin',reject)
+        monkeypatch.setattr(locator,'locate',lambda *a:pytest.fail('Invalid point must not query'))
+    else:
+        monkeypatch.setattr(locator,'corrected_origin',lambda m,x,y:{**m,'lon':x,'lat':y})
+        monkeypatch.setattr(locator,'locate',reject)
+    click(app,'Use this point and recalculate')
+    assert app.session_state['origin']==original
+    assert app.session_state['result']==result
+    assert app.session_state['pending_point']
+    assert not any(m.value=='100 ft' for m in app.metric)
+    assert any('Synthetic point check failed' in e.value for e in app.error)
+
+
+def test_point_move_can_change_which_hydrant_is_nearest(setup,monkeypatch):
+    import streamlit_folium
+    app,result=setup
+    origin=result['address']
+    a=locator.GEOD.fwd(origin['lon'],origin['lat'],0,50*.3048)
+    b=locator.GEOD.fwd(origin['lon'],origin['lat'],180,100*.3048)
+    moved=locator.GEOD.fwd(origin['lon'],origin['lat'],180,110*.3048)
+    queried=[]
+    def rank(match,radius):
+        queried.append(match.copy())
+        points=[{**result['nearest'],'object_id':oid,'lon':x,'lat':y,
+                 'distance_ft':locator.distance_feet(match['lon'],match['lat'],x,y)}
+                for oid,(x,y,_) in [('SYNTHETIC-A',a),('SYNTHETIC-B',b)]]
+        points.sort(key=lambda p:p['distance_ft'])
+        return {**result,'address':match,'radius_ft':radius,'nearest':points[0],'candidates':points,'candidate_count':2}
+    monkeypatch.setattr(locator,'locate',rank)
+    click(app,'Search near this address')
+    assert app.session_state['result']['nearest']['object_id']=='SYNTHETIC-A'
+    monkeypatch.setattr(streamlit_folium,'st_folium',lambda *a,**k:{'last_clicked':{'lat':moved[1],'lng':moved[0]}})
+    monkeypatch.setattr(locator,'corrected_origin',lambda m,x,y:{**m,'lon':x,'lat':y,'provider':'User-selected map point'})
+    app.checkbox[0].check().run(timeout=30)
+    click(app,'Use this point and recalculate')
+    assert len(queried)==2
+    assert app.session_state['result']['nearest']['object_id']=='SYNTHETIC-B'
+    assert app.session_state['result']['nearest']['distance_ft']==pytest.approx(10)
+    assert any(m.value=='10 ft' for m in app.metric)
 
 
 def test_address_then_hydrant_search_needs_no_wait(setup):
