@@ -1,5 +1,6 @@
 import copy
 import json
+import time
 from pathlib import Path
 import pytest
 import locator
@@ -20,7 +21,7 @@ def setup(monkeypatch):
     app=AppTest.from_file(APP).run(timeout=30)
     app.text_input(key='address_input').set_value('100 SYNTHETIC TEST RD, TESTVILLE, GA, 00000')
     click(app,'Locate address')
-    app.session_state['last_request']=-100
+    app.select_slider[0].set_value(result['radius_ft']//5280).run(timeout=30)
     return app,result
 
 
@@ -82,7 +83,6 @@ def test_manual_map_correction_clears_result(setup,monkeypatch):
         seen.append((lon,lat)); return {**original,'lon':lon,'lat':lat,'provider':'User-selected map point'}
     monkeypatch.setattr(locator,'corrected_origin',correction)
     app.checkbox[0].check().run(timeout=30)
-    app.session_state['last_request']=-100
     click(app,'Apply corrected point')
     assert seen==[(-83.5,33.5001)]
     assert app.session_state['origin']['lat']==33.5001
@@ -90,17 +90,49 @@ def test_manual_map_correction_clears_result(setup,monkeypatch):
     assert not any(m.value=='100 ft' for m in app.metric)
     queried=[]
     monkeypatch.setattr(locator,'locate',lambda match,*a:queried.append(match) or {**result,'address':match})
-    app.session_state['last_request']=-100
+    app.session_state['last_request_hydrants']=-100
     click(app,'Search near this address')
     assert queried[0]['lat']==33.5001
 
 
-def test_throttle_prevents_repeated_query(setup,monkeypatch):
+def test_address_then_hydrant_search_needs_no_wait(setup):
+    app,_=setup
+    click(app,'Search near this address')
+    assert not app.error
+    assert any(m.value=='100 ft' for m in app.metric)
+
+
+def test_throttle_prevents_repeated_query_and_preserves_result(setup,monkeypatch):
     app,result=setup
-    app.session_state['last_request']=__import__('time').monotonic()
+    click(app,'Search near this address')
+    app.session_state['last_request_hydrants']=time.monotonic()
     monkeypatch.setattr(locator,'locate',lambda *a:pytest.fail('Repeated network lookup'))
     click(app,'Search near this address')
-    assert any('10 seconds' in x.value for x in app.error)
+    assert any('5 seconds' in x.value for x in app.error)
+    assert app.session_state['result']==result
+    assert any(m.value=='100 ft' for m in app.metric)
+
+
+def test_query_allowed_after_five_seconds(setup,monkeypatch):
+    app,result=setup
+    app.session_state['last_request_hydrants']=time.monotonic()-5
+    queried=[]
+    monkeypatch.setattr(locator,'locate',lambda *a:queried.append(a) or result)
+    click(app,'Search near this address')
+    assert len(queried)==1
+    assert not app.error
+
+
+def test_throttled_address_keeps_match_and_result(setup,monkeypatch):
+    app,result=setup
+    click(app,'Search near this address')
+    app.session_state['last_request_address']=time.monotonic()
+    monkeypatch.setattr(locator,'geocode',lambda *a:pytest.fail('Repeated address lookup'))
+    click(app,'Locate address')
+    assert any('5 seconds' in x.value for x in app.error)
+    assert app.session_state['result']==result
+    assert app.session_state['matches']
+    assert any(m.value=='100 ft' for m in app.metric)
 
 
 def test_new_failed_search_clears_old_result(setup,monkeypatch):
@@ -108,7 +140,7 @@ def test_new_failed_search_clears_old_result(setup,monkeypatch):
     click(app,'Search near this address')
     def fail(_): raise locator.LookupError('No Georgia match')
     monkeypatch.setattr(locator,'geocode',fail)
-    app.session_state['last_request']=-100
+    app.session_state['last_request_address']=-100
     click(app,'Locate address')
     assert 'result' not in app.session_state
     assert any('No Georgia match' in x.value for x in app.error)
@@ -122,6 +154,6 @@ def test_new_county_scope_messages(setup,monkeypatch,fips,county,phrase):
     app,result=setup
     match={**result['address'],'county_fips':fips,'county':county}
     monkeypatch.setattr(locator,'geocode',lambda _:[match])
-    app.session_state['last_request']=-100
+    app.session_state['last_request_address']=-100
     click(app,'Locate address')
     assert any(phrase in w.value for w in list(app.warning)+list(app.caption))

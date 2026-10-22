@@ -1,5 +1,6 @@
 import html
 import json
+import math
 import time
 import folium
 from folium.plugins import MarkerCluster
@@ -14,11 +15,20 @@ st.caption('PUBLIC GOVERNMENT GIS · GEORGIA ADDRESSES · DISTANCES IN FEET')
 st.info(DISCLAIMER)
 sources, coverage = load_sources(), load_coverage()
 
-def throttle():
+REQUEST_COOLDOWN_SECONDS = 5
+
+
+def throttle(action):
     current = time.monotonic()
-    if current - st.session_state.get('last_request', -100) < 10:
-        raise LookupError('Please wait 10 seconds between requests.')
-    st.session_state.last_request = current
+    key = f'last_request_{action}'
+    previous = st.session_state.get(key)
+    if previous is not None:
+        remaining = REQUEST_COOLDOWN_SECONDS - (current - previous)
+        if remaining > 0:
+            seconds = math.ceil(remaining)
+            unit = 'second' if seconds == 1 else 'seconds'
+            raise LookupError(f'Please wait {seconds} {unit} before repeating this action.')
+    st.session_state[key] = current
 
 
 def reset_search():
@@ -44,9 +54,9 @@ with search_tab:
         address = st.text_input('Georgia street address', value='', placeholder='Enter a Georgia street address', key='address_input', max_chars=300)
         submitted = st.form_submit_button('Locate address', type='primary')
     if submitted:
-        reset_search()
         try:
-            throttle()
+            throttle('address')
+            reset_search()
             with st.spinner('Checking Georgia address locations…'):
                 matches = geocode(address)
                 options = []
@@ -93,10 +103,10 @@ with search_tab:
             st.session_state.pop('result',None)
             result = None
         if st.button('Search near this address',type='primary'):
-            result = None
-            st.session_state.pop('result', None)
             try:
-                throttle()
+                throttle('hydrants')
+                result = None
+                st.session_state.pop('result', None)
                 with st.spinner('Checking public hydrant layers…'):
                     result = locate(match,radius*5280)
                 st.session_state.result = result
@@ -158,7 +168,7 @@ with search_tab:
                 apply=st.form_submit_button('Apply corrected point')
             if apply:
                 try:
-                    throttle()
+                    throttle('correction')
                     st.session_state.origin=corrected_origin(original,lon,lat)
                     st.session_state.pop('result',None)
                     st.session_state.pop('pending_point',None)
