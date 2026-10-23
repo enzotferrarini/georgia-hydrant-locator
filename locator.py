@@ -121,33 +121,40 @@ def timestamp(value):
         return None
 
 
+def status_rules(source):
+    return ([source['status_filter']] if source.get('status_filter') else []) + source.get('status_filters', [])
+
+
 def source_where(source):
     """Build a fixed registry status filter; user input never enters this SQL."""
-    rule = source.get('status_filter')
-    if not rule:
-        return '1=1'
-    field = rule['field']
-    if not re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', field):
-        raise LookupError('Invalid configured status field.')
-    mode = 'include' if 'include' in rule else 'exclude'
-    values = rule.get(mode)
-    if not isinstance(values,list) or not values or any(not isinstance(v,str) for v in values):
-        raise LookupError('Invalid configured status values.')
-    literals = ','.join("'"+v.replace("'","''")+"'" for v in values)
-    return (f'{field} IN ({literals})' if mode=='include' else
-            f'({field} NOT IN ({literals}) OR {field} IS NULL)')
+    clauses = []
+    for rule in status_rules(source):
+        field = rule['field']
+        if not re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', field):
+            raise LookupError('Invalid configured status field.')
+        mode = 'include' if 'include' in rule else 'exclude'
+        values = rule.get(mode)
+        if not isinstance(values,list) or not values or any(type(v) not in (str,int) for v in values):
+            raise LookupError('Invalid configured status values.')
+        literals = ','.join("'"+v.replace("'","''")+"'" if isinstance(v,str) else str(v) for v in values)
+        clauses.append(f'{field} IN ({literals})' if mode=='include' else
+                       f'({field} NOT IN ({literals}) OR {field} IS NULL)')
+    return ' AND '.join(clauses) or '1=1'
 
 
 def accepted_status(source,attributes):
-    rule = source.get('status_filter')
-    if not rule:
-        return True
-    if rule['field'] not in attributes:
-        return False
-    value = attributes[rule['field']]
-    return value in rule['include'] if 'include' in rule else value not in rule['exclude']
+    for rule in status_rules(source):
+        if rule['field'] not in attributes:
+            return False
+        value = attributes[rule['field']]
+        if not (value in rule['include'] if 'include' in rule else value not in rule['exclude']):
+            return False
+    return True
 
 def query_source(source, lon, lat, radius_ft, fetch=get_json):
+    if source.get('kind') == 'historical_map':
+        from historical import query_historical
+        return query_historical(source, lon, lat, radius_ft)
     url = source['url']
     meta = fetch(url)
     if meta.get('geometryType') != 'esriGeometryPoint':
@@ -155,9 +162,9 @@ def query_source(source, lon, lat, radius_ft, fetch=get_json):
     oid = meta.get('objectIdField') or next((f['name'] for f in meta.get('fields', []) if f['type'] == 'esriFieldTypeOID'), None)
     if not oid:
         raise LookupError('Layer has no object ID field; completeness cannot be verified.')
-    rule = source.get('status_filter')
+    rules = status_rules(source)
     available = {f['name'] for f in meta.get('fields', [])}
-    if rule and rule['field'] not in available:
+    if any(rule['field'] not in available for rule in rules):
         raise LookupError('Source status schema changed; this inventory cannot be verified.')
     spatial = {'where': source_where(source), 'geometry': json.dumps(search_envelope(lon, lat, radius_ft)),
                                   'geometryType': 'esriGeometryEnvelope', 'inSR': 4326,
@@ -187,8 +194,7 @@ def query_source(source, lon, lat, radius_ft, fetch=get_json):
     candidates, invalid = [], 0
     deadline = time.monotonic() + 60
     fields = [oid] + [f for f in (source.get('date_field'), source.get('identity_field')) if f and f in available]
-    if rule:
-        fields.append(rule['field'])
+    fields.extend(rule['field'] for rule in rules)
     batch_size = max(1, min(200, int(meta.get('maxRecordCount') or 200)))
     for start in range(0, len(ids), batch_size):
         if time.monotonic() > deadline:
@@ -227,7 +233,7 @@ def query_source(source, lon, lat, radius_ft, fetch=get_json):
 
 def _locate(match, radius_ft=26400, sources=None, query=query_source):
     search_envelope(match['lon'], match['lat'], radius_ft)
-    sources = sources if sources is not None else load_sources()
+    sources = sources if sources is not None else [s for s in load_sources() if not s.get('requires_opt_in')]
     def safe(source):
         try:
             return query(source, match['lon'], match['lat'], radius_ft)
@@ -249,11 +255,13 @@ def _locate(match, radius_ft=26400, sources=None, query=query_source):
     candidates = deduplicate(candidates)
     errors = [r for r in reports if r['error']]
     backups = [r for r in reports if r.get('is_snapshot')]
-    return {'address': match, 'radius_ft': radius_ft, 'queried_at': now(), 'complete': not errors and not backups,
-            'status': 'partial' if errors or backups else ('found' if candidates else 'no_mapped_result'),
+    historical = [r for r in reports if r.get('is_historical')]
+    partial = bool(errors or backups or historical)
+    return {'address': match, 'radius_ft': radius_ft, 'queried_at': now(), 'complete': not partial,
+            'status': 'partial' if partial else ('found' if candidates else 'no_mapped_result'),
             'nearest': candidates[0] if candidates else None, 'candidates': candidates[:250], 'candidate_count': len(candidates), 'display_limit': 250,
             'sources': [{k: v for k, v in r.items() if k != 'candidates'} for r in reports],
-            'disclaimer': DISCLAIMER, 'scope': 'Nearest among integrated public government layers within the selected radius; not all actual hydrants.'}
+            'disclaimer': DISCLAIMER, 'scope': 'Nearest among selected public GIS sources within the selected radius; not all actual hydrants. Optional historical sources are identified separately.'}
 
 
 def deduplicate(candidates):

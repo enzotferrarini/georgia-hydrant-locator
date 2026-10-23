@@ -5,6 +5,15 @@ from locator import get_json, load_sources, query_source, source_where, LookupEr
 
 
 def check(source):
+    if source.get('kind')=='historical_map':
+        from historical import query_historical
+        from locator import DATA
+        row=json.loads((DATA/'historical/walton-historical.json').read_text())[0]
+        result=query_historical(source,row[1],row[2],5280)
+        if result['candidates'][0]['distance_ft']>.01:
+            raise LookupError('Historical point recovery failed.')
+        return {'source':source['id'],'records':result['ids_checked'],'nearest_feet':0,
+                'is_historical':True,'publisher_verified':False,'checked_at':result['retrieved_at']}
     meta=get_json(source['url'])
     oid=meta.get('objectIdField') or next(f['name'] for f in meta['fields'] if f['type']=='esriFieldTypeOID')
     response=get_json(source['url']+'/query',{'where':source_where(source),'returnIdsOnly':'true'})

@@ -30,7 +30,7 @@ def test_initial_ui_blank():
     assert not app.exception
     assert app.text_input(key='address_input').value==''
     assert app.text_input(key='address_input').placeholder=='Enter a Georgia street address'
-    assert app.metric[0].value=='12 / 159'
+    assert app.metric[0].value=='14 / 159'
 
 @pytest.mark.parametrize('fips, county', [('13195', 'Madison County'), ('13221', 'Oglethorpe County')])
 def test_unverified_county_search_explains_local_gap(monkeypatch, fips, county):
@@ -43,7 +43,7 @@ def test_unverified_county_search_explains_local_gap(monkeypatch, fips, county):
     click(app, 'Locate address')
     assert any('No local source is integrated' in w.value for w in app.warning)
     assert any('no official public hydrant point inventory verified' in c.value.lower() and 'Last reviewed:' in c.value for c in app.caption)
-    assert app.metric[0].value == '12 / 159'
+    assert app.metric[0].value == '14 / 159'
 
 
 def test_blank_submit_rejected_without_network(monkeypatch):

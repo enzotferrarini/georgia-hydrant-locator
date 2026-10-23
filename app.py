@@ -11,7 +11,7 @@ from locator import (DISCLAIMER, LookupError, geocode, load_coverage, load_sourc
 
 st.set_page_config(page_title='Georgia Hydrant Locator', page_icon='📍', layout='wide')
 st.title('Georgia Fire Hydrant Locator')
-st.caption('PUBLIC GOVERNMENT GIS · GEORGIA ADDRESSES · DISTANCES IN FEET')
+st.caption('PUBLIC GIS · GEORGIA ADDRESSES · DISTANCES IN FEET')
 st.info(DISCLAIMER)
 sources, coverage = load_sources(), load_coverage()
 
@@ -37,12 +37,25 @@ def reset_search():
         st.session_state.pop(key, None)
 
 
+def clear_results():
+    for key in ('result','pending_point','last_map_click'):
+        st.session_state.pop(key,None)
+
+
+def search_hydrants(match, radius_ft):
+    if st.session_state.get('include_historical_walton',False):
+        return locate(match,radius_ft,sources=sources)
+    return locate(match,radius_ft)
+
+
 with st.sidebar:
     st.header('Coverage at a glance')
     supported = [c for c in coverage if c['status'] == 'supported_partial']
     st.metric('Counties with an integrated source', f'{len(supported)} / {len(coverage)}')
     st.write(' · '.join('Cobb (Smyrna only)' if c['fips']=='13067' else c['county'].removesuffix(' County') for c in supported))
     st.caption('Partial published inventories. A successful search cannot establish the nearest actual hydrant.')
+    st.toggle('Include Walton’s June 2022 map',value=False,key='include_historical_walton',on_change=clear_results)
+    st.caption('Optional historical Walton coverage: publisher unverified, locations and operation may have changed. This saved map is separate from the verified government sources above.')
     st.caption('Addresses go to Census and, for Barrow matches, county GIS. Search coordinates go to GIS providers. OpenStreetMap receives map-tile requests. Inputs stay in this session; downloads contain your address and coordinates.')
     if st.button('Clear this session'):
         reset_search()
@@ -94,7 +107,9 @@ with search_tab:
         if 'geocoder_offset_ft' in match:
             st.caption(f"County point is {match['geocoder_offset_ft']:,.0f} ft from the Census street position. This is a difference between sources, not a measured error bound.")
         entry = next((c for c in coverage if c['fips']==match['county_fips']),None)
-        if not entry or entry['status'] != 'supported_partial':
+        if entry and entry['status']=='supported_historical':
+            st.warning('Walton has an optional June 2022 historical map only; its publisher is unverified. Enable it in the sidebar to include those older points. Current countywide coverage is not established.')
+        elif not entry or entry['status'] != 'supported_partial':
             st.warning('No local source is integrated for this county. Only nearby records from configured layers can be found.')
             if entry and entry['status'] == 'researched_unverified':
                 st.caption(f"Coverage review: {entry['scope']} Last reviewed: {entry['last_verified']}.")
@@ -106,6 +121,10 @@ with search_tab:
             st.warning('Cobb coverage currently includes Smyrna’s public inventory only. County-owned and other municipal systems are not comprehensively represented.')
         elif match['county_fips']=='13117':
             st.caption('Forsyth searches published Existing/Active records; construction, removed and inactive records are excluded. Operation and countywide completeness are not certified.')
+        elif match['county_fips']=='13119':
+            st.warning('Franklin coverage includes Carnesville’s mapped water-system hydrants only. Other Franklin County and municipal systems may be missing.')
+        elif match['county_fips']=='13139':
+            st.caption('Hall searches the published Gainesville, Flowery Branch and Lula water-system hydrants. Municipal, private and newer assets may be missing; complete county coverage is not certified.')
         radius = st.select_slider('Search radius (miles)', options=[1,2,5,10],value=5)
         result = st.session_state.get('result')
         if result and (result['address'] != match or result['radius_ft'] != radius*5280):
@@ -117,7 +136,7 @@ with search_tab:
                 result = None
                 st.session_state.pop('result', None)
                 with st.spinner('Checking public hydrant layers…'):
-                    result = locate(match,radius*5280)
+                    result = search_hydrants(match,radius*5280)
                 st.session_state.result = result
             except LookupError as exc:
                 st.error(str(exc))
@@ -143,7 +162,7 @@ with search_tab:
                     throttle('correction')
                     with st.spinner('Checking your point and recalculating nearby hydrants…'):
                         new_origin = corrected_origin(original,pending['lng'],pending['lat'])
-                        new_result = locate(new_origin,radius*5280)
+                        new_result = search_hydrants(new_origin,radius*5280)
                     st.session_state.origin = new_origin
                     st.session_state.result = new_result
                     st.session_state.pop('pending_point',None)
@@ -154,7 +173,10 @@ with search_tab:
                     st.error(str(exc))
         if result and not pending:
             if not result['complete']:
-                st.warning('Some live sources could not be fully checked. This candidate may use a dated backup; review source status below.')
+                if any(r.get('is_historical') for r in result['sources']):
+                    st.warning('The June 2022 Walton map is included. Its publisher is unverified and the points may be outdated. Review source status below; the nearest current hydrant is not established.')
+                if any(r.get('error') or r.get('is_snapshot') for r in result['sources']):
+                    st.warning('Some live sources could not be fully checked. This candidate may use a dated backup; review source status below.')
             nearest = result['nearest']
             if nearest:
                 st.metric('Approximate map straight-line distance', f"{nearest['distance_ft']:,.0f} ft")
@@ -185,9 +207,9 @@ with search_tab:
             folium.Marker([pending['lat'],pending['lng']],tooltip='Selected starting point — not applied yet',icon=folium.Icon(color='orange',icon='home')).add_to(preview)
         map_data = st_folium(m,height=480,use_container_width=True,returned_objects=['last_clicked'] if edit else [],feature_group_to_add=preview,key=f"map_{identity}_{match['lon']}_{match['lat']}_{edit}_{bool(result)}")
         if edit:
-            st.caption('Blue house: current starting point · Orange house: your selected point, not applied yet · Green markers/clusters: mapped hydrants. Select Use this point and recalculate above the map to update the nearest hydrant. Map © OpenStreetMap contributors; hydrants from listed government sources.')
+            st.caption('Blue house: current starting point · Orange house: your selected point, not applied yet · Green markers/clusters: mapped hydrants. Select Use this point and recalculate above the map to update the nearest hydrant. Map © OpenStreetMap contributors; hydrants from listed GIS sources.')
         else:
-            st.caption('Blue house: property point · Red flame: nearest mapped hydrant · Green markers/clusters: nearby records · Dashed red line: straight-line distance. Map © OpenStreetMap contributors; hydrants from listed government sources.')
+            st.caption('Blue house: property point · Red flame: nearest mapped hydrant · Green markers/clusters: nearby records · Dashed red line: straight-line distance. Map © OpenStreetMap contributors; hydrants from listed GIS sources.')
         if edit:
             click=(map_data or {}).get('last_clicked')
             if click and click != st.session_state.get('last_map_click'):
@@ -207,19 +229,23 @@ with search_tab:
                             st.caption(report.get('inventory_filter_label') or 'Published status exclusions applied; see source notes.')
                         if report.get('is_snapshot'):
                             st.warning(f"Using saved {report['name']} backup downloaded {report['snapshot_downloaded_at']} ({report['snapshot_age_days']} days old). Live query failed: {report['live_error']} Locations may have changed since download.")
+                        if report.get('is_historical'):
+                            st.warning(report['historical_caution'])
+                            st.caption(f"Saved map downloaded UTC: {report['dataset_downloaded_at']}. Download date does not establish field currency. Publisher verified: no.")
                         st.caption(f"Records checked: {report['ids_checked']} · Publisher edit: {report['source_data_updated_at'] or 'Not supplied'} · Retrieved UTC: {report['retrieved_at']}")
             st.download_button('Download this result (contains address)',json.dumps(result,indent=2),'hydrant-result.json','application/json')
 
 with coverage_tab:
     st.subheader('All 159 Georgia counties')
-    st.write('Supported — partial: some verified layers are integrated. Researched — unverified: a candidate was not accepted. Not researched: no source integrated yet. None of these labels establishes absence of hydrants.')
+    st.write('Supported — partial: some verified layers are integrated. Supported — historical: an optional dated map with an unverified publisher, disabled by default. Researched — unverified: a candidate was not accepted. Not researched: no source integrated yet. None of these labels establishes absence of hydrants.')
     needle=st.text_input('Filter counties')
     st.dataframe([c for c in coverage if needle.lower() in c['county'].lower()],hide_index=True,width='stretch')
     st.download_button('Download coverage register',json.dumps(coverage,indent=2),'georgia-159-county-coverage.json','application/json')
 with about_tab:
     for source in sources:
         st.markdown(f"**[{source['name']}]({source['url']})** — {source['scope']}")
-        st.markdown(f"[Government evidence]({source['evidence_url']}) · Verified {source['verified_at']}")
+        label = 'Publisher review — unverified' if source.get('publisher_verified') is False else 'Government evidence'
+        st.markdown(f"[{label}]({source['evidence_url']}) · {'Reviewed' if source.get('publisher_verified') is False else 'Verified'} {source['verified_at']}")
         st.caption(source['notes'])
-    st.write('Distances use WGS84 ellipsoidal geometry, converted at 0.3048 metres per foot. Every configured layer is searched across county boundaries. All candidate IDs and feature batches must agree. No municipal completeness, field survey accuracy, operational status or underwriting approval is implied.')
+    st.write('Distances use WGS84 ellipsoidal geometry, converted at 0.3048 metres per foot. Every selected source is searched across county boundaries. All candidate IDs and feature batches must agree. The optional Walton map is disabled by default and always labeled historical and publisher-unverified. No municipal completeness, field survey accuracy, operational status or underwriting approval is implied.')
     st.write('Inputs are session-only, with no disk storage or cross-user address cache. Providers and the hosting platform may retain request/security logs. Download only if you want a local copy of the address and coordinates. Public repositories contain synthetic test fixtures, never submitted searches.')

@@ -228,7 +228,7 @@
     "fips": "13059",
     "status": "supported_partial",
     "source_ids": "clarke",
-    "scope": "Athens–Clarke County published utility mapping; partial inventory, completeness not certified",
+    "scope": "Athens\u00e2\u20ac\u201cClarke County published utility mapping; partial inventory, completeness not certified",
     "last_verified": "2026-10-15T18:51:05.088534+00:00"
   },
   {
@@ -340,7 +340,7 @@
     "fips": "13089",
     "status": "supported_partial",
     "source_ids": "dekalb",
-    "scope": "DeKalb County — Hydrants All; partial published inventory, completeness not certified",
+    "scope": "DeKalb County \u00e2\u20ac\u201d Hydrants All; partial published inventory, completeness not certified",
     "last_verified": "2026-10-16T14:56:13.823088+00:00"
   },
   {
@@ -466,10 +466,10 @@
   {
     "county": "Franklin County",
     "fips": "13119",
-    "status": "not_researched",
-    "source_ids": "",
-    "scope": "No integrated source; not evidence of missing hydrants.",
-    "last_verified": null
+    "status": "supported_partial",
+    "source_ids": "franklin_carnesville",
+    "scope": "Carnesville municipal water-system hydrants only; other Franklin County and municipal systems are not comprehensively represented.",
+    "last_verified": "2026-10-23T20:20:50.846707+00:00"
   },
   {
     "county": "Fulton County",
@@ -546,10 +546,10 @@
   {
     "county": "Hall County",
     "fips": "13139",
-    "status": "not_researched",
-    "source_ids": "",
-    "scope": "No integrated source; not evidence of missing hydrants.",
-    "last_verified": null
+    "status": "supported_partial",
+    "source_ids": "hall_gainesville, hall_flowery_branch, hall_lula",
+    "scope": "Gainesville water-system inventory published by Hall County; partial county coverage, not every municipal/private system. | Flowery Branch water-system inventory published by Hall County; partial county coverage, not every municipal/private system. | Lula water-system inventory published by Hall County; partial county coverage, not every municipal/private system.",
+    "last_verified": "2026-10-23T20:20:50.846707+00:00"
   },
   {
     "county": "Hancock County",
@@ -620,7 +620,7 @@
     "fips": "13157",
     "status": "supported_partial",
     "source_ids": "jackson",
-    "scope": "Jackson County — Hydrants; partial published inventory, completeness not certified",
+    "scope": "Jackson County \u00e2\u20ac\u201d Hydrants; partial published inventory, completeness not certified",
     "last_verified": "2026-10-16T14:56:37.651759+00:00"
   },
   {
@@ -860,7 +860,7 @@
     "fips": "13219",
     "status": "supported_partial",
     "source_ids": "oconee",
-    "scope": "Oconee County — Public Water Hydrants; partial published inventory, completeness not certified",
+    "scope": "Oconee County \u00e2\u20ac\u201d Public Water Hydrants; partial published inventory, completeness not certified",
     "last_verified": "2026-10-16T14:56:55.562739+00:00"
   },
   {
@@ -1170,10 +1170,10 @@
   {
     "county": "Walton County",
     "fips": "13297",
-    "status": "researched_unverified",
-    "source_ids": "",
-    "scope": "A June 2022 Georgia hydrant web map was found, but government ownership could not be conclusively verified. Not integrated; no inference about actual hydrants.",
-    "last_verified": "2026-10-16T14:59:56.910061+00:00"
+    "status": "supported_historical",
+    "source_ids": "walton_historical",
+    "scope": "Optional June 2022 map points, disabled by default. Publisher unverified; partial WCFR-jurisdiction coverage claimed by map, not certified countywide data.",
+    "last_verified": "2026-10-23T20:20:50.846707+00:00"
   },
   {
     "county": "Ware County",
