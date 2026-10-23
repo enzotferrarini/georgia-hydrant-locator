@@ -96,6 +96,8 @@ with search_tab:
         entry = next((c for c in coverage if c['fips']==match['county_fips']),None)
         if not entry or entry['status'] != 'supported_partial':
             st.warning('No local source is integrated for this county. Only nearby records from configured layers can be found.')
+            if entry and entry['status'] == 'researched_unverified':
+                st.caption(f"Coverage review: {entry['scope']} Last reviewed: {entry['last_verified']}.")
         if match['county_fips']=='13013':
             st.warning('Barrow coverage primarily represents county-owned utility hydrants, not every municipal system. Winder, Auburn, Statham, Bethlehem and Braselton may have additional unmapped hydrants. Confirm with the serving water utility.')
         elif match['county_fips']=='13121':

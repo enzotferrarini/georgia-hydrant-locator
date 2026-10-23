@@ -134,3 +134,9 @@ The new source status filters are applied to ID queries and rechecked on returne
 Dense new-source inventories may exceed 10,000 live records within the selected maximum radius. For those sources the query can halve its radius, at most five times. It reports success only if the smaller exact circle contains a candidate: every omitted outer point is necessarily farther away, so the nearest result remains valid. An empty inner circle never establishes absence in the outer area and fails closed. Reports disclose the smaller searched radius, and map counts describe retrieved records rather than all records within the maximum radius. Existing source behavior and the Gwinnett backup remain intact.
 
 After code changes to imported Python modules, use Community Cloud's Manage app > Reboot app to load the new module versions; a browser refresh alone may retain old imports when file watching is disabled. A reboot briefly disconnects active viewers.
+
+## Oglethorpe and Madison research — 2026-10-23
+
+Both counties are now recorded as **researched — unverified**, with dated explanations in the coverage register and address-search UI. No official public hydrant point inventory was verified during this review, so neither county is counted as supported and no new source is queried. The app remains at 14 sources in 12 partially supported counties. Nearby configured layers may return records across county boundaries; that does not establish local hydrant coverage. See [research evidence and next steps](OGLETHORPE_MADISON_RESEARCH.md).
+
+A current, public or explicitly authorized hydrant-point export/service from the county fire/water departments and relevant municipal utilities is needed before integration. A failed or empty search remains no evidence that hydrants are absent.

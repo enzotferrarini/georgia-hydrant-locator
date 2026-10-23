@@ -228,7 +228,7 @@
     "fips": "13059",
     "status": "supported_partial",
     "source_ids": "clarke",
-    "scope": "Athens\u2013Clarke County published utility mapping; partial inventory, completeness not certified",
+    "scope": "Athens–Clarke County published utility mapping; partial inventory, completeness not certified",
     "last_verified": "2026-10-15T18:51:05.088534+00:00"
   },
   {
@@ -340,7 +340,7 @@
     "fips": "13089",
     "status": "supported_partial",
     "source_ids": "dekalb",
-    "scope": "DeKalb County \u2014 Hydrants All; partial published inventory, completeness not certified",
+    "scope": "DeKalb County — Hydrants All; partial published inventory, completeness not certified",
     "last_verified": "2026-10-16T14:56:13.823088+00:00"
   },
   {
@@ -620,7 +620,7 @@
     "fips": "13157",
     "status": "supported_partial",
     "source_ids": "jackson",
-    "scope": "Jackson County \u2014 Hydrants; partial published inventory, completeness not certified",
+    "scope": "Jackson County — Hydrants; partial published inventory, completeness not certified",
     "last_verified": "2026-10-16T14:56:37.651759+00:00"
   },
   {
@@ -754,10 +754,10 @@
   {
     "county": "Madison County",
     "fips": "13195",
-    "status": "not_researched",
+    "status": "researched_unverified",
     "source_ids": "",
-    "scope": "No integrated source; not evidence of missing hydrants.",
-    "last_verified": null
+    "scope": "Public county, water-department and regional GIS reviewed; no official public hydrant point inventory verified. Madison city hydrant mapping is in Morgan County, not Madison County. Nearby configured layers may return candidates but do not establish local coverage. Seek a current public/authorized export from the Madison County water department and municipal utilities.",
+    "last_verified": "2026-10-23T16:42:28+00:00"
   },
   {
     "county": "Marion County",
@@ -860,16 +860,16 @@
     "fips": "13219",
     "status": "supported_partial",
     "source_ids": "oconee",
-    "scope": "Oconee County \u2014 Public Water Hydrants; partial published inventory, completeness not certified",
+    "scope": "Oconee County — Public Water Hydrants; partial published inventory, completeness not certified",
     "last_verified": "2026-10-16T14:56:55.562739+00:00"
   },
   {
     "county": "Oglethorpe County",
     "fips": "13221",
-    "status": "not_researched",
+    "status": "researched_unverified",
     "source_ids": "",
-    "scope": "No integrated source; not evidence of missing hydrants.",
-    "last_verified": null
+    "scope": "County GIS and regional mapping reviewed; no official public hydrant point inventory verified. A county-named ArcGIS service requires a token; zoning and fire-station service-area maps do not establish hydrant locations. Nearby configured layers may return candidates but do not establish local coverage. Seek a current public/authorized export from Oglethorpe County Fire & Rescue and municipal water utilities.",
+    "last_verified": "2026-10-23T16:42:28+00:00"
   },
   {
     "county": "Paulding County",

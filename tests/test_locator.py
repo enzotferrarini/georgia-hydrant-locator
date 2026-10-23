@@ -114,5 +114,13 @@ def test_walton_unverified_is_not_integrated():
     assert next(c for c in load_coverage() if c['fips']=='13297')['status']=='researched_unverified'
     assert not any('13297' in s['county_fips'] for s in load_sources())
 
+@pytest.mark.parametrize('fips', ['13195', '13221'])
+def test_unverified_eastern_counties_do_not_claim_coverage(fips):
+    entry = next(c for c in load_coverage() if c['fips'] == fips)
+    assert entry['status'] == 'researched_unverified'
+    assert not entry['source_ids']
+    assert entry['last_verified'] and 'no official public hydrant point inventory verified' in entry['scope'].lower()
+    assert not any(fips in source['county_fips'] for source in load_sources())
+
 def test_oconee_generalization_caution():
     assert 'generalized' in next(s for s in load_sources() if s['id']=='oconee')['result_caution']
