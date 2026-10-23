@@ -24,9 +24,9 @@ def test_envelope_contains_entire_ten_mile_circle(lat):
 def test_county_registry():
     counties = load_coverage()
     assert len(counties) == len({c['fips'] for c in counties}) == 159
-    assert sum(c['status']=='supported_partial' for c in counties) == 12
+    assert sum(c['status']=='supported_partial' for c in counties) == 14
     assert all(c['fips'].startswith('13') for c in counties)
-    assert len(load_sources()) == 14
+    assert len(load_sources()) == 19
     by_fips = {c['fips']:c for c in counties}
     for fips, sid in [('13135','gwinnett'),('13059','clarke'),('13207','monroe'),('13157','jackson'),('13219','oconee'),('13089','dekalb')]:
         assert by_fips[fips]['source_ids'] == sid
@@ -110,9 +110,13 @@ def test_service_error_and_invalid_json(monkeypatch):
         with pytest.raises(LookupError): get_json('https://example.gov')
 
 
-def test_walton_unverified_is_not_integrated():
-    assert next(c for c in load_coverage() if c['fips']=='13297')['status']=='researched_unverified'
-    assert not any('13297' in s['county_fips'] for s in load_sources())
+def test_walton_is_historical_and_never_automatic_official_coverage():
+    assert next(c for c in load_coverage() if c['fips']=='13297')['status']=='supported_historical'
+    source=next(s for s in load_sources() if s['id']=='walton_historical')
+    assert source['requires_opt_in'] and source['publisher_verified'] is False
+    seen=[]
+    locate({'lon':-83.7,'lat':33.8},5280,query=lambda s,*a:seen.append(s['id']) or {'error':None,'candidates':[]})
+    assert 'walton_historical' not in seen and 'franklin_carnesville' in seen
 
 @pytest.mark.parametrize('fips', ['13195', '13221'])
 def test_unverified_eastern_counties_do_not_claim_coverage(fips):
