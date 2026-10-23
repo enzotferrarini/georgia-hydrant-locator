@@ -32,6 +32,19 @@ def test_initial_ui_blank():
     assert app.text_input(key='address_input').placeholder=='Enter a Georgia street address'
     assert app.metric[0].value=='12 / 159'
 
+@pytest.mark.parametrize('fips, county', [('13195', 'Madison County'), ('13221', 'Oglethorpe County')])
+def test_unverified_county_search_explains_local_gap(monkeypatch, fips, county):
+    match = json.loads((locator.DATA/'example_result.json').read_text())['address']
+    match.update(county_fips=fips, county=county)
+    monkeypatch.setattr(locator, 'geocode', lambda _: [copy.deepcopy(match)])
+    monkeypatch.setattr(locator, 'barrow_address_options', lambda _: [])
+    app = AppTest.from_file(APP).run(timeout=30)
+    app.text_input(key='address_input').set_value('100 SYNTHETIC TEST RD, TESTVILLE, GA, 00000')
+    click(app, 'Locate address')
+    assert any('No local source is integrated' in w.value for w in app.warning)
+    assert any('no official public hydrant point inventory verified' in c.value.lower() and 'Last reviewed:' in c.value for c in app.caption)
+    assert app.metric[0].value == '12 / 159'
+
 
 def test_blank_submit_rejected_without_network(monkeypatch):
     monkeypatch.setattr(locator,'get_json',lambda *a:pytest.fail('No network for blank input'))
