@@ -1,0 +1,38 @@
+[
+  {
+    "source": "hall_gainesville",
+    "records": 12191,
+    "spatial_records": 296,
+    "nearest_feet": 0.0,
+    "checked_at": "2026-10-23T20:22:42.936862+00:00"
+  },
+  {
+    "source": "hall_flowery_branch",
+    "records": 155,
+    "spatial_records": 140,
+    "nearest_feet": 0.0,
+    "checked_at": "2026-10-23T20:22:42.729700+00:00"
+  },
+  {
+    "source": "hall_lula",
+    "records": 158,
+    "spatial_records": 62,
+    "nearest_feet": 0.0,
+    "checked_at": "2026-10-23T20:22:42.660602+00:00"
+  },
+  {
+    "source": "franklin_carnesville",
+    "records": 88,
+    "spatial_records": 73,
+    "nearest_feet": 0.0,
+    "checked_at": "2026-10-23T20:22:42.850324+00:00"
+  },
+  {
+    "source": "walton_historical",
+    "records": 3776,
+    "nearest_feet": 0,
+    "is_historical": true,
+    "publisher_verified": false,
+    "checked_at": "2026-10-23T20:22:42.675442+00:00"
+  }
+]

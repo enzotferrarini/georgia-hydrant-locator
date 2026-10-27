@@ -1,6 +1,6 @@
 # Georgia Fire Hydrant Locator
 
-A public Python + Streamlit app that locates a Georgia street address and calculates the nearest mapped hydrant in **fourteen verified public government ArcGIS layers across twelve partially supported counties**, within a selectable 1, 2, 5 or 10 mile radius. Includes an interactive map, source health, UTC timestamps, downloadable results, and an explicit register of all 159 counties.
+A public Python + Streamlit app that locates a Georgia street address and calculates the nearest mapped hydrant in **eighteen verified public government ArcGIS layers across fourteen partially supported counties**, within a selectable 1, 2, 5 or 10 mile radius. An additional **Walton June 2022 historical map is optional, disabled by default, and publisher-unverified**. Includes an interactive map, source health, UTC timestamps, downloadable results, and an explicit register of all 159 counties.
 
 ## Start
 
@@ -55,7 +55,23 @@ Source counts were observed on 2026-10-15â€“20 using anonymous metadata, co
 | [Forsyth County â€” Existing Water Hydrants](https://geo.forsythco.com/gis2/rest/services/Public/Water_Hydrants_Public/FeatureServer/0) | Forsyth | 13,711 published; 13,302 eligible | Official public water hydrants labeled Existing (Active); partial inventory, not certified countywide completeness. |
 | [City of Smyrna â€” Fire Hydrants](https://services2.arcgis.com/hE9igMm8RoNeQRbh/arcgis/rest/services/Water_Database/FeatureServer/1) | Cobb (Smyrna only) | 2,723 published; 2,723 eligible | Smyrna municipal water mapping only; partial Cobb coverage. Countywide and other municipal inventories are not integrated. |
 
-Twelve counties are `supported_partial`; Walton is `researched_unverified`. The other **146 counties are `not_researched`**, not asserted to lack a public source. See `data/coverage.json`. Names and five-digit FIPS codes come from the [US Census TIGERweb county layer](https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/State_County/MapServer/1), queried with `STATE='13'`; the returned 159-row inventory is preserved in `data/counties.json`.
+Fourteen counties are `supported_partial`; Walton is `supported_historical` (optional and unverified); Madison and Oglethorpe are `researched_unverified`. The remaining **142 counties are `not_researched`**, not asserted to lack a public source. See `data/coverage.json`. Names and five-digit FIPS codes come from the [US Census TIGERweb county layer](https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/State_County/MapServer/1), queried with `STATE='13'`; the returned 159-row inventory is preserved in `data/counties.json`.
+
+## Hall, Franklin and optional Walton coverage — October 23, 2026
+
+| Source | Published records observed | Included scope |
+|---|---:|---|
+| [Hall: Gainesville hydrants](https://hallgis.hallcounty.org/arcgis/rest/services/UtilityTab/MapServer/2) | 13,194 raw; 12,191 eligible | ACTIVEFLAG, ENABLED and OPERABLE must all equal 1. Flags do not establish current operation. |
+| [Hall: Flowery Branch hydrants](https://hallgis.hallcounty.org/arcgis/rest/services/UtilityTab/MapServer/1) | 155 | Published municipal water-system points; last non-null feature edit observed August 2024. |
+| [Hall: Lula hydrants](https://hallgis.hallcounty.org/arcgis/rest/services/UtilityTab/MapServer/3) | 158 | Published municipal water-system points; no feature edit field supplied. |
+| [Franklin: Carnesville water structures](https://services1.arcgis.com/Ug5xGQbHsD8zuZzM/arcgis/rest/services/CarnesvilleWebMapWater_WFL1/FeatureServer/3) | 88 hydrant records | Type='Hydrant' only; excludes hydrant valves, meters and other water equipment. GMRC mapping in 2026; dataset edited July 6, 2026. Other Franklin systems are not comprehensively covered. |
+| [Walton: June 2022 map](https://www.arcgis.com/home/item.html?id=7234164215134678b48a5dd117ef884f) | 3,776 records; 3,775 unique coordinate pairs | **Optional historical source with an unverified publisher**, not one of the eighteen verified government layers. Partial jurisdiction claimed by map, not certified countywide coverage. |
+
+Hall's official GIS directory links the county viewer, whose configuration points to these county-hosted utility layers. Duplicate PublicSafety copies and group layers are not added as separate inventories. Carnesville's application credits Georgia Mountains Regional Commission's 2026 GPS mapping; its owner matches the GMRC GIS analyst and publishes in the regional-commission ArcGIS organization. See source ownership chains in `data/sources.json` and known-point zero-distance checks in `data/hall_franklin_walton_validation.json`.
+
+Enable **Include Walton’s June 2022 map** in the sidebar to search the saved Walton points alongside government layers. Changing this option clears any previous result, including a pending map correction. It is disabled by default, including for direct `locate()` callers; explicitly supplying that source opts in. Walton is never counted as a verified government-source county. Included historical data always make the overall result partial, even when no historical point falls within the radius. The result, map tooltips, source details and downloaded JSON identify the source as historical and publisher-unverified. Confirm it with Fire Rescue or the water utility before relying on a distance.
+
+The public Walton map is an embedded feature collection, not an anonymous REST query layer. Its source map last changed June 2, 2022. Its account `cleague1402` could not be conclusively authenticated as a county publisher. A coordinates-only copy is saved in `data/historical/`, checked against a pinned SHA-256 and provenance manifest. Original Web Mercator point geometry was converted to WGS84; the saved download timestamp never substitutes for the older map date. No public GIS address/description fields are packaged. A saved historical copy works during GIS outages; internet remains necessary for this hosted app, address geocoding and base-map tiles. It is not a current operational inventory, and there is no automatic refresh that re-labels it as current.
 
 Barrow ownership was established through the [county GIS page](https://www.barrowga.org/526/GIS), its linked Experience Builder app, the app's referenced web map, and that map's actual hydrant layer URL. That full chain is in `data/sources.json`. Hosted ArcGIS sources include Barrow, Jackson, Oconee and MGRC; their government publisher evidence is recorded in the source registry. Other services use government GIS domains. Layer metadata snapshots are included for review, not used as live hydrant data.
 
@@ -70,11 +86,11 @@ Monroe uses a [public hosted layer](https://www.arcgis.com/home/item.html?id=9a1
 ## Calculation and completeness
 
 - Census `geographies/onelineaddress` uses `Public_AR_Current` and `Current_Current`. Both the matched state and county FIPS must identify Georgia. No city/ZIP centroid fallback is used. Returned benchmark/vintage and retrieval time are recorded.
-- Every integrated source is searched, regardless of the origin county, so a county boundary cannot exclude a closer point in an integrated neighboring source.
+- Every selected source is searched, regardless of the origin county, so a county boundary cannot exclude a closer point in a selected neighboring source. The optional Walton source is searched only after explicit opt-in.
 - A conservative geographic envelope contains the entire radius for Georgia. The app asks for all IDs inside it, retrieves bounded batches of at most 200, and compares every returned ID set. It rejects transfer-limit flags, missing records, invalid geometry and unexpected coordinate systems. ArcGIS's null empty-ID response is accepted only after a separate count query confirms zero.
 - ArcGIS projects geometry to WGS84 (`outSR=4326`). `pyproj.Geod(ellps='WGS84')` computes the shortest ellipsoidal surface distance. Metres are converted using exactly **0.3048 metres per international foot**. The app does not treat Web Mercator coordinates as ground distances or use potentially stale latitude/longitude attribute columns.
 - Points outside the exact radius are discarded and all remaining candidates are ranked. Up to 250 nearest candidates are retained in JSON and shown using marker clusters; the retrieved matching count is displayed. The nearest calculation uses all retrieved candidates before this display cap. Duplicate records merge only when an identical point shares a source record ID or explicitly configured authoritative asset identity; nearby or coincident points alone are not merged. Complete means all **configured queries** succeeded, not that the underlying inventory is complete.
-- A failed or incomplete source makes the overall result `partial`. A successful source may still provide a candidate, explicitly labeled as unverified across the complete configured source set. Empty and unavailable results are kept distinct.
+- A failed or incomplete source, dated outage backup, or selected historical source makes the overall result `partial`. A successful source may still provide a candidate, explicitly labeled as unverified across the complete selected source set. Empty and unavailable results are kept distinct.
 - Read requests have timeouts and bounded retries for temporary HTTP/network failures. GIS records can change during queries; missing IDs fail closed. New records inserted after the initial ID query are not detectable without a transactional snapshot. A dated, validated public Gwinnett snapshot is available as an outage fallback; other layers use live queries.
 
 ## Tests and live checks
@@ -89,7 +105,7 @@ The offline suite covers distance correctness, coordinate validation, full-radiu
 
 ## Add a source
 
-1. Verify a government page or government-domain service establishes ownership. An ArcGIS title alone is insufficient.
+1. For a verified government source, verify a government page or government-domain service establishes ownership. An ArcGIS title alone is insufficient. The explicitly requested Walton exception stays disabled by default, historical and publisher-unverified; it must never be promoted to verified government coverage without new evidence.
 2. Confirm anonymous point-layer metadata and queries, actual Georgia geometry and the coverage scope. Do not bypass access controls or integrate private layers.
 3. Add its URL, scope, government evidence URL, county FIPS, verification time and optional record update field to `data/sources.json`. Preserve municipal scope; never promote a city layer to complete county coverage.
 4. Update the matching county entries in `data/coverage.json`, add fixtures/tests, and run a live spatial query near a known mapped feature.

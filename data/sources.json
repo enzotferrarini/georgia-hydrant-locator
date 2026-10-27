@@ -261,5 +261,137 @@
     "verified_at": "2026-10-20T19:57:42.963090+00:00",
     "adaptive_radius": true,
     "eligible_record_count": 2723
+  },
+  {
+    "id": "hall_gainesville",
+    "name": "Hall County \u2014 Gainesville Fire Hydrants",
+    "url": "https://hallgis.hallcounty.org/arcgis/rest/services/UtilityTab/MapServer/2",
+    "county_fips": [
+      "13139"
+    ],
+    "scope": "Gainesville water-system inventory published by Hall County; partial county coverage, not every municipal/private system.",
+    "evidence_url": "https://www.hallcounty.org/652/County-Service-Maps",
+    "date_field": "LASTUPDATE",
+    "verified_record_count": 13194,
+    "verified_at": "2026-10-23T20:20:50.846707+00:00",
+    "adaptive_radius": true,
+    "notes": "Official Hall County GIS directory links Experience 07c9cfa0f6a94be0b7a24ad4e0b084fa; configuration references this county-hosted UtilityTab hydrant layer. PublicSafety copies are not separately integrated. Asset status and coordinate accuracy are not field-certified.",
+    "ownership_chain": [
+      "https://www.hallcounty.org/652/County-Service-Maps",
+      "https://experience.arcgis.com/experience/07c9cfa0f6a94be0b7a24ad4e0b084fa/",
+      "https://hallgis.hallcounty.org/arcgis/rest/services/UtilityTab/MapServer/2"
+    ],
+    "status_filters": [
+      {
+        "field": "ACTIVEFLAG",
+        "include": [
+          1
+        ]
+      },
+      {
+        "field": "ENABLED",
+        "include": [
+          1
+        ]
+      },
+      {
+        "field": "OPERABLE",
+        "include": [
+          1
+        ]
+      }
+    ],
+    "status_filter_label": "Published ACTIVEFLAG, ENABLED and OPERABLE must all equal 1; this is not an operational guarantee.",
+    "eligible_record_count": 12191,
+    "result_caution": "Only published records flagged active, enabled and operable are searched. Flags and utility mapping are not field confirmation; private or neighboring systems may be included."
+  },
+  {
+    "id": "hall_flowery_branch",
+    "name": "Hall County \u2014 Flowery Branch Fire Hydrants",
+    "url": "https://hallgis.hallcounty.org/arcgis/rest/services/UtilityTab/MapServer/1",
+    "county_fips": [
+      "13139"
+    ],
+    "scope": "Flowery Branch water-system inventory published by Hall County; partial county coverage, not every municipal/private system.",
+    "evidence_url": "https://www.hallcounty.org/652/County-Service-Maps",
+    "date_field": "last_edited_date",
+    "verified_record_count": 155,
+    "verified_at": "2026-10-23T20:20:50.846707+00:00",
+    "adaptive_radius": true,
+    "notes": "Official Hall County GIS directory links Experience 07c9cfa0f6a94be0b7a24ad4e0b084fa; configuration references this county-hosted UtilityTab hydrant layer. PublicSafety copies are not separately integrated. Asset status and coordinate accuracy are not field-certified.",
+    "ownership_chain": [
+      "https://www.hallcounty.org/652/County-Service-Maps",
+      "https://experience.arcgis.com/experience/07c9cfa0f6a94be0b7a24ad4e0b084fa/",
+      "https://hallgis.hallcounty.org/arcgis/rest/services/UtilityTab/MapServer/1"
+    ]
+  },
+  {
+    "id": "hall_lula",
+    "name": "Hall County \u2014 Lula Fire Hydrants",
+    "url": "https://hallgis.hallcounty.org/arcgis/rest/services/UtilityTab/MapServer/3",
+    "county_fips": [
+      "13139"
+    ],
+    "scope": "Lula water-system inventory published by Hall County; partial county coverage, not every municipal/private system.",
+    "evidence_url": "https://www.hallcounty.org/652/County-Service-Maps",
+    "date_field": null,
+    "verified_record_count": 158,
+    "verified_at": "2026-10-23T20:20:50.846707+00:00",
+    "adaptive_radius": true,
+    "notes": "Official Hall County GIS directory links Experience 07c9cfa0f6a94be0b7a24ad4e0b084fa; configuration references this county-hosted UtilityTab hydrant layer. PublicSafety copies are not separately integrated. Asset status and coordinate accuracy are not field-certified.",
+    "ownership_chain": [
+      "https://www.hallcounty.org/652/County-Service-Maps",
+      "https://experience.arcgis.com/experience/07c9cfa0f6a94be0b7a24ad4e0b084fa/",
+      "https://hallgis.hallcounty.org/arcgis/rest/services/UtilityTab/MapServer/3"
+    ]
+  },
+  {
+    "id": "franklin_carnesville",
+    "name": "Franklin County \u2014 Carnesville Hydrants",
+    "url": "https://services1.arcgis.com/Ug5xGQbHsD8zuZzM/arcgis/rest/services/CarnesvilleWebMapWater_WFL1/FeatureServer/3",
+    "county_fips": [
+      "13119"
+    ],
+    "scope": "Carnesville municipal water-system hydrants only; other Franklin County and municipal systems are not comprehensively represented.",
+    "evidence_url": "https://www.gmrc.ga.gov/staffdirectory",
+    "verified_at": "2026-10-23T20:20:50.846707+00:00",
+    "date_field": null,
+    "verified_record_count": 88,
+    "eligible_record_count": 88,
+    "status_filter": {
+      "field": "Type",
+      "include": [
+        "Hydrant"
+      ]
+    },
+    "status_filter_label": "Water structures labeled Hydrant only; excludes hydrant valves, meters, wells and other equipment.",
+    "notes": "Regional-commission organization item c89df1c3b00542a2b6e454ce0734d6b3, owner bcarlock_garc. GMRC staff directory identifies Brandon Carlock as GIS Analyst. App 288283c0c491407587f48c974b2de798 credits GPS collection and maps to GMRC in 2026. July 6, 2026 dataset edit is not an asset-by-asset inspection date.",
+    "ownership_chain": [
+      "https://www.gmrc.ga.gov/staffdirectory",
+      "https://www.arcgis.com/home/item.html?id=288283c0c491407587f48c974b2de798",
+      "https://www.arcgis.com/home/item.html?id=c89df1c3b00542a2b6e454ce0734d6b3",
+      "https://services1.arcgis.com/Ug5xGQbHsD8zuZzM/arcgis/rest/services/CarnesvilleWebMapWater_WFL1/FeatureServer/3"
+    ],
+    "result_caution": "Carnesville mapping only, not all Franklin County. Hydrant classification does not establish active equipment or access."
+  },
+  {
+    "id": "walton_historical",
+    "name": "Walton \u2014 June 2022 map (publisher unverified)",
+    "url": "https://www.arcgis.com/home/item.html?id=7234164215134678b48a5dd117ef884f",
+    "county_fips": [
+      "13297"
+    ],
+    "kind": "historical_map",
+    "requires_opt_in": true,
+    "publisher_verified": false,
+    "sha256": "f0ea0dff24d0335192e3a197e0b34aaa60eb360616cd02e41cc7de68ecaa748a",
+    "source_data_updated_at": "2022-06-02T13:09:09+00:00",
+    "verified_at": "2026-10-23T20:20:50.846707+00:00",
+    "verified_record_count": 3776,
+    "date_field": null,
+    "evidence_url": "https://www.arcgis.com/home/item.html?id=7234164215134678b48a5dd117ef884f",
+    "scope": "Optional June 2022 map points, disabled by default. Publisher unverified; partial WCFR-jurisdiction coverage claimed by map, not certified countywide data.",
+    "notes": "Public map account cleague1402 cannot be conclusively tied to the county. Last map modification June 2, 2022. Map claims WCWSA, MUN and SCWD records. Kept separate from verified government sources; saved coordinates permit searches during county GIS outages. No freshness or operation guarantee.",
+    "result_caution": "HISTORICAL WALTON MAP \u2014 June 2022, publisher unverified. This point may be outdated, removed or inactive. Confirm location and operation with Walton Fire Rescue or the serving utility before relying on this distance."
   }
 ]

@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "source_id": "walton_historical",
+  "source_url": "https://www.arcgis.com/home/item.html?id=7234164215134678b48a5dd117ef884f",
+  "publisher_account": "cleague1402",
+  "publisher_verified": false,
+  "source_data_updated_at": "2022-06-02T13:09:09+00:00",
+  "source_date_label": "June 2022",
+  "downloaded_at": "2026-10-23T20:20:50.846707+00:00",
+  "sha256": "f0ea0dff24d0335192e3a197e0b34aaa60eb360616cd02e41cc7de68ecaa748a",
+  "record_count": 3776,
+  "unique_coordinate_count": 3775,
+  "complete_embedded_collection": true,
+  "scope": "Complete retrieved embedded feature collection only; not a complete county inventory. County/municipal ownership claims in map description are unverified.",
+  "coordinate_method": "Embedded EPSG:3857 point geometry converted to WGS84; no address attributes or personal data retained.",
+  "refresh_policy": "Historical opt-in source; never re-date as current on download. Replace only after renewed publisher/currentness review."
+}
